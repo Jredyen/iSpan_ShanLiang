@@ -1,0 +1,1490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ShanLiangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AccountPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identification" Type="int" />
+        </EntityType>
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionName" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="CouponID" />
+          </Key>
+          <Property Name="CouponID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CouponContent" Type="nvarchar(max)" />
+          <Property Name="CouponImage" Type="varbinary(max)" />
+          <Property Name="CustomerLevel" Type="int" />
+          <Property Name="CouponDeadline" Type="date" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EatType_Method">
+          <Key>
+            <PropertyRef Name="EatTypeMethodID" />
+          </Key>
+          <Property Name="EatTypeMethodID" Type="int" Nullable="false" />
+          <Property Name="EatTypeMethodName" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Identification">
+          <Key>
+            <PropertyRef Name="IdentificationID" />
+          </Key>
+          <Property Name="IdentificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentificationName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Meals_Image">
+          <Key>
+            <PropertyRef Name="ImageNo." />
+          </Key>
+          <Property Name="ImageNo." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MealsID" Type="int" />
+          <Property Name="MealsImage" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Meals_Menu">
+          <Key>
+            <PropertyRef Name="MealsID" />
+          </Key>
+          <Property Name="MealsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="MealsName" Type="nvarchar" MaxLength="30" />
+          <Property Name="MealsPrice" Type="money" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Memberphone" Type="nvarchar" MaxLength="20" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="20" />
+          <Property Name="BrithDate" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerLevel" Type="int" />
+        </EntityType>
+        <EntityType Name="Member_Action">
+          <Key>
+            <PropertyRef Name="No." />
+          </Key>
+          <Property Name="No." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionID" Type="int" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="MemberNotes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Member_Coupon">
+          <Key>
+            <PropertyRef Name="No." />
+          </Key>
+          <Property Name="No." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="CouponID" Type="int" />
+          <Property Name="CouponStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="ReservationTime" Type="datetime" />
+          <Property Name="ReservationNumber" Type="nvarchar" MaxLength="3" />
+          <Property Name="PaymentMethodID" Type="int" />
+          <Property Name="EatTypeMethodID" Type="int" />
+          <Property Name="CouponID" Type="int" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="OrderStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Order_Details">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="MealsID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="MealsID" Type="int" Nullable="false" />
+          <Property Name="MealsName" Type="nvarchar" MaxLength="30" />
+          <Property Name="MealsPrice" Type="money" />
+        </EntityType>
+        <EntityType Name="Payment_Method">
+          <Key>
+            <PropertyRef Name="PaymentMethodID" />
+          </Key>
+          <Property Name="PaymentMethodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentName" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Restaurant_Type">
+          <Key>
+            <PropertyRef Name="RestaurantTypeNum" />
+          </Key>
+          <Property Name="RestaurantTypeNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TaxID" Type="nvarchar" MaxLength="8" />
+          <Property Name="RestaurantName" Type="nvarchar" MaxLength="30" />
+          <Property Name="RestaurantAddress" Type="nvarchar" MaxLength="40" />
+          <Property Name="RestaurantPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="DistrictID" Type="int" />
+          <Property Name="Seats" Type="int" />
+          <Property Name="Longitude" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="Latitude" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="OpeningTime" Type="time" Precision="7" />
+          <Property Name="ClosingTime" Type="time" Precision="7" />
+          <Property Name="Website" Type="nvarchar(max)" />
+          <Property Name="StoreImage" Type="varbinary(max)" />
+          <Property Name="Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="Store_Evaluate">
+          <Key>
+            <PropertyRef Name="EvaluateNo." />
+          </Key>
+          <Property Name="EvaluateNo." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="Rating" Type="int" />
+          <Property Name="EvaluateDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Store_Type">
+          <Key>
+            <PropertyRef Name="No." />
+          </Key>
+          <Property Name="No." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RestaurantTypeNum" Type="int" />
+          <Property Name="StoreID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Account_Identification1">
+          <End Role="Identification" Type="Self.Identification" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identification">
+              <PropertyRef Name="IdentificationID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="Identification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Coupon_Coupon">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="CouponID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="CouponID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Coupon_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_District_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="District" Type="Self.District" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="District">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meals_Image_Meals_Menu">
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="0..1" />
+          <End Role="Meals_Image" Type="Self.Meals_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meals_Menu">
+              <PropertyRef Name="MealsID" />
+            </Principal>
+            <Dependent Role="Meals_Image">
+              <PropertyRef Name="MealsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meals_Menu_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Meals_Menu">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Action">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="ActionID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="ActionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Coupon_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="CouponStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Coupon">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="CouponID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CouponID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Meals_Menu">
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meals_Menu">
+              <PropertyRef Name="MealsID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="MealsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_EatTypeMethod">
+          <End Role="EatType_Method" Type="Self.EatType_Method" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EatType_Method">
+              <PropertyRef Name="EatTypeMethodID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="EatTypeMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_PaymentMethod">
+          <End Role="Payment_Method" Type="Self.Payment_Method" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment_Method">
+              <PropertyRef Name="PaymentMethodID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_District">
+          <End Role="District" Type="Self.District" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="DistrictID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="DistrictID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Evaluate_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Store_Evaluate">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Evaluate_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Store_Evaluate">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Type_Restaurant_Type">
+          <End Role="Restaurant_Type" Type="Self.Restaurant_Type" Multiplicity="0..1" />
+          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant_Type">
+              <PropertyRef Name="RestaurantTypeNum" />
+            </Principal>
+            <Dependent Role="Store_Type">
+              <PropertyRef Name="RestaurantTypeNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Type_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Store_Type">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShanLiangModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coupon" EntityType="Self.Coupon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EatType_Method" EntityType="Self.EatType_Method" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Identification" EntityType="Self.Identification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meals_Image" EntityType="Self.Meals_Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meals_Menu" EntityType="Self.Meals_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member_Action" EntityType="Self.Member_Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member_Coupon" EntityType="Self.Member_Coupon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment_Method" EntityType="Self.Payment_Method" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Restaurant_Type" EntityType="Self.Restaurant_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store_Evaluate" EntityType="Self.Store_Evaluate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store_Type" EntityType="Self.Store_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Account_Identification1" Association="Self.FK_Account_Identification1">
+            <End Role="Identification" EntitySet="Identification" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Coupon" Association="Self.FK_Customer_Coupon_Coupon">
+            <End Role="Coupon" EntitySet="Coupon" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Member" Association="Self.FK_Customer_Coupon_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_District_City" Association="Self.FK_District_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="District" EntitySet="District" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="Self.FK_Meals_Image_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Meals_Image" EntitySet="Meals_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Menu_Store" Association="Self.FK_Meals_Menu_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Action" Association="Self.FK_Member_Action_Action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Member" Association="Self.FK_Member_Action_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Store" Association="Self.FK_Member_Action_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Coupon_Status" Association="Self.FK_Member_Coupon_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Coupon" Association="Self.FK_Order_Coupon">
+            <End Role="Coupon" EntitySet="Coupon" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="Self.FK_Order_Details_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Order" Association="Self.FK_Order_Details_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_EatTypeMethod" Association="Self.FK_Order_EatTypeMethod">
+            <End Role="EatType_Method" EntitySet="EatType_Method" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Member" Association="Self.FK_Order_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_PaymentMethod" Association="Self.FK_Order_PaymentMethod">
+            <End Role="Payment_Method" EntitySet="Payment_Method" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Status" Association="Self.FK_Order_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Store" Association="Self.FK_Order_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_District" Association="Self.FK_Store_District">
+            <End Role="District" EntitySet="District" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Member" Association="Self.FK_Store_Evaluate_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Store" Association="Self.FK_Store_Evaluate_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Restaurant_Type" Association="Self.FK_Store_Type_Restaurant_Type">
+            <End Role="Restaurant_Type" EntitySet="Restaurant_Type" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Store" Association="Self.FK_Store_Type_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShanLiangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identification" Type="Int32" />
+          <NavigationProperty Name="Identification1" Relationship="Self.FK_Account_Identification1" FromRole="Account" ToRole="Identification" />
+        </EntityType>
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Action" FromRole="Action" ToRole="Member_Action" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Districts" Relationship="Self.FK_District_City" FromRole="City" ToRole="District" />
+        </EntityType>
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="CouponID" />
+          </Key>
+          <Property Name="CouponID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CouponContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CouponImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CustomerLevel" Type="Int32" />
+          <Property Name="CouponDeadline" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Customer_Coupon_Coupon" FromRole="Coupon" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Coupon" FromRole="Coupon" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="DistrictName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="City" Relationship="Self.FK_District_City" FromRole="District" ToRole="City" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_District" FromRole="District" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="EatType_Method">
+          <Key>
+            <PropertyRef Name="EatTypeMethodID" />
+          </Key>
+          <Property Name="EatTypeMethodID" Type="Int32" Nullable="false" />
+          <Property Name="EatTypeMethodName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_EatTypeMethod" FromRole="EatType_Method" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Identification">
+          <Key>
+            <PropertyRef Name="IdentificationID" />
+          </Key>
+          <Property Name="IdentificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentificationName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_Identification1" FromRole="Identification" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Meals_Image">
+          <Key>
+            <PropertyRef Name="ImageNo_" />
+          </Key>
+          <Property Name="ImageNo_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MealsID" Type="Int32" />
+          <Property Name="MealsImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Meals_Image_Meals_Menu" FromRole="Meals_Image" ToRole="Meals_Menu" />
+        </EntityType>
+        <EntityType Name="Meals_Menu">
+          <Key>
+            <PropertyRef Name="MealsID" />
+          </Key>
+          <Property Name="MealsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Meals_Image" Relationship="Self.FK_Meals_Image_Meals_Menu" FromRole="Meals_Menu" ToRole="Meals_Image" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Meals_Menu_Store" FromRole="Meals_Menu" ToRole="Store" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Meals_Menu" FromRole="Meals_Menu" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Memberphone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MemberName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BrithDate" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLevel" Type="Int32" />
+          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Customer_Coupon_Member" FromRole="Member" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Member" FromRole="Member" ToRole="Member_Action" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Member" FromRole="Member" ToRole="Order" />
+          <NavigationProperty Name="Store_Evaluate" Relationship="Self.FK_Store_Evaluate_Member" FromRole="Member" ToRole="Store_Evaluate" />
+        </EntityType>
+        <EntityType Name="Member_Action">
+          <Key>
+            <PropertyRef Name="No_" />
+          </Key>
+          <Property Name="No_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionID" Type="Int32" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="MemberNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Member_Action_Action" FromRole="Member_Action" ToRole="Action" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Member_Action_Member" FromRole="Member_Action" ToRole="Member" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Member_Action_Store" FromRole="Member_Action" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Member_Coupon">
+          <Key>
+            <PropertyRef Name="No_" />
+          </Key>
+          <Property Name="No_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="CouponID" Type="Int32" />
+          <Property Name="CouponStatus" Type="Int32" />
+          <NavigationProperty Name="Coupon" Relationship="Self.FK_Customer_Coupon_Coupon" FromRole="Member_Coupon" ToRole="Coupon" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Customer_Coupon_Member" FromRole="Member_Coupon" ToRole="Member" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Member_Coupon_Status" FromRole="Member_Coupon" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="ReservationTime" Type="DateTime" Precision="3" />
+          <Property Name="ReservationNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentMethodID" Type="Int32" />
+          <Property Name="EatTypeMethodID" Type="Int32" />
+          <Property Name="CouponID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OrderStatus" Type="Int32" />
+          <NavigationProperty Name="Coupon" Relationship="Self.FK_Order_Coupon" FromRole="Order" ToRole="Coupon" />
+          <NavigationProperty Name="EatType_Method" Relationship="Self.FK_Order_EatTypeMethod" FromRole="Order" ToRole="EatType_Method" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Order_Member" FromRole="Order" ToRole="Member" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Order" FromRole="Order" ToRole="Order_Details" />
+          <NavigationProperty Name="Payment_Method" Relationship="Self.FK_Order_PaymentMethod" FromRole="Order" ToRole="Payment_Method" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Order_Status" FromRole="Order" ToRole="Status" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Order_Store" FromRole="Order" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Order_Details">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="MealsID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="MealsID" Type="Int32" Nullable="false" />
+          <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Order_Details_Meals_Menu" FromRole="Order_Details" ToRole="Meals_Menu" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Details_Order" FromRole="Order_Details" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Payment_Method">
+          <Key>
+            <PropertyRef Name="PaymentMethodID" />
+          </Key>
+          <Property Name="PaymentMethodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_PaymentMethod" FromRole="Payment_Method" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Restaurant_Type">
+          <Key>
+            <PropertyRef Name="RestaurantTypeNum" />
+          </Key>
+          <Property Name="RestaurantTypeNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Store_Type" Relationship="Self.FK_Store_Type_Restaurant_Type" FromRole="Restaurant_Type" ToRole="Store_Type" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Member_Coupon_Status" FromRole="Status" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Status" FromRole="Status" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaxID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="RestaurantName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="RestaurantAddress" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="RestaurantPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictID" Type="Int32" />
+          <Property Name="Seats" Type="Int32" />
+          <Property Name="Longitude" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="Latitude" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="OpeningTime" Type="Time" Precision="7" />
+          <Property Name="ClosingTime" Type="Time" Precision="7" />
+          <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StoreImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Rating" Type="Int32" />
+          <NavigationProperty Name="District" Relationship="Self.FK_Store_District" FromRole="Store" ToRole="District" />
+          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Meals_Menu_Store" FromRole="Store" ToRole="Meals_Menu" />
+          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Store" FromRole="Store" ToRole="Member_Action" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Store" FromRole="Store" ToRole="Order" />
+          <NavigationProperty Name="Store_Evaluate" Relationship="Self.FK_Store_Evaluate_Store" FromRole="Store" ToRole="Store_Evaluate" />
+          <NavigationProperty Name="Store_Type" Relationship="Self.FK_Store_Type_Store" FromRole="Store" ToRole="Store_Type" />
+        </EntityType>
+        <EntityType Name="Store_Evaluate">
+          <Key>
+            <PropertyRef Name="EvaluateNo_" />
+          </Key>
+          <Property Name="EvaluateNo_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Int32" />
+          <Property Name="EvaluateDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Store_Evaluate_Member" FromRole="Store_Evaluate" ToRole="Member" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Store_Evaluate_Store" FromRole="Store_Evaluate" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Store_Type">
+          <Key>
+            <PropertyRef Name="No_" />
+          </Key>
+          <Property Name="No_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RestaurantTypeNum" Type="Int32" />
+          <Property Name="StoreID" Type="Int32" />
+          <NavigationProperty Name="Restaurant_Type" Relationship="Self.FK_Store_Type_Restaurant_Type" FromRole="Store_Type" ToRole="Restaurant_Type" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Store_Type_Store" FromRole="Store_Type" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Account_Identification1">
+          <End Role="Identification" Type="Self.Identification" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identification">
+              <PropertyRef Name="IdentificationID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="Identification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Action">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="ActionID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="ActionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_District_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="District" Type="Self.District" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="District">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Coupon_Coupon">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="CouponID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="CouponID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Coupon">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="CouponID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CouponID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_District">
+          <End Role="District" Type="Self.District" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="DistrictID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="DistrictID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_EatTypeMethod">
+          <End Role="EatType_Method" Type="Self.EatType_Method" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EatType_Method">
+              <PropertyRef Name="EatTypeMethodID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="EatTypeMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meals_Image_Meals_Menu">
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="0..1" />
+          <End Role="Meals_Image" Type="Self.Meals_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meals_Menu">
+              <PropertyRef Name="MealsID" />
+            </Principal>
+            <Dependent Role="Meals_Image">
+              <PropertyRef Name="MealsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meals_Menu_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Meals_Menu">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Meals_Menu">
+          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meals_Menu">
+              <PropertyRef Name="MealsID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="MealsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Coupon_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Evaluate_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Store_Evaluate">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Action_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Member_Action">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Coupon_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Member_Coupon">
+              <PropertyRef Name="CouponStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_PaymentMethod">
+          <End Role="Payment_Method" Type="Self.Payment_Method" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment_Method">
+              <PropertyRef Name="PaymentMethodID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Type_Restaurant_Type">
+          <End Role="Restaurant_Type" Type="Self.Restaurant_Type" Multiplicity="0..1" />
+          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant_Type">
+              <PropertyRef Name="RestaurantTypeNum" />
+            </Principal>
+            <Dependent Role="Store_Type">
+              <PropertyRef Name="RestaurantTypeNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Evaluate_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Store_Evaluate">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Type_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Store_Type">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShanLiangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Actions" EntityType="Self.Action" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Coupons" EntityType="Self.Coupon" />
+          <EntitySet Name="Districts" EntityType="Self.District" />
+          <EntitySet Name="EatType_Method" EntityType="Self.EatType_Method" />
+          <EntitySet Name="Identifications" EntityType="Self.Identification" />
+          <EntitySet Name="Meals_Image" EntityType="Self.Meals_Image" />
+          <EntitySet Name="Meals_Menu" EntityType="Self.Meals_Menu" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Member_Action" EntityType="Self.Member_Action" />
+          <EntitySet Name="Member_Coupon" EntityType="Self.Member_Coupon" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
+          <EntitySet Name="Payment_Method" EntityType="Self.Payment_Method" />
+          <EntitySet Name="Restaurant_Type" EntityType="Self.Restaurant_Type" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Store_Evaluate" EntityType="Self.Store_Evaluate" />
+          <EntitySet Name="Store_Type" EntityType="Self.Store_Type" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Account_Identification1" Association="Self.FK_Account_Identification1">
+            <End Role="Identification" EntitySet="Identifications" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Action" Association="Self.FK_Member_Action_Action">
+            <End Role="Action" EntitySet="Actions" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_District_City" Association="Self.FK_District_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="District" EntitySet="Districts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Coupon" Association="Self.FK_Customer_Coupon_Coupon">
+            <End Role="Coupon" EntitySet="Coupons" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Coupon" Association="Self.FK_Order_Coupon">
+            <End Role="Coupon" EntitySet="Coupons" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_District" Association="Self.FK_Store_District">
+            <End Role="District" EntitySet="Districts" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_EatTypeMethod" Association="Self.FK_Order_EatTypeMethod">
+            <End Role="EatType_Method" EntitySet="EatType_Method" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="Self.FK_Meals_Image_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Meals_Image" EntitySet="Meals_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Menu_Store" Association="Self.FK_Meals_Menu_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="Self.FK_Order_Details_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Member" Association="Self.FK_Customer_Coupon_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Member" Association="Self.FK_Member_Action_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Member" Association="Self.FK_Order_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Member" Association="Self.FK_Store_Evaluate_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Store" Association="Self.FK_Member_Action_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Coupon_Status" Association="Self.FK_Member_Coupon_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Order" Association="Self.FK_Order_Details_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_PaymentMethod" Association="Self.FK_Order_PaymentMethod">
+            <End Role="Payment_Method" EntitySet="Payment_Method" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Status" Association="Self.FK_Order_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Store" Association="Self.FK_Order_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Restaurant_Type" Association="Self.FK_Store_Type_Restaurant_Type">
+            <End Role="Restaurant_Type" EntitySet="Restaurant_Type" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Store" Association="Self.FK_Store_Evaluate_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Store" Association="Self.FK_Store_Type_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShanLiangModelStoreContainer" CdmEntityContainer="ShanLiangEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="ShanLiangModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
+                <ScalarProperty Name="Identification" ColumnName="Identification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Actions">
+            <EntityTypeMapping TypeName="ShanLiangModel.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="ShanLiangModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coupons">
+            <EntityTypeMapping TypeName="ShanLiangModel.Coupon">
+              <MappingFragment StoreEntitySet="Coupon">
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="CouponContent" ColumnName="CouponContent" />
+                <ScalarProperty Name="CouponImage" ColumnName="CouponImage" />
+                <ScalarProperty Name="CustomerLevel" ColumnName="CustomerLevel" />
+                <ScalarProperty Name="CouponDeadline" ColumnName="CouponDeadline" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="ShanLiangModel.District">
+              <MappingFragment StoreEntitySet="District">
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EatType_Method">
+            <EntityTypeMapping TypeName="ShanLiangModel.EatType_Method">
+              <MappingFragment StoreEntitySet="EatType_Method">
+                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
+                <ScalarProperty Name="EatTypeMethodName" ColumnName="EatTypeMethodName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Identifications">
+            <EntityTypeMapping TypeName="ShanLiangModel.Identification">
+              <MappingFragment StoreEntitySet="Identification">
+                <ScalarProperty Name="IdentificationID" ColumnName="IdentificationID" />
+                <ScalarProperty Name="IdentificationName" ColumnName="IdentificationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meals_Image">
+            <EntityTypeMapping TypeName="ShanLiangModel.Meals_Image">
+              <MappingFragment StoreEntitySet="Meals_Image">
+                <ScalarProperty Name="ImageNo_" ColumnName="ImageNo." />
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
+                <ScalarProperty Name="MealsImage" ColumnName="MealsImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meals_Menu">
+            <EntityTypeMapping TypeName="ShanLiangModel.Meals_Menu">
+              <MappingFragment StoreEntitySet="Meals_Menu">
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
+                <ScalarProperty Name="MealsPrice" ColumnName="MealsPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ShanLiangModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="Memberphone" ColumnName="Memberphone" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BrithDate" ColumnName="BrithDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CustomerLevel" ColumnName="CustomerLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_Action">
+            <EntityTypeMapping TypeName="ShanLiangModel.Member_Action">
+              <MappingFragment StoreEntitySet="Member_Action">
+                <ScalarProperty Name="No_" ColumnName="No." />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MemberNotes" ColumnName="MemberNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_Coupon">
+            <EntityTypeMapping TypeName="ShanLiangModel.Member_Coupon">
+              <MappingFragment StoreEntitySet="Member_Coupon">
+                <ScalarProperty Name="No_" ColumnName="No." />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="CouponStatus" ColumnName="CouponStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ShanLiangModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="ReservationTime" ColumnName="ReservationTime" />
+                <ScalarProperty Name="ReservationNumber" ColumnName="ReservationNumber" />
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Details">
+            <EntityTypeMapping TypeName="ShanLiangModel.Order_Details">
+              <MappingFragment StoreEntitySet="Order_Details">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
+                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
+                <ScalarProperty Name="MealsPrice" ColumnName="MealsPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_Method">
+            <EntityTypeMapping TypeName="ShanLiangModel.Payment_Method">
+              <MappingFragment StoreEntitySet="Payment_Method">
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="PaymentName" ColumnName="PaymentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurant_Type">
+            <EntityTypeMapping TypeName="ShanLiangModel.Restaurant_Type">
+              <MappingFragment StoreEntitySet="Restaurant_Type">
+                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="ShanLiangModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="ShanLiangModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
+                <ScalarProperty Name="RestaurantAddress" ColumnName="RestaurantAddress" />
+                <ScalarProperty Name="RestaurantPhone" ColumnName="RestaurantPhone" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+                <ScalarProperty Name="Seats" ColumnName="Seats" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="OpeningTime" ColumnName="OpeningTime" />
+                <ScalarProperty Name="ClosingTime" ColumnName="ClosingTime" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="StoreImage" ColumnName="StoreImage" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Store_Evaluate">
+            <EntityTypeMapping TypeName="ShanLiangModel.Store_Evaluate">
+              <MappingFragment StoreEntitySet="Store_Evaluate">
+                <ScalarProperty Name="EvaluateNo_" ColumnName="EvaluateNo." />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="EvaluateDate" ColumnName="EvaluateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Store_Type">
+            <EntityTypeMapping TypeName="ShanLiangModel.Store_Type">
+              <MappingFragment StoreEntitySet="Store_Type">
+                <ScalarProperty Name="No_" ColumnName="No." />
+                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ShanLiangModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CE21135-943E-4B79-85D4-C5FA56928E3A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Frm_ShanLiang</RootNamespace>
+    <AssemblyName>Frm_ShanLiang</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Action.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EatType_Method.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtesionMethods\C_TextBoxTool.cs" />
+    <Compile Include="Frm_Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Homepage.Designer.cs">
+      <DependentUpon>Frm_Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LoginPage.Designer.cs">
+      <DependentUpon>Frm_LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MemberPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MemberPage.Designer.cs">
+      <DependentUpon>Frm_MemberPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_SignInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SignInPage.Designer.cs">
+      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_StorePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StorePage.Designer.cs">
+      <DependentUpon>Frm_StorePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_StoreSignInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreSignInPage.Designer.cs">
+      <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Identification.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Meals_Image.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Meals_Menu.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Action.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Coupon.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Details.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Method.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restaurant_Type.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShanLiangModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShanLiangModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShanLiangModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShanLiangModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShanLiangModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store_Evaluate.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store_Type.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_Homepage.resx">
+      <DependentUpon>Frm_Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LoginPage.resx">
+      <DependentUpon>Frm_LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MemberPage.resx">
+      <DependentUpon>Frm_MemberPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SignInPage.resx">
+      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StorePage.resx">
+      <DependentUpon>Frm_StorePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreSignInPage.resx">
+      <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="ShanLiangModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShanLiangModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ShanLiangModel.edmx.diagram">
+      <DependentUpon>ShanLiangModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg" />
+    <None Include="Resources\352091_search_icon.png" />
+    <Content Include="ShanLiangModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShanLiangModel.edmx</DependentUpon>
+      <LastGenOutput>ShanLiangModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ShanLiangModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShanLiangModel.edmx</DependentUpon>
+      <LastGenOutput>ShanLiangModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
