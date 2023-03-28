@@ -28,34 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_StorePage));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_signin = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.bnt_login = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labSeat = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLike = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCommemt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnBranch1 = new System.Windows.Forms.Button();
+            this.btnBranch4 = new System.Windows.Forms.Button();
+            this.btnBranch3 = new System.Windows.Forms.Button();
+            this.btnBranch2 = new System.Windows.Forms.Button();
+            this.labRating = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labOpenTime = new System.Windows.Forms.Label();
+            this.labResPhone = new System.Windows.Forms.Label();
+            this.labResAddress = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labBranch = new System.Windows.Forms.Label();
+            this.labImage = new System.Windows.Forms.Label();
+            this.labComment = new System.Windows.Forms.Label();
+            this.labPhone = new System.Windows.Forms.Label();
+            this.labTime = new System.Windows.Forms.Label();
+            this.labAddress = new System.Windows.Forms.Label();
             this.labResName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.linkResType1 = new System.Windows.Forms.LinkLabel();
-            this.linkResType2 = new System.Windows.Forms.LinkLabel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.picBoxComment = new System.Windows.Forms.PictureBox();
             this.labCommentNum = new System.Windows.Forms.Label();
@@ -63,16 +72,12 @@
             this.labLikeNum = new System.Windows.Forms.Label();
             this.labStar = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timerStoreAd = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLike)).BeginInit();
@@ -88,6 +93,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.btn_signin);
             this.splitContainer1.Panel1.Controls.Add(this.btn_search);
@@ -96,8 +102,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox2);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
@@ -139,28 +143,13 @@
             this.bnt_login.Text = "登入";
             this.bnt_login.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(759, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(375, 218);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(382, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(375, 218);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.labSeat);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnLike);
@@ -168,25 +157,59 @@
             this.panel2.Controls.Add(this.btnCommemt);
             this.panel2.Location = new System.Drawing.Point(739, 249);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(398, 683);
+            this.panel2.Size = new System.Drawing.Size(398, 813);
             this.panel2.TabIndex = 10;
             // 
-            // label5
+            // label11
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(93, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 23);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "空位 26 / 30 ，繁忙";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(208, 183);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 17);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "不須等候";
+            // 
+            // labSeat
+            // 
+            this.labSeat.AutoSize = true;
+            this.labSeat.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labSeat.Location = new System.Drawing.Point(105, 183);
+            this.labSeat.Name = "labSeat";
+            this.labSeat.Size = new System.Drawing.Size(27, 17);
+            this.labSeat.TabIndex = 11;
+            this.labSeat.Text = "1 / ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
+            this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(199, 158);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 21);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "等候時間";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(93, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "現場空位";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(93, 197);
+            this.button2.Location = new System.Drawing.Point(93, 214);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 38);
             this.button2.TabIndex = 4;
@@ -242,21 +265,140 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.flowLayoutPanel3);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnBranch1);
+            this.panel1.Controls.Add(this.btnBranch4);
+            this.panel1.Controls.Add(this.btnBranch3);
+            this.panel1.Controls.Add(this.btnBranch2);
+            this.panel1.Controls.Add(this.labRating);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.labOpenTime);
+            this.panel1.Controls.Add(this.labResPhone);
+            this.panel1.Controls.Add(this.labResAddress);
+            this.panel1.Controls.Add(this.flowLayoutPanel3);
+            this.panel1.Controls.Add(this.labBranch);
+            this.panel1.Controls.Add(this.labImage);
+            this.panel1.Controls.Add(this.labComment);
+            this.panel1.Controls.Add(this.labPhone);
+            this.panel1.Controls.Add(this.labTime);
+            this.panel1.Controls.Add(this.labAddress);
             this.panel1.Controls.Add(this.labResName);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.labStar);
             this.panel1.Location = new System.Drawing.Point(8, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 683);
+            this.panel1.Size = new System.Drawing.Size(725, 813);
             this.panel1.TabIndex = 9;
+            // 
+            // btnBranch1
+            // 
+            this.btnBranch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch1.Location = new System.Drawing.Point(43, 672);
+            this.btnBranch1.Name = "btnBranch1";
+            this.btnBranch1.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch1.TabIndex = 24;
+            this.btnBranch1.Text = "膳糧食堂\r\n大安1號店";
+            this.btnBranch1.UseVisualStyleBackColor = true;
+            this.btnBranch1.Click += new System.EventHandler(this.btnBranch1_Click);
+            // 
+            // btnBranch4
+            // 
+            this.btnBranch4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch4.Location = new System.Drawing.Point(352, 672);
+            this.btnBranch4.Name = "btnBranch4";
+            this.btnBranch4.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch4.TabIndex = 23;
+            this.btnBranch4.Text = "陸二村家\r\nVillage LuL";
+            this.btnBranch4.UseVisualStyleBackColor = true;
+            this.btnBranch4.Click += new System.EventHandler(this.btnBranch4_Click);
+            // 
+            // btnBranch3
+            // 
+            this.btnBranch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch3.Location = new System.Drawing.Point(249, 672);
+            this.btnBranch3.Name = "btnBranch3";
+            this.btnBranch3.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch3.TabIndex = 22;
+            this.btnBranch3.Text = "藏壽司\r\n板橋中山遠百店";
+            this.btnBranch3.UseVisualStyleBackColor = true;
+            this.btnBranch3.Click += new System.EventHandler(this.btnBranch3_Click);
+            // 
+            // btnBranch2
+            // 
+            this.btnBranch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch2.Location = new System.Drawing.Point(146, 672);
+            this.btnBranch2.Name = "btnBranch2";
+            this.btnBranch2.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch2.TabIndex = 21;
+            this.btnBranch2.Text = "OGGI 歐奇\r\n窯烤披薩-敦南店";
+            this.btnBranch2.UseVisualStyleBackColor = true;
+            this.btnBranch2.Click += new System.EventHandler(this.btnBranch2_Click);
+            // 
+            // labRating
+            // 
+            this.labRating.AutoSize = true;
+            this.labRating.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labRating.Location = new System.Drawing.Point(39, 82);
+            this.labRating.Name = "labRating";
+            this.labRating.Size = new System.Drawing.Size(34, 21);
+            this.labRating.TabIndex = 20;
+            this.labRating.Text = "0.0";
+            // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(38, 319);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(659, 2);
+            this.label3.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(37, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(659, 2);
+            this.label2.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label13.Location = new System.Drawing.Point(37, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(659, 2);
+            this.label13.TabIndex = 17;
+            // 
+            // labOpenTime
+            // 
+            this.labOpenTime.AutoSize = true;
+            this.labOpenTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labOpenTime.Location = new System.Drawing.Point(132, 214);
+            this.labOpenTime.Name = "labOpenTime";
+            this.labOpenTime.Size = new System.Drawing.Size(26, 21);
+            this.labOpenTime.TabIndex = 16;
+            this.labOpenTime.Text = "　";
+            // 
+            // labResPhone
+            // 
+            this.labResPhone.AutoSize = true;
+            this.labResPhone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labResPhone.Location = new System.Drawing.Point(132, 283);
+            this.labResPhone.Name = "labResPhone";
+            this.labResPhone.Size = new System.Drawing.Size(26, 21);
+            this.labResPhone.TabIndex = 15;
+            this.labResPhone.Text = "　";
+            // 
+            // labResAddress
+            // 
+            this.labResAddress.AutoSize = true;
+            this.labResAddress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labResAddress.Location = new System.Drawing.Point(132, 145);
+            this.labResAddress.Name = "labResAddress";
+            this.labResAddress.Size = new System.Drawing.Size(26, 21);
+            this.labResAddress.TabIndex = 14;
+            this.labResAddress.Text = "　";
             // 
             // flowLayoutPanel3
             // 
@@ -266,65 +408,65 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(647, 100);
             this.flowLayoutPanel3.TabIndex = 13;
             // 
-            // label8
+            // labBranch
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(33, 621);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 28);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "分店";
+            this.labBranch.AutoSize = true;
+            this.labBranch.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
+            this.labBranch.Location = new System.Drawing.Point(33, 621);
+            this.labBranch.Name = "labBranch";
+            this.labBranch.Size = new System.Drawing.Size(56, 28);
+            this.labBranch.TabIndex = 12;
+            this.labBranch.Text = "分店";
             // 
-            // label7
+            // labImage
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(35, 462);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 28);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "照片";
+            this.labImage.AutoSize = true;
+            this.labImage.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
+            this.labImage.Location = new System.Drawing.Point(35, 462);
+            this.labImage.Name = "labImage";
+            this.labImage.Size = new System.Drawing.Size(56, 28);
+            this.labImage.TabIndex = 11;
+            this.labImage.Text = "照片";
             // 
-            // label6
+            // labComment
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(32, 374);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 28);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "評論";
+            this.labComment.AutoSize = true;
+            this.labComment.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
+            this.labComment.Location = new System.Drawing.Point(32, 374);
+            this.labComment.Name = "labComment";
+            this.labComment.Size = new System.Drawing.Size(56, 28);
+            this.labComment.TabIndex = 10;
+            this.labComment.Text = "評論";
             // 
-            // label3
+            // labPhone
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(53, 284);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "電話";
+            this.labPhone.AutoSize = true;
+            this.labPhone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labPhone.Location = new System.Drawing.Point(53, 277);
+            this.labPhone.Name = "labPhone";
+            this.labPhone.Size = new System.Drawing.Size(41, 20);
+            this.labPhone.TabIndex = 9;
+            this.labPhone.Text = "電話";
             // 
-            // label2
+            // labTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(53, 215);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "營業時間";
+            this.labTime.AutoSize = true;
+            this.labTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labTime.Location = new System.Drawing.Point(53, 211);
+            this.labTime.Name = "labTime";
+            this.labTime.Size = new System.Drawing.Size(73, 20);
+            this.labTime.TabIndex = 8;
+            this.labTime.Text = "營業時間";
             // 
-            // label1
+            // labAddress
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(53, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "地址";
+            this.labAddress.AutoSize = true;
+            this.labAddress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labAddress.Location = new System.Drawing.Point(53, 145);
+            this.labAddress.Name = "labAddress";
+            this.labAddress.Size = new System.Drawing.Size(41, 20);
+            this.labAddress.TabIndex = 7;
+            this.labAddress.Text = "地址";
             // 
             // labResName
             // 
@@ -332,42 +474,16 @@
             this.labResName.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
             this.labResName.Location = new System.Drawing.Point(33, 48);
             this.labResName.Name = "labResName";
-            this.labResName.Size = new System.Drawing.Size(216, 28);
+            this.labResName.Size = new System.Drawing.Size(34, 28);
             this.labResName.TabIndex = 3;
-            this.labResName.Text = "膳糧食堂 大安１號店";
+            this.labResName.Text = "　";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.linkResType1);
-            this.flowLayoutPanel1.Controls.Add(this.linkResType2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(268, 20);
             this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // linkResType1
-            // 
-            this.linkResType1.AutoSize = true;
-            this.linkResType1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.linkResType1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.linkResType1.Location = new System.Drawing.Point(3, 0);
-            this.linkResType1.Name = "linkResType1";
-            this.linkResType1.Size = new System.Drawing.Size(31, 16);
-            this.linkResType1.TabIndex = 1;
-            this.linkResType1.TabStop = true;
-            this.linkResType1.Text = "台式";
-            // 
-            // linkResType2
-            // 
-            this.linkResType2.AutoSize = true;
-            this.linkResType2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.linkResType2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.linkResType2.Location = new System.Drawing.Point(40, 0);
-            this.linkResType2.Name = "linkResType2";
-            this.linkResType2.Size = new System.Drawing.Size(31, 16);
-            this.linkResType2.TabIndex = 2;
-            this.linkResType2.TabStop = true;
-            this.linkResType2.Text = "便當";
             // 
             // flowLayoutPanel2
             // 
@@ -375,7 +491,7 @@
             this.flowLayoutPanel2.Controls.Add(this.labCommentNum);
             this.flowLayoutPanel2.Controls.Add(this.picBoxLike);
             this.flowLayoutPanel2.Controls.Add(this.labLikeNum);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(129, 79);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(168, 79);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(176, 29);
             this.flowLayoutPanel2.TabIndex = 6;
@@ -427,24 +543,21 @@
             this.labStar.AutoSize = true;
             this.labStar.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.labStar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.labStar.Location = new System.Drawing.Point(36, 82);
+            this.labStar.Location = new System.Drawing.Point(75, 82);
             this.labStar.Name = "labStar";
-            this.labStar.Size = new System.Drawing.Size(90, 21);
+            this.labStar.Size = new System.Drawing.Size(26, 21);
             this.labStar.TabIndex = 5;
-            this.labStar.Text = "★★★★★";
+            this.labStar.Text = "★";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(5, 14);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(375, 218);
+            this.pictureBox1.Size = new System.Drawing.Size(725, 240);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // timerStoreAd
-            // 
-            this.timerStoreAd.Tick += new System.EventHandler(this.timerStoreAd_Tick);
             // 
             // Frm_StorePage
             // 
@@ -454,18 +567,16 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Frm_StorePage";
             this.Text = "Frm_StorePage";
+            this.Load += new System.EventHandler(this.Frm_StorePage_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).EndInit();
@@ -483,8 +594,6 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button bnt_login;
         private System.Windows.Forms.Label labResName;
-        private System.Windows.Forms.LinkLabel linkResType2;
-        private System.Windows.Forms.LinkLabel linkResType1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.PictureBox picBoxComment;
@@ -493,23 +602,34 @@
         private System.Windows.Forms.Label labLikeNum;
         private System.Windows.Forms.Label labStar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Timer timerStoreAd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labPhone;
+        private System.Windows.Forms.Label labTime;
+        private System.Windows.Forms.Label labAddress;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLike;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCommemt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labBranch;
+        private System.Windows.Forms.Label labImage;
+        private System.Windows.Forms.Label labComment;
+        private System.Windows.Forms.Label labResAddress;
+        private System.Windows.Forms.Label labResPhone;
+        private System.Windows.Forms.Label labOpenTime;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labSeat;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labRating;
+        private System.Windows.Forms.Button btnBranch2;
+        private System.Windows.Forms.Button btnBranch4;
+        private System.Windows.Forms.Button btnBranch3;
+        private System.Windows.Forms.Button btnBranch1;
     }
 }

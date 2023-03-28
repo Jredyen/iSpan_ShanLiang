@@ -70,6 +70,8 @@
     <Compile Include="Coupon.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CStoreShow.cs" />
+    <Compile Include="CStorePage.cs" />
     <Compile Include="District.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
