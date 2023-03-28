@@ -113,7 +113,7 @@ namespace Frm_ShanLiang
 
         private void linkToStoreSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //分支測試
+
         }
     }
 }
