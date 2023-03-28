@@ -26,6 +26,9 @@ namespace Frm_ShanLiang
             txt_phone.SetWatermark("店家電話號碼");
         }
 
-        
+        private void btn_signin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
