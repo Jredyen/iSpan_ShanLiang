@@ -65,6 +65,7 @@
     <Compile Include="City.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CNowLoginAccount.cs" />
     <Compile Include="Coupon.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
@@ -93,11 +94,11 @@
     <Compile Include="Frm_MemberPage.Designer.cs">
       <DependentUpon>Frm_MemberPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_SignInPage.cs">
+    <Compile Include="Frm_SignupPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_SignInPage.Designer.cs">
-      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    <Compile Include="Frm_SignupPage.Designer.cs">
+      <DependentUpon>Frm_SignupPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_StorePage.cs">
       <SubType>Form</SubType>
@@ -182,8 +183,8 @@
     <EmbeddedResource Include="Frm_MemberPage.resx">
       <DependentUpon>Frm_MemberPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_SignInPage.resx">
-      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_SignupPage.resx">
+      <DependentUpon>Frm_SignupPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StorePage.resx">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>
