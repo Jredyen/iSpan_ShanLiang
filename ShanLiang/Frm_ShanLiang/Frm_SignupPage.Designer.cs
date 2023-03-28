@@ -1,6 +1,6 @@
 ﻿namespace Frm_ShanLiang
 {
-    partial class Frm_SignInPage
+    partial class Frm_SignupPage
     {
         /// <summary>
         /// Required designer variable.

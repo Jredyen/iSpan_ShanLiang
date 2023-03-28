@@ -9,16 +9,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Frm_ShanLiang
 {
-    public partial class Frm_SignInPage : Form
+    public partial class Frm_SignupPage : Form
     {
         ShanLiangEntities SLE = new ShanLiangEntities();
         bool isHighPassword;
         bool isPhone;
-        public Frm_SignInPage()
+        public Frm_SignupPage()
         {
             InitializeComponent();
             //註冊頁面圖片

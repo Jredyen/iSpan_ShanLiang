@@ -24,7 +24,7 @@ namespace Frm_ShanLiang
         private void linkLab_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Close();
-            new Frm_SignInPage().ShowDialog();
+            new Frm_SignupPage().ShowDialog();
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
