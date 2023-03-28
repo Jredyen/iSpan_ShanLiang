@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -227,6 +228,7 @@
   <ItemGroup>
     <None Include="Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg" />
     <None Include="Resources\352091_search_icon.png" />
+    <None Include="Resources\登入畫面.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
