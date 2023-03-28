@@ -16,5 +16,10 @@ namespace Frm_ShanLiang
         {
             InitializeComponent();
         }
+
+        private void btn_ReviseData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
