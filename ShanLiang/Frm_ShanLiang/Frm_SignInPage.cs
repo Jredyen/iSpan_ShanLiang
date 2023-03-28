@@ -27,45 +27,78 @@ namespace Frm_ShanLiang
             txt_email.SetWatermark("E-Mail");
             txt_phone.SetWatermark("電話號碼");
         }
+        //帳號欄位驗證
+        private void txt_account_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_account.Text == "")
+            {
+                lab_account.Text = "請輸入帳號";
+            }
+            else if (SLE.Accounts.Where(n => n.AccountName == txt_account.Text).Select(n => n.AccountName).Any())
+            {
+                lab_account.Text = "該帳號已存在";
+            }
+            else
+            {
+                lab_account.Text = "Ok";
+            }
+        }
+        //密碼欄位驗證
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+            bool isHighPassword = Regex.IsMatch(txt_password.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,50}$");
+            lab_password.Text = (isHighPassword ? "Ok!" : "密碼強度不足");
+        }
+        //密碼二次驗證
+        private void txt_doubleCheckPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_password.Text == txt_doubleCheckPassword.Text)
+            {
+                lab_doubleCheckPassword.Text = "Ok!";
+            }
+            else
+            {
+                lab_doubleCheckPassword.Text = "請輸入相同的密碼";
+            }
+        }
+        //姓名欄位驗證
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+            lab_name.Text = txt_name.Text == "" ? "請輸入姓名" : "Ok!";
+        }
 
+        private void txt_phone_TextChanged(object sender, EventArgs e)
+        {
+            bool isPhone = Regex.IsMatch(txt_phone.Text, @"^09[0-9]{8}$");
+            lab_phone.Text = isPhone ? "Ok!" : "請輸入正確的手機號碼格式";
+        }
+        //Email欄位驗證
+        private void txt_email_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_email.Text == "")
+            {
+                lab_email.Text = "請輸入Email";
+            }
+            else if (SLE.Members.Where(n => n.Email == txt_email.Text).Select(n => n.Email).Any())
+            {
+                lab_email.Text = "該E-mail已存在";
+            }
+            else
+            {
+                lab_email.Text = "Ok!";
+            }
+        }
+        //地址欄位驗證
+        private void txt_address_TextChanged(object sender, EventArgs e)
+        {
+            lab_address.Text = txt_address.Text == "" ? "請輸入地址" : "Ok";
+        }
+        //取消鍵
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             Close();
         }
-        private void txt_inputCheck(object sender, EventArgs e)
-        {
-            switch (((TextBox)sender).Name)
-            {
-                case "txt_account":
-                    lab_account.Text = txt_account.Text == "" ? "請輸入帳號" : SLE.Accounts.Where(n => n.AccountName == txt_account.Text).Select(n => n.AccountName).Any() ? "該帳號已存在" : "Ok!";
-                    // 判斷式1.驗證帳號欄位是不是空的、判斷式2.驗證帳號是否已經存在、3.Ok!
-                    break;
-                case "txt_password":
-                    bool isHighPassword = Regex.IsMatch(txt_password.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,50}$");
-                    lab_password.Text = (isHighPassword ? "Ok!" : "密碼強度不足");
-                    //密碼中小於8碼、沒有大小寫及數字會顯示密碼強度不足
-                    break;
-                case "txt_doubleCheckPassword":
-                    lab_doubleCheckPassword.Text = txt_password.Text == txt_doubleCheckPassword.Text ? "Ok!" : "請輸入相同的密碼";
-                    break;
-                case "txt_name":
-                    lab_name.Text = txt_name.Text == "" ? "請輸入姓名" : "Ok!";
-                    break;
-                case "txt_phone":
-                    bool isPhone = Regex.IsMatch(txt_phone.Text, @"^09[0-9]{8}$");
-                    lab_phone.Text = isPhone ? "Ok!" : "請輸入正確的手機號碼格式";
-                    break;
-                case "txt_email":
-                    //bool isEmail = Regex.IsMatch(txt_email.Text, "^[\\w-]+@[\\w-]+.(com|net|org|edu|mil|tv|biz|info)$");
-                    lab_email.Text = txt_email.Text == "" ? "請輸入Email" : SLE.Members.Where(n => n.Email == txt_email.Text).Select(n => n.Email).Any() ? "該E-mail已存在" : "Ok!";
-                    // 判斷式1.驗證E-mail欄位是不是空的、判斷式2.驗證E-mail是否已經存在、3.Ok!
-                    break;
-                case "txt_address":
-                    lab_address.Text = txt_address.Text == "" ? "請輸入地址" : "Ok!";
-                    break;
-            }
-        }
-
+        //註冊鍵
         private void btn_signin_Click(object sender, EventArgs e)
         {
             try
@@ -113,7 +146,8 @@ namespace Frm_ShanLiang
 
         private void linkToStoreSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //分支測試
+
         }
+
     }
 }
