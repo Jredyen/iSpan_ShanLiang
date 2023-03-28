@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Frm_ShanLiang
 {
-    public delegate void CStoreLoad();
+    public delegate void CStoreShow();
 }

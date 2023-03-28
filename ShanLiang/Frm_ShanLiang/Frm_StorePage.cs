@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace Frm_ShanLiang
 {
@@ -26,20 +27,14 @@ namespace Frm_ShanLiang
             //載入分店按鍵背景
             LoadBtnImg();
             //委派LoadStoreData
-            cSP.cSL += this.LoadStoreData;
-            //如果static ID為空，隨機載入店家
-            if (CStorePage._sid > 0)
-            {
-                LoadStoreData(); 
-            }
-            else
-            {
-                CStorePage._sid = SLE.Stores.OrderBy(id => Guid.NewGuid()).First().StoreID;
-                LoadStoreData();
-            }
+            cSP.cSS += this.ShowStoreData;
+            //載入店家資訊
+            ShowStoreData();
+
+            //隨機載入CStorePage._sid = SLE.Stores.OrderBy(id => Guid.NewGuid()).First().StoreID;
         }
 
-        public void LoadStoreData()
+        public void ShowStoreData()
         {
             //店家圖片
             var qImg = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.StoreImage);
@@ -73,6 +68,9 @@ namespace Frm_ShanLiang
             var qName = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.RestaurantName);
             foreach (var item in qName)
                 labResName.Text = item;
+            //Store store = cSP.getCurrent();
+            //labResName.Text = store.RestaurantName;
+
             //評分
             var qRating = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Rating);
             labStar.Text = null;
@@ -150,24 +148,24 @@ namespace Frm_ShanLiang
         private void btnBranch1_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 1;
-            LoadStoreData();            
+            ShowStoreData();            
         }
         private void btnBranch2_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 8;
-            LoadStoreData();
+            ShowStoreData();
         }
 
         private void btnBranch3_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 6;
-            LoadStoreData();
+            ShowStoreData();
         }
 
         private void btnBranch4_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 12;
-            LoadStoreData();
+            ShowStoreData();
         }
 
         private void bnt_login_Click(object sender, EventArgs e)
