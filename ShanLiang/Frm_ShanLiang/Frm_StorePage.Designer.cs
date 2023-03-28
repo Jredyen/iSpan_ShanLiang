@@ -45,10 +45,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnCommemt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnBranch1 = new System.Windows.Forms.Button();
+            this.btnBranch4 = new System.Windows.Forms.Button();
+            this.btnBranch3 = new System.Windows.Forms.Button();
+            this.btnBranch2 = new System.Windows.Forms.Button();
             this.labRating = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -176,9 +176,9 @@
             this.labSeat.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labSeat.Location = new System.Drawing.Point(105, 183);
             this.labSeat.Name = "labSeat";
-            this.labSeat.Size = new System.Drawing.Size(43, 17);
+            this.labSeat.Size = new System.Drawing.Size(27, 17);
             this.labSeat.TabIndex = 11;
-            this.labSeat.Text = "1 / 30";
+            this.labSeat.Text = "1 / ";
             // 
             // label9
             // 
@@ -265,10 +265,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnBranch1);
+            this.panel1.Controls.Add(this.btnBranch4);
+            this.panel1.Controls.Add(this.btnBranch3);
+            this.panel1.Controls.Add(this.btnBranch2);
             this.panel1.Controls.Add(this.labRating);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -292,45 +292,49 @@
             this.panel1.Size = new System.Drawing.Size(725, 813);
             this.panel1.TabIndex = 9;
             // 
-            // button6
+            // btnBranch1
             // 
-            this.button6.Location = new System.Drawing.Point(43, 672);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(97, 98);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "膳糧食堂\r\n大安1號店";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnBranch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch1.Location = new System.Drawing.Point(43, 672);
+            this.btnBranch1.Name = "btnBranch1";
+            this.btnBranch1.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch1.TabIndex = 24;
+            this.btnBranch1.Text = "膳糧食堂\r\n大安1號店";
+            this.btnBranch1.UseVisualStyleBackColor = true;
+            this.btnBranch1.Click += new System.EventHandler(this.btnBranch1_Click);
             // 
-            // button5
+            // btnBranch4
             // 
-            this.button5.Location = new System.Drawing.Point(372, 672);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 98);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "陸二村家\r\nVillage LuL";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnBranch4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch4.Location = new System.Drawing.Point(352, 672);
+            this.btnBranch4.Name = "btnBranch4";
+            this.btnBranch4.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch4.TabIndex = 23;
+            this.btnBranch4.Text = "陸二村家\r\nVillage LuL";
+            this.btnBranch4.UseVisualStyleBackColor = true;
+            this.btnBranch4.Click += new System.EventHandler(this.btnBranch4_Click);
             // 
-            // button4
+            // btnBranch3
             // 
-            this.button4.Location = new System.Drawing.Point(265, 672);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 98);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "藏壽司\r\n板橋中山遠百店";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnBranch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch3.Location = new System.Drawing.Point(249, 672);
+            this.btnBranch3.Name = "btnBranch3";
+            this.btnBranch3.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch3.TabIndex = 22;
+            this.btnBranch3.Text = "藏壽司\r\n板橋中山遠百店";
+            this.btnBranch3.UseVisualStyleBackColor = true;
+            this.btnBranch3.Click += new System.EventHandler(this.btnBranch3_Click);
             // 
-            // button3
+            // btnBranch2
             // 
-            this.button3.Location = new System.Drawing.Point(154, 672);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 98);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "膳糧食堂\r\n士林2號店";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnBranch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranch2.Location = new System.Drawing.Point(146, 672);
+            this.btnBranch2.Name = "btnBranch2";
+            this.btnBranch2.Size = new System.Drawing.Size(97, 98);
+            this.btnBranch2.TabIndex = 21;
+            this.btnBranch2.Text = "OGGI 歐奇\r\n窯烤披薩-敦南店";
+            this.btnBranch2.UseVisualStyleBackColor = true;
+            this.btnBranch2.Click += new System.EventHandler(this.btnBranch2_Click);
             // 
             // labRating
             // 
@@ -623,9 +627,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labRating;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnBranch2;
+        private System.Windows.Forms.Button btnBranch4;
+        private System.Windows.Forms.Button btnBranch3;
+        private System.Windows.Forms.Button btnBranch1;
     }
 }
