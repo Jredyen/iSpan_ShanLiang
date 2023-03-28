@@ -24,9 +24,9 @@ namespace ShanLiang
             timer_ADchange.Enabled = true;
             timer_ADchange.Interval = 5000;
 
-            _adImages.Add(Image.FromFile(@"ubAD1.png"));
-            _adImages.Add(Image.FromFile(@"ubAD2.png"));
-            _adImages.Add(Image.FromFile(@"ubAD3.png"));
+            _adImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD1.png"));
+            _adImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD2.png"));
+            _adImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD3.png"));
             pictureBox1.Image = _adImages[_adIndex];
 
 

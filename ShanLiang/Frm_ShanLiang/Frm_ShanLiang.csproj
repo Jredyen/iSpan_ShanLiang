@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="Frm_SignupPage.Designer.cs">
       <DependentUpon>Frm_SignupPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_StoreManagerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreManagerPage.Designer.cs">
+      <DependentUpon>Frm_StoreManagerPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_StorePage.cs">
       <SubType>Form</SubType>
@@ -185,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_SignupPage.resx">
       <DependentUpon>Frm_SignupPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreManagerPage.resx">
+      <DependentUpon>Frm_StoreManagerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StorePage.resx">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>

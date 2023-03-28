@@ -21,9 +21,9 @@ namespace Frm_ShanLiang
             timerStoreAd.Enabled = true;
             timerStoreAd.Interval = 5000;
 
-            _storeAdImages.Add(Image.FromFile(@"ubAD1.png"));
-            _storeAdImages.Add(Image.FromFile(@"ubAD2.png"));
-            _storeAdImages.Add(Image.FromFile(@"ubAD3.png"));
+            _storeAdImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD1.png"));
+            _storeAdImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD2.png"));
+            _storeAdImages.Add(Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\ubAD3.png"));
             pictureBox1.Image = _storeAdImages[_storeAdIndex1];
             pictureBox2.Image = _storeAdImages[_storeAdIndex2];
             pictureBox3.Image = _storeAdImages[_storeAdIndex3];
