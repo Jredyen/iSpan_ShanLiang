@@ -129,7 +129,7 @@ namespace Frm_ShanLiang
         private void lab_linkToMemberSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Close();
-            new Frm_SignInPage().ShowDialog();
+            new Frm_SignupPage().ShowDialog();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Frm_ShanLiang
 
         private void linkLab_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            (new Frm_SignInPage()).Show();
+            (new Frm_SignupPage()).Show();
             //Close();         
         }
 

@@ -21,7 +21,7 @@ namespace Frm_ShanLiang
         {
             InitializeComponent();
             //註冊頁面圖片
-            pictureBox_signIn.Image = Image.FromFile(@"C:\iSpanProject\ShanLiang\Frm_ShanLiang\Resources\signupImage.png");
+            pictureBox_signIn.Image = Image.FromFile(@"../../Resources\signupImage.png");
             //TextBox的浮水印
             txt_account.SetWatermark("帳號");
             txt_name.SetWatermark("姓名");

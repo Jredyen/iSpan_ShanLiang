@@ -177,7 +177,7 @@ namespace Frm_ShanLiang
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            new Frm_SignInPage().ShowDialog();
+            new Frm_SignupPage().ShowDialog();
         }
         
     }
