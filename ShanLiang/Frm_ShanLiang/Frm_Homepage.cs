@@ -95,7 +95,7 @@ namespace ShanLiang
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            new Frm_SignInPage().ShowDialog();
+            new Frm_SignupPage().ShowDialog();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
