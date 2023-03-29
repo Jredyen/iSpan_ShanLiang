@@ -39,6 +39,7 @@ namespace Frm_ShanLiang
         public string Website { get; set; }
         public byte[] StoreImage { get; set; }
         public Nullable<int> Rating { get; set; }
+        public string StoreMail { get; set; }
     
         public virtual District District { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

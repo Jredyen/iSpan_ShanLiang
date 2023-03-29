@@ -175,6 +175,7 @@
           <Property Name="Website" Type="nvarchar(max)" />
           <Property Name="StoreImage" Type="varbinary(max)" />
           <Property Name="Rating" Type="int" />
+          <Property Name="StoreMail" Type="nvarchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="Store_Evaluate">
           <Key>
@@ -600,15 +601,130 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShanLiangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ShanLiangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="ShanLiangModel.Account" />
+          <EntitySet Name="Actions" EntityType="ShanLiangModel.Action" />
+          <EntitySet Name="Cities" EntityType="ShanLiangModel.City" />
+          <EntitySet Name="Coupons" EntityType="ShanLiangModel.Coupon" />
+          <EntitySet Name="Districts" EntityType="ShanLiangModel.District" />
+          <EntitySet Name="EatType_Method" EntityType="ShanLiangModel.EatType_Method" />
+          <EntitySet Name="Identifications" EntityType="ShanLiangModel.Identification" />
+          <EntitySet Name="Meals_Image" EntityType="ShanLiangModel.Meals_Image" />
+          <EntitySet Name="Meals_Menu" EntityType="ShanLiangModel.Meals_Menu" />
+          <EntitySet Name="Members" EntityType="ShanLiangModel.Member" />
+          <EntitySet Name="Member_Action" EntityType="ShanLiangModel.Member_Action" />
+          <EntitySet Name="Member_Coupon" EntityType="ShanLiangModel.Member_Coupon" />
+          <EntitySet Name="Orders" EntityType="ShanLiangModel.Order" />
+          <EntitySet Name="Order_Details" EntityType="ShanLiangModel.Order_Details" />
+          <EntitySet Name="Payment_Method" EntityType="ShanLiangModel.Payment_Method" />
+          <EntitySet Name="Restaurant_Type" EntityType="ShanLiangModel.Restaurant_Type" />
+          <EntitySet Name="Status" EntityType="ShanLiangModel.Status" />
+          <EntitySet Name="Stores" EntityType="ShanLiangModel.Store" />
+          <EntitySet Name="Store_Evaluate" EntityType="ShanLiangModel.Store_Evaluate" />
+          <EntitySet Name="Store_Type" EntityType="ShanLiangModel.Store_Type" />
+          <EntitySet Name="sysdiagrams" EntityType="ShanLiangModel.sysdiagram" />
+          <AssociationSet Name="FK_Account_Identification1" Association="ShanLiangModel.FK_Account_Identification1">
+            <End Role="Identification" EntitySet="Identifications" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Action" Association="ShanLiangModel.FK_Member_Action_Action">
+            <End Role="Action" EntitySet="Actions" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_District_City" Association="ShanLiangModel.FK_District_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="District" EntitySet="Districts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Coupon" Association="ShanLiangModel.FK_Customer_Coupon_Coupon">
+            <End Role="Coupon" EntitySet="Coupons" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Coupon" Association="ShanLiangModel.FK_Order_Coupon">
+            <End Role="Coupon" EntitySet="Coupons" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_District" Association="ShanLiangModel.FK_Store_District">
+            <End Role="District" EntitySet="Districts" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_EatTypeMethod" Association="ShanLiangModel.FK_Order_EatTypeMethod">
+            <End Role="EatType_Method" EntitySet="EatType_Method" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="ShanLiangModel.FK_Meals_Image_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Meals_Image" EntitySet="Meals_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_Menu_Store" Association="ShanLiangModel.FK_Meals_Menu_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="ShanLiangModel.FK_Order_Details_Meals_Menu">
+            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Coupon_Member" Association="ShanLiangModel.FK_Customer_Coupon_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Member" Association="ShanLiangModel.FK_Member_Action_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Member" Association="ShanLiangModel.FK_Order_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Member" Association="ShanLiangModel.FK_Store_Evaluate_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Action_Store" Association="ShanLiangModel.FK_Member_Action_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Member_Action" EntitySet="Member_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Coupon_Status" Association="ShanLiangModel.FK_Member_Coupon_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Order" Association="ShanLiangModel.FK_Order_Details_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_PaymentMethod" Association="ShanLiangModel.FK_Order_PaymentMethod">
+            <End Role="Payment_Method" EntitySet="Payment_Method" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Status" Association="ShanLiangModel.FK_Order_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Store" Association="ShanLiangModel.FK_Order_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Restaurant_Type" Association="ShanLiangModel.FK_Store_Type_Restaurant_Type">
+            <End Role="Restaurant_Type" EntitySet="Restaurant_Type" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Evaluate_Store" Association="ShanLiangModel.FK_Store_Evaluate_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Type_Store" Association="ShanLiangModel.FK_Store_Type_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="AccountID" />
           </Key>
           <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="AccountPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Identification" Type="Int32" />
-          <NavigationProperty Name="Identification1" Relationship="Self.FK_Account_Identification1" FromRole="Account" ToRole="Identification" />
+          <NavigationProperty Name="Identification1" Relationship="ShanLiangModel.FK_Account_Identification1" FromRole="Account" ToRole="Identification" />
         </EntityType>
         <EntityType Name="Action">
           <Key>
@@ -616,7 +732,7 @@
           </Key>
           <Property Name="ActionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ActionName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Action" FromRole="Action" ToRole="Member_Action" />
+          <NavigationProperty Name="Member_Action" Relationship="ShanLiangModel.FK_Member_Action_Action" FromRole="Action" ToRole="Member_Action" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -624,7 +740,7 @@
           </Key>
           <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Districts" Relationship="Self.FK_District_City" FromRole="City" ToRole="District" />
+          <NavigationProperty Name="Districts" Relationship="ShanLiangModel.FK_District_City" FromRole="City" ToRole="District" />
         </EntityType>
         <EntityType Name="Coupon">
           <Key>
@@ -636,8 +752,8 @@
           <Property Name="CustomerLevel" Type="Int32" />
           <Property Name="CouponDeadline" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="Boolean" />
-          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Customer_Coupon_Coupon" FromRole="Coupon" ToRole="Member_Coupon" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Coupon" FromRole="Coupon" ToRole="Order" />
+          <NavigationProperty Name="Member_Coupon" Relationship="ShanLiangModel.FK_Customer_Coupon_Coupon" FromRole="Coupon" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Coupon" FromRole="Coupon" ToRole="Order" />
         </EntityType>
         <EntityType Name="District">
           <Key>
@@ -646,8 +762,8 @@
           <Property Name="DistrictID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityID" Type="Int32" />
           <Property Name="DistrictName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="City" Relationship="Self.FK_District_City" FromRole="District" ToRole="City" />
-          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_District" FromRole="District" ToRole="Store" />
+          <NavigationProperty Name="City" Relationship="ShanLiangModel.FK_District_City" FromRole="District" ToRole="City" />
+          <NavigationProperty Name="Stores" Relationship="ShanLiangModel.FK_Store_District" FromRole="District" ToRole="Store" />
         </EntityType>
         <EntityType Name="EatType_Method">
           <Key>
@@ -655,7 +771,7 @@
           </Key>
           <Property Name="EatTypeMethodID" Type="Int32" Nullable="false" />
           <Property Name="EatTypeMethodName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_EatTypeMethod" FromRole="EatType_Method" ToRole="Order" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_EatTypeMethod" FromRole="EatType_Method" ToRole="Order" />
         </EntityType>
         <EntityType Name="Identification">
           <Key>
@@ -663,7 +779,7 @@
           </Key>
           <Property Name="IdentificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdentificationName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_Identification1" FromRole="Identification" ToRole="Account" />
+          <NavigationProperty Name="Accounts" Relationship="ShanLiangModel.FK_Account_Identification1" FromRole="Identification" ToRole="Account" />
         </EntityType>
         <EntityType Name="Meals_Image">
           <Key>
@@ -672,7 +788,7 @@
           <Property Name="ImageNo_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MealsID" Type="Int32" />
           <Property Name="MealsImage" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Meals_Image_Meals_Menu" FromRole="Meals_Image" ToRole="Meals_Menu" />
+          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Meals_Image_Meals_Menu" FromRole="Meals_Image" ToRole="Meals_Menu" />
         </EntityType>
         <EntityType Name="Meals_Menu">
           <Key>
@@ -682,26 +798,26 @@
           <Property Name="StoreID" Type="Int32" />
           <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Meals_Image" Relationship="Self.FK_Meals_Image_Meals_Menu" FromRole="Meals_Menu" ToRole="Meals_Image" />
-          <NavigationProperty Name="Store" Relationship="Self.FK_Meals_Menu_Store" FromRole="Meals_Menu" ToRole="Store" />
-          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Meals_Menu" FromRole="Meals_Menu" ToRole="Order_Details" />
+          <NavigationProperty Name="Meals_Image" Relationship="ShanLiangModel.FK_Meals_Image_Meals_Menu" FromRole="Meals_Menu" ToRole="Meals_Image" />
+          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Meals_Menu_Store" FromRole="Meals_Menu" ToRole="Store" />
+          <NavigationProperty Name="Order_Details" Relationship="ShanLiangModel.FK_Order_Details_Meals_Menu" FromRole="Meals_Menu" ToRole="Order_Details" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
             <PropertyRef Name="MemberID" />
           </Key>
           <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Memberphone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MemberName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="BrithDate" Type="DateTime" Precision="3" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CustomerLevel" Type="Int32" />
-          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Customer_Coupon_Member" FromRole="Member" ToRole="Member_Coupon" />
-          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Member" FromRole="Member" ToRole="Member_Action" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Member" FromRole="Member" ToRole="Order" />
-          <NavigationProperty Name="Store_Evaluate" Relationship="Self.FK_Store_Evaluate_Member" FromRole="Member" ToRole="Store_Evaluate" />
+          <NavigationProperty Name="Member_Coupon" Relationship="ShanLiangModel.FK_Customer_Coupon_Member" FromRole="Member" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Member_Action" Relationship="ShanLiangModel.FK_Member_Action_Member" FromRole="Member" ToRole="Member_Action" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Member" FromRole="Member" ToRole="Order" />
+          <NavigationProperty Name="Store_Evaluate" Relationship="ShanLiangModel.FK_Store_Evaluate_Member" FromRole="Member" ToRole="Store_Evaluate" />
         </EntityType>
         <EntityType Name="Member_Action">
           <Key>
@@ -712,9 +828,9 @@
           <Property Name="MemberID" Type="Int32" />
           <Property Name="StoreID" Type="Int32" />
           <Property Name="MemberNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Action" Relationship="Self.FK_Member_Action_Action" FromRole="Member_Action" ToRole="Action" />
-          <NavigationProperty Name="Member" Relationship="Self.FK_Member_Action_Member" FromRole="Member_Action" ToRole="Member" />
-          <NavigationProperty Name="Store" Relationship="Self.FK_Member_Action_Store" FromRole="Member_Action" ToRole="Store" />
+          <NavigationProperty Name="Action" Relationship="ShanLiangModel.FK_Member_Action_Action" FromRole="Member_Action" ToRole="Action" />
+          <NavigationProperty Name="Member" Relationship="ShanLiangModel.FK_Member_Action_Member" FromRole="Member_Action" ToRole="Member" />
+          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Member_Action_Store" FromRole="Member_Action" ToRole="Store" />
         </EntityType>
         <EntityType Name="Member_Coupon">
           <Key>
@@ -724,9 +840,9 @@
           <Property Name="MemberID" Type="Int32" />
           <Property Name="CouponID" Type="Int32" />
           <Property Name="CouponStatus" Type="Int32" />
-          <NavigationProperty Name="Coupon" Relationship="Self.FK_Customer_Coupon_Coupon" FromRole="Member_Coupon" ToRole="Coupon" />
-          <NavigationProperty Name="Member" Relationship="Self.FK_Customer_Coupon_Member" FromRole="Member_Coupon" ToRole="Member" />
-          <NavigationProperty Name="Status" Relationship="Self.FK_Member_Coupon_Status" FromRole="Member_Coupon" ToRole="Status" />
+          <NavigationProperty Name="Coupon" Relationship="ShanLiangModel.FK_Customer_Coupon_Coupon" FromRole="Member_Coupon" ToRole="Coupon" />
+          <NavigationProperty Name="Member" Relationship="ShanLiangModel.FK_Customer_Coupon_Member" FromRole="Member_Coupon" ToRole="Member" />
+          <NavigationProperty Name="Status" Relationship="ShanLiangModel.FK_Member_Coupon_Status" FromRole="Member_Coupon" ToRole="Status" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -742,13 +858,13 @@
           <Property Name="CouponID" Type="Int32" />
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="OrderStatus" Type="Int32" />
-          <NavigationProperty Name="Coupon" Relationship="Self.FK_Order_Coupon" FromRole="Order" ToRole="Coupon" />
-          <NavigationProperty Name="EatType_Method" Relationship="Self.FK_Order_EatTypeMethod" FromRole="Order" ToRole="EatType_Method" />
-          <NavigationProperty Name="Member" Relationship="Self.FK_Order_Member" FromRole="Order" ToRole="Member" />
-          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Order" FromRole="Order" ToRole="Order_Details" />
-          <NavigationProperty Name="Payment_Method" Relationship="Self.FK_Order_PaymentMethod" FromRole="Order" ToRole="Payment_Method" />
-          <NavigationProperty Name="Status" Relationship="Self.FK_Order_Status" FromRole="Order" ToRole="Status" />
-          <NavigationProperty Name="Store" Relationship="Self.FK_Order_Store" FromRole="Order" ToRole="Store" />
+          <NavigationProperty Name="Coupon" Relationship="ShanLiangModel.FK_Order_Coupon" FromRole="Order" ToRole="Coupon" />
+          <NavigationProperty Name="EatType_Method" Relationship="ShanLiangModel.FK_Order_EatTypeMethod" FromRole="Order" ToRole="EatType_Method" />
+          <NavigationProperty Name="Member" Relationship="ShanLiangModel.FK_Order_Member" FromRole="Order" ToRole="Member" />
+          <NavigationProperty Name="Order_Details" Relationship="ShanLiangModel.FK_Order_Details_Order" FromRole="Order" ToRole="Order_Details" />
+          <NavigationProperty Name="Payment_Method" Relationship="ShanLiangModel.FK_Order_PaymentMethod" FromRole="Order" ToRole="Payment_Method" />
+          <NavigationProperty Name="Status" Relationship="ShanLiangModel.FK_Order_Status" FromRole="Order" ToRole="Status" />
+          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Order_Store" FromRole="Order" ToRole="Store" />
         </EntityType>
         <EntityType Name="Order_Details">
           <Key>
@@ -759,8 +875,8 @@
           <Property Name="MealsID" Type="Int32" Nullable="false" />
           <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Order_Details_Meals_Menu" FromRole="Order_Details" ToRole="Meals_Menu" />
-          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Details_Order" FromRole="Order_Details" ToRole="Order" />
+          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Order_Details_Meals_Menu" FromRole="Order_Details" ToRole="Meals_Menu" />
+          <NavigationProperty Name="Order" Relationship="ShanLiangModel.FK_Order_Details_Order" FromRole="Order_Details" ToRole="Order" />
         </EntityType>
         <EntityType Name="Payment_Method">
           <Key>
@@ -768,7 +884,7 @@
           </Key>
           <Property Name="PaymentMethodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PaymentName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_PaymentMethod" FromRole="Payment_Method" ToRole="Order" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_PaymentMethod" FromRole="Payment_Method" ToRole="Order" />
         </EntityType>
         <EntityType Name="Restaurant_Type">
           <Key>
@@ -776,7 +892,7 @@
           </Key>
           <Property Name="RestaurantTypeNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Store_Type" Relationship="Self.FK_Store_Type_Restaurant_Type" FromRole="Restaurant_Type" ToRole="Store_Type" />
+          <NavigationProperty Name="Store_Type" Relationship="ShanLiangModel.FK_Store_Type_Restaurant_Type" FromRole="Restaurant_Type" ToRole="Store_Type" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -784,15 +900,15 @@
           </Key>
           <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StatusName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Member_Coupon" Relationship="Self.FK_Member_Coupon_Status" FromRole="Status" ToRole="Member_Coupon" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Status" FromRole="Status" ToRole="Order" />
+          <NavigationProperty Name="Member_Coupon" Relationship="ShanLiangModel.FK_Member_Coupon_Status" FromRole="Status" ToRole="Member_Coupon" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Status" FromRole="Status" ToRole="Order" />
         </EntityType>
         <EntityType Name="Store">
           <Key>
             <PropertyRef Name="StoreID" />
           </Key>
           <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AccountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TaxID" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="RestaurantName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="RestaurantAddress" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
@@ -806,12 +922,13 @@
           <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StoreImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Rating" Type="Int32" />
-          <NavigationProperty Name="District" Relationship="Self.FK_Store_District" FromRole="Store" ToRole="District" />
-          <NavigationProperty Name="Meals_Menu" Relationship="Self.FK_Meals_Menu_Store" FromRole="Store" ToRole="Meals_Menu" />
-          <NavigationProperty Name="Member_Action" Relationship="Self.FK_Member_Action_Store" FromRole="Store" ToRole="Member_Action" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Store" FromRole="Store" ToRole="Order" />
-          <NavigationProperty Name="Store_Evaluate" Relationship="Self.FK_Store_Evaluate_Store" FromRole="Store" ToRole="Store_Evaluate" />
-          <NavigationProperty Name="Store_Type" Relationship="Self.FK_Store_Type_Store" FromRole="Store" ToRole="Store_Type" />
+          <Property Name="StoreMail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="District" Relationship="ShanLiangModel.FK_Store_District" FromRole="Store" ToRole="District" />
+          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Meals_Menu_Store" FromRole="Store" ToRole="Meals_Menu" />
+          <NavigationProperty Name="Member_Action" Relationship="ShanLiangModel.FK_Member_Action_Store" FromRole="Store" ToRole="Member_Action" />
+          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Store" FromRole="Store" ToRole="Order" />
+          <NavigationProperty Name="Store_Evaluate" Relationship="ShanLiangModel.FK_Store_Evaluate_Store" FromRole="Store" ToRole="Store_Evaluate" />
+          <NavigationProperty Name="Store_Type" Relationship="ShanLiangModel.FK_Store_Type_Store" FromRole="Store" ToRole="Store_Type" />
         </EntityType>
         <EntityType Name="Store_Evaluate">
           <Key>
@@ -823,8 +940,8 @@
           <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="EvaluateDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Member" Relationship="Self.FK_Store_Evaluate_Member" FromRole="Store_Evaluate" ToRole="Member" />
-          <NavigationProperty Name="Store" Relationship="Self.FK_Store_Evaluate_Store" FromRole="Store_Evaluate" ToRole="Store" />
+          <NavigationProperty Name="Member" Relationship="ShanLiangModel.FK_Store_Evaluate_Member" FromRole="Store_Evaluate" ToRole="Member" />
+          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Store_Evaluate_Store" FromRole="Store_Evaluate" ToRole="Store" />
         </EntityType>
         <EntityType Name="Store_Type">
           <Key>
@@ -833,22 +950,22 @@
           <Property Name="No_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RestaurantTypeNum" Type="Int32" />
           <Property Name="StoreID" Type="Int32" />
-          <NavigationProperty Name="Restaurant_Type" Relationship="Self.FK_Store_Type_Restaurant_Type" FromRole="Store_Type" ToRole="Restaurant_Type" />
-          <NavigationProperty Name="Store" Relationship="Self.FK_Store_Type_Store" FromRole="Store_Type" ToRole="Store" />
+          <NavigationProperty Name="Restaurant_Type" Relationship="ShanLiangModel.FK_Store_Type_Restaurant_Type" FromRole="Store_Type" ToRole="Restaurant_Type" />
+          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Store_Type_Store" FromRole="Store_Type" ToRole="Store" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Account_Identification1">
-          <End Role="Identification" Type="Self.Identification" Multiplicity="0..1" />
-          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <End Type="ShanLiangModel.Identification" Role="Identification" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Account" Role="Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Identification">
               <PropertyRef Name="IdentificationID" />
@@ -859,8 +976,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Action_Action">
-          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
-          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <End Type="ShanLiangModel.Action" Role="Action" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Action" Role="Member_Action" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Action">
               <PropertyRef Name="ActionID" />
@@ -871,8 +988,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_District_City">
-          <End Role="City" Type="Self.City" Multiplicity="0..1" />
-          <End Role="District" Type="Self.District" Multiplicity="*" />
+          <End Type="ShanLiangModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.District" Role="District" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="CityID" />
@@ -883,8 +1000,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_Coupon_Coupon">
-          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
-          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <End Type="ShanLiangModel.Coupon" Role="Coupon" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Coupon" Role="Member_Coupon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Coupon">
               <PropertyRef Name="CouponID" />
@@ -895,8 +1012,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Coupon">
-          <End Role="Coupon" Type="Self.Coupon" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.Coupon" Role="Coupon" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Coupon">
               <PropertyRef Name="CouponID" />
@@ -907,8 +1024,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_District">
-          <End Role="District" Type="Self.District" Multiplicity="0..1" />
-          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <End Type="ShanLiangModel.District" Role="District" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="District">
               <PropertyRef Name="DistrictID" />
@@ -919,8 +1036,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_EatTypeMethod">
-          <End Role="EatType_Method" Type="Self.EatType_Method" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.EatType_Method" Role="EatType_Method" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EatType_Method">
               <PropertyRef Name="EatTypeMethodID" />
@@ -931,8 +1048,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Meals_Image_Meals_Menu">
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="0..1" />
-          <End Role="Meals_Image" Type="Self.Meals_Image" Multiplicity="*" />
+          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Meals_Image" Role="Meals_Image" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meals_Menu">
               <PropertyRef Name="MealsID" />
@@ -943,8 +1060,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Meals_Menu_Store">
-          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="*" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
@@ -955,8 +1072,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Meals_Menu">
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="1" />
-          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="1" />
+          <End Type="ShanLiangModel.Order_Details" Role="Order_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meals_Menu">
               <PropertyRef Name="MealsID" />
@@ -967,8 +1084,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_Coupon_Member">
-          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
-          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <End Type="ShanLiangModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Coupon" Role="Member_Coupon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
               <PropertyRef Name="MemberID" />
@@ -979,8 +1096,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Action_Member">
-          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
-          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <End Type="ShanLiangModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Action" Role="Member_Action" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
               <PropertyRef Name="MemberID" />
@@ -991,8 +1108,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Member">
-          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
               <PropertyRef Name="MemberID" />
@@ -1003,8 +1120,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_Evaluate_Member">
-          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
-          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <End Type="ShanLiangModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store_Evaluate" Role="Store_Evaluate" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
               <PropertyRef Name="MemberID" />
@@ -1015,8 +1132,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Action_Store">
-          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Member_Action" Type="Self.Member_Action" Multiplicity="*" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Action" Role="Member_Action" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
@@ -1027,8 +1144,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Coupon_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
-          <End Role="Member_Coupon" Type="Self.Member_Coupon" Multiplicity="*" />
+          <End Type="ShanLiangModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Member_Coupon" Role="Member_Coupon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
               <PropertyRef Name="StatusID" />
@@ -1039,8 +1156,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Order">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
-          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="ShanLiangModel.Order_Details" Role="Order_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="OrderID" />
@@ -1051,8 +1168,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_PaymentMethod">
-          <End Role="Payment_Method" Type="Self.Payment_Method" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.Payment_Method" Role="Payment_Method" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Payment_Method">
               <PropertyRef Name="PaymentMethodID" />
@@ -1063,8 +1180,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
               <PropertyRef Name="StatusID" />
@@ -1075,8 +1192,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Store">
-          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
@@ -1087,8 +1204,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_Type_Restaurant_Type">
-          <End Role="Restaurant_Type" Type="Self.Restaurant_Type" Multiplicity="0..1" />
-          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <End Type="ShanLiangModel.Restaurant_Type" Role="Restaurant_Type" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store_Type" Role="Store_Type" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Restaurant_Type">
               <PropertyRef Name="RestaurantTypeNum" />
@@ -1099,8 +1216,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_Evaluate_Store">
-          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Store_Evaluate" Type="Self.Store_Evaluate" Multiplicity="*" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store_Evaluate" Role="Store_Evaluate" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
@@ -1111,8 +1228,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_Type_Store">
-          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Store_Type" Type="Self.Store_Type" Multiplicity="*" />
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store_Type" Role="Store_Type" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
@@ -1122,121 +1239,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ShanLiangEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Accounts" EntityType="Self.Account" />
-          <EntitySet Name="Actions" EntityType="Self.Action" />
-          <EntitySet Name="Cities" EntityType="Self.City" />
-          <EntitySet Name="Coupons" EntityType="Self.Coupon" />
-          <EntitySet Name="Districts" EntityType="Self.District" />
-          <EntitySet Name="EatType_Method" EntityType="Self.EatType_Method" />
-          <EntitySet Name="Identifications" EntityType="Self.Identification" />
-          <EntitySet Name="Meals_Image" EntityType="Self.Meals_Image" />
-          <EntitySet Name="Meals_Menu" EntityType="Self.Meals_Menu" />
-          <EntitySet Name="Members" EntityType="Self.Member" />
-          <EntitySet Name="Member_Action" EntityType="Self.Member_Action" />
-          <EntitySet Name="Member_Coupon" EntityType="Self.Member_Coupon" />
-          <EntitySet Name="Orders" EntityType="Self.Order" />
-          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
-          <EntitySet Name="Payment_Method" EntityType="Self.Payment_Method" />
-          <EntitySet Name="Restaurant_Type" EntityType="Self.Restaurant_Type" />
-          <EntitySet Name="Status" EntityType="Self.Status" />
-          <EntitySet Name="Stores" EntityType="Self.Store" />
-          <EntitySet Name="Store_Evaluate" EntityType="Self.Store_Evaluate" />
-          <EntitySet Name="Store_Type" EntityType="Self.Store_Type" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK_Account_Identification1" Association="Self.FK_Account_Identification1">
-            <End Role="Identification" EntitySet="Identifications" />
-            <End Role="Account" EntitySet="Accounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Member_Action_Action" Association="Self.FK_Member_Action_Action">
-            <End Role="Action" EntitySet="Actions" />
-            <End Role="Member_Action" EntitySet="Member_Action" />
-          </AssociationSet>
-          <AssociationSet Name="FK_District_City" Association="Self.FK_District_City">
-            <End Role="City" EntitySet="Cities" />
-            <End Role="District" EntitySet="Districts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Customer_Coupon_Coupon" Association="Self.FK_Customer_Coupon_Coupon">
-            <End Role="Coupon" EntitySet="Coupons" />
-            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Coupon" Association="Self.FK_Order_Coupon">
-            <End Role="Coupon" EntitySet="Coupons" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Store_District" Association="Self.FK_Store_District">
-            <End Role="District" EntitySet="Districts" />
-            <End Role="Store" EntitySet="Stores" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_EatTypeMethod" Association="Self.FK_Order_EatTypeMethod">
-            <End Role="EatType_Method" EntitySet="EatType_Method" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="Self.FK_Meals_Image_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Meals_Image" EntitySet="Meals_Image" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meals_Menu_Store" Association="Self.FK_Meals_Menu_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="Self.FK_Order_Details_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Customer_Coupon_Member" Association="Self.FK_Customer_Coupon_Member">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Member_Action_Member" Association="Self.FK_Member_Action_Member">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="Member_Action" EntitySet="Member_Action" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Member" Association="Self.FK_Order_Member">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Store_Evaluate_Member" Association="Self.FK_Store_Evaluate_Member">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Member_Action_Store" Association="Self.FK_Member_Action_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Member_Action" EntitySet="Member_Action" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Member_Coupon_Status" Association="Self.FK_Member_Coupon_Status">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Member_Coupon" EntitySet="Member_Coupon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Details_Order" Association="Self.FK_Order_Details_Order">
-            <End Role="Order" EntitySet="Orders" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_PaymentMethod" Association="Self.FK_Order_PaymentMethod">
-            <End Role="Payment_Method" EntitySet="Payment_Method" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Status" Association="Self.FK_Order_Status">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Store" Association="Self.FK_Order_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Store_Type_Restaurant_Type" Association="Self.FK_Store_Type_Restaurant_Type">
-            <End Role="Restaurant_Type" EntitySet="Restaurant_Type" />
-            <End Role="Store_Type" EntitySet="Store_Type" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Store_Evaluate_Store" Association="Self.FK_Store_Evaluate_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Store_Evaluate" EntitySet="Store_Evaluate" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Store_Type_Store" Association="Self.FK_Store_Type_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Store_Type" EntitySet="Store_Type" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1246,220 +1248,221 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="ShanLiangModel.Account">
               <MappingFragment StoreEntitySet="Account">
-                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
-                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-                <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
                 <ScalarProperty Name="Identification" ColumnName="Identification" />
+                <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Actions">
             <EntityTypeMapping TypeName="ShanLiangModel.Action">
               <MappingFragment StoreEntitySet="Action">
-                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
                 <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cities">
             <EntityTypeMapping TypeName="ShanLiangModel.City">
               <MappingFragment StoreEntitySet="City">
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Coupons">
             <EntityTypeMapping TypeName="ShanLiangModel.Coupon">
               <MappingFragment StoreEntitySet="Coupon">
-                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
-                <ScalarProperty Name="CouponContent" ColumnName="CouponContent" />
-                <ScalarProperty Name="CouponImage" ColumnName="CouponImage" />
-                <ScalarProperty Name="CustomerLevel" ColumnName="CustomerLevel" />
-                <ScalarProperty Name="CouponDeadline" ColumnName="CouponDeadline" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CouponDeadline" ColumnName="CouponDeadline" />
+                <ScalarProperty Name="CustomerLevel" ColumnName="CustomerLevel" />
+                <ScalarProperty Name="CouponImage" ColumnName="CouponImage" />
+                <ScalarProperty Name="CouponContent" ColumnName="CouponContent" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Districts">
             <EntityTypeMapping TypeName="ShanLiangModel.District">
               <MappingFragment StoreEntitySet="District">
-                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EatType_Method">
             <EntityTypeMapping TypeName="ShanLiangModel.EatType_Method">
               <MappingFragment StoreEntitySet="EatType_Method">
-                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
                 <ScalarProperty Name="EatTypeMethodName" ColumnName="EatTypeMethodName" />
+                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Identifications">
             <EntityTypeMapping TypeName="ShanLiangModel.Identification">
               <MappingFragment StoreEntitySet="Identification">
-                <ScalarProperty Name="IdentificationID" ColumnName="IdentificationID" />
                 <ScalarProperty Name="IdentificationName" ColumnName="IdentificationName" />
+                <ScalarProperty Name="IdentificationID" ColumnName="IdentificationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Meals_Image">
             <EntityTypeMapping TypeName="ShanLiangModel.Meals_Image">
               <MappingFragment StoreEntitySet="Meals_Image">
-                <ScalarProperty Name="ImageNo_" ColumnName="ImageNo." />
-                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
                 <ScalarProperty Name="MealsImage" ColumnName="MealsImage" />
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
+                <ScalarProperty Name="ImageNo_" ColumnName="ImageNo." />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Meals_Menu">
             <EntityTypeMapping TypeName="ShanLiangModel.Meals_Menu">
               <MappingFragment StoreEntitySet="Meals_Menu">
-                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
                 <ScalarProperty Name="MealsPrice" ColumnName="MealsPrice" />
+                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="ShanLiangModel.Member">
               <MappingFragment StoreEntitySet="Member">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-                <ScalarProperty Name="Memberphone" ColumnName="Memberphone" />
-                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="BrithDate" ColumnName="BrithDate" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CustomerLevel" ColumnName="CustomerLevel" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BrithDate" ColumnName="BrithDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Memberphone" ColumnName="Memberphone" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Member_Action">
             <EntityTypeMapping TypeName="ShanLiangModel.Member_Action">
               <MappingFragment StoreEntitySet="Member_Action">
-                <ScalarProperty Name="No_" ColumnName="No." />
-                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
                 <ScalarProperty Name="MemberNotes" ColumnName="MemberNotes" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="No_" ColumnName="No." />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Member_Coupon">
             <EntityTypeMapping TypeName="ShanLiangModel.Member_Coupon">
               <MappingFragment StoreEntitySet="Member_Coupon">
-                <ScalarProperty Name="No_" ColumnName="No." />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
                 <ScalarProperty Name="CouponStatus" ColumnName="CouponStatus" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="No_" ColumnName="No." />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="ShanLiangModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="ReservationTime" ColumnName="ReservationTime" />
-                <ScalarProperty Name="ReservationNumber" ColumnName="ReservationNumber" />
-                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
-                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
-                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CouponID" ColumnName="CouponID" />
+                <ScalarProperty Name="EatTypeMethodID" ColumnName="EatTypeMethodID" />
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="ReservationNumber" ColumnName="ReservationNumber" />
+                <ScalarProperty Name="ReservationTime" ColumnName="ReservationTime" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_Details">
             <EntityTypeMapping TypeName="ShanLiangModel.Order_Details">
               <MappingFragment StoreEntitySet="Order_Details">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
-                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
                 <ScalarProperty Name="MealsPrice" ColumnName="MealsPrice" />
+                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
+                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Payment_Method">
             <EntityTypeMapping TypeName="ShanLiangModel.Payment_Method">
               <MappingFragment StoreEntitySet="Payment_Method">
-                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
                 <ScalarProperty Name="PaymentName" ColumnName="PaymentName" />
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Restaurant_Type">
             <EntityTypeMapping TypeName="ShanLiangModel.Restaurant_Type">
               <MappingFragment StoreEntitySet="Restaurant_Type">
-                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
             <EntityTypeMapping TypeName="ShanLiangModel.Status">
               <MappingFragment StoreEntitySet="Status">
-                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stores">
             <EntityTypeMapping TypeName="ShanLiangModel.Store">
               <MappingFragment StoreEntitySet="Store">
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
-                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
-                <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
-                <ScalarProperty Name="RestaurantAddress" ColumnName="RestaurantAddress" />
-                <ScalarProperty Name="RestaurantPhone" ColumnName="RestaurantPhone" />
-                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
-                <ScalarProperty Name="Seats" ColumnName="Seats" />
-                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-                <ScalarProperty Name="OpeningTime" ColumnName="OpeningTime" />
-                <ScalarProperty Name="ClosingTime" ColumnName="ClosingTime" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="StoreImage" ColumnName="StoreImage" />
+                <ScalarProperty Name="StoreMail" ColumnName="StoreMail" />
                 <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="StoreImage" ColumnName="StoreImage" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="ClosingTime" ColumnName="ClosingTime" />
+                <ScalarProperty Name="OpeningTime" ColumnName="OpeningTime" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Seats" ColumnName="Seats" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+                <ScalarProperty Name="RestaurantPhone" ColumnName="RestaurantPhone" />
+                <ScalarProperty Name="RestaurantAddress" ColumnName="RestaurantAddress" />
+                <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Store_Evaluate">
             <EntityTypeMapping TypeName="ShanLiangModel.Store_Evaluate">
               <MappingFragment StoreEntitySet="Store_Evaluate">
-                <ScalarProperty Name="EvaluateNo_" ColumnName="EvaluateNo." />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="EvaluateDate" ColumnName="EvaluateDate" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="EvaluateNo_" ColumnName="EvaluateNo." />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Store_Type">
             <EntityTypeMapping TypeName="ShanLiangModel.Store_Type">
               <MappingFragment StoreEntitySet="Store_Type">
-                <ScalarProperty Name="No_" ColumnName="No." />
-                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
                 <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="RestaurantTypeNum" ColumnName="RestaurantTypeNum" />
+                <ScalarProperty Name="No_" ColumnName="No." />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ShanLiangModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
