@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Homepage));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cmb_area = new System.Windows.Forms.ComboBox();
             this.cmb_restaurantType = new System.Windows.Forms.ComboBox();
             this.cmb_City = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_keyword = new System.Windows.Forms.TextBox();
             this.btn_signin = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
             this.bnt_login = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.timer_ADchange = new System.Windows.Forms.Timer(this.components);
-            this.btn_search = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -52,8 +54,8 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -67,9 +69,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cmb_area);
             this.splitContainer1.Panel1.Controls.Add(this.cmb_restaurantType);
             this.splitContainer1.Panel1.Controls.Add(this.cmb_City);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txt_keyword);
             this.splitContainer1.Panel1.Controls.Add(this.btn_signin);
             this.splitContainer1.Panel1.Controls.Add(this.btn_search);
             this.splitContainer1.Panel1.Controls.Add(this.bnt_login);
@@ -81,6 +84,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(1210, 709);
             this.splitContainer1.SplitterDistance = 100;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // cmb_area
+            // 
+            this.cmb_area.FormattingEnabled = true;
+            this.cmb_area.Location = new System.Drawing.Point(215, 9);
+            this.cmb_area.Name = "cmb_area";
+            this.cmb_area.Size = new System.Drawing.Size(121, 20);
+            this.cmb_area.TabIndex = 5;
+            this.cmb_area.SelectedIndexChanged += new System.EventHandler(this.cmb_area_SelectedIndexChanged);
             // 
             // cmb_restaurantType
             // 
@@ -94,20 +106,21 @@
             // cmb_City
             // 
             this.cmb_City.FormattingEnabled = true;
-            this.cmb_City.Location = new System.Drawing.Point(203, 9);
+            this.cmb_City.Location = new System.Drawing.Point(88, 9);
             this.cmb_City.Name = "cmb_City";
             this.cmb_City.Size = new System.Drawing.Size(121, 20);
             this.cmb_City.TabIndex = 3;
             this.cmb_City.SelectedIndexChanged += new System.EventHandler(this.cmb_City_SelectedIndexChanged);
             // 
-            // textBox1
+            // txt_keyword
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_keyword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(476, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 22);
-            this.textBox1.TabIndex = 1;
+            this.txt_keyword.Location = new System.Drawing.Point(476, 9);
+            this.txt_keyword.Name = "txt_keyword";
+            this.txt_keyword.Size = new System.Drawing.Size(457, 22);
+            this.txt_keyword.TabIndex = 1;
+            this.txt_keyword.TextChanged += new System.EventHandler(this.txt_keyword_TextChanged);
             // 
             // btn_signin
             // 
@@ -119,6 +132,19 @@
             this.btn_signin.Text = "註冊";
             this.btn_signin.UseVisualStyleBackColor = true;
             this.btn_signin.Click += new System.EventHandler(this.btn_signin_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.AutoSize = true;
+            this.btn_search.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_search.Image = global::Frm_ShanLiang.Properties.Resources._352091_search_icon;
+            this.btn_search.Location = new System.Drawing.Point(939, 5);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(30, 30);
+            this.btn_search.TabIndex = 0;
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // bnt_login
             // 
@@ -156,8 +182,23 @@
             this.tabPage1.Text = "首頁";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(612, 266);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(582, 295);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 266);
             this.dataGridView1.Name = "dataGridView1";
@@ -165,6 +206,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(603, 295);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1191, 260);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -198,38 +250,6 @@
             // 
             this.timer_ADchange.Tick += new System.EventHandler(this.timer_ADchange_Tick);
             // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.AutoSize = true;
-            this.btn_search.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_search.Image = global::Frm_ShanLiang.Properties.Resources._352091_search_icon;
-            this.btn_search.Location = new System.Drawing.Point(939, 5);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(30, 30);
-            this.btn_search.TabIndex = 0;
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(612, 266);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(582, 295);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1191, 260);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // bindingSource1
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
@@ -251,8 +271,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -262,7 +282,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_keyword;
         private System.Windows.Forms.Button btn_signin;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button bnt_login;
@@ -278,6 +298,7 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cmb_restaurantType;
+        private System.Windows.Forms.ComboBox cmb_area;
     }
 }
 
