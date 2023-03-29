@@ -306,13 +306,14 @@
             // 
             // cmb_type
             // 
+            this.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_type.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmb_type.FormattingEnabled = true;
             this.cmb_type.Location = new System.Drawing.Point(212, 273);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(250, 28);
             this.cmb_type.TabIndex = 40;
-            this.cmb_type.TextChanged += new System.EventHandler(this.txt_inputCheck);
+            this.cmb_type.TextChanged += new System.EventHandler(this.cmb_inputCheck);
             // 
             // label9
             // 
@@ -437,13 +438,14 @@
             // 
             // cmb_district
             // 
+            this.cmb_district.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_district.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmb_district.FormattingEnabled = true;
             this.cmb_district.Location = new System.Drawing.Point(212, 311);
             this.cmb_district.Name = "cmb_district";
             this.cmb_district.Size = new System.Drawing.Size(250, 28);
             this.cmb_district.TabIndex = 57;
-            this.cmb_district.TextChanged += new System.EventHandler(this.txt_inputCheck);
+            this.cmb_district.TextChanged += new System.EventHandler(this.cmb_inputCheck);
             // 
             // label17
             // 

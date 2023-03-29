@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,17 @@ namespace Frm_ShanLiang
             txt_seats.SetWatermark("店家座位容客量");
             txt_openTime.SetWatermark("店家開始營業時間");
             txt_closeTime.SetWatermark("店家結束營業時間");
+
+            //抓店家類型
+            var q = SLE.Restaurant_Type.Select(rs => rs.TypeName).ToList();
+            this.cmb_type.DataSource = q;
+            this.cmb_type.Text = null;
+
+            //抓店家地區
+            //var s = SLE.Districts.Select(d => d.DistrictName)
+            
+            //this.cmb_district.DataSource = s;
+            //this.cmb_district.Text = null;
         }
 
         private void txt_inputCheck(object sender, EventArgs e)
@@ -61,17 +73,11 @@ namespace Frm_ShanLiang
                     bool isPhone = Regex.IsMatch(txt_phone.Text, @"^02[0-9]{8}$");
                     lab_phone.Text = isPhone ? "Ok!" : "請輸入正確的店家號碼格式";
                     break;
-                case "cmb_type":
-                    lab_type.Text = cmb_type.Text == "" ? "請選擇類型" : "Ok!";
-                    break;
-                case "cmb_district":
-                    lab_district.Text = cmb_district.Text == "" ? "請選擇地區類型" : "Ok!";
-                    break;
                 case "txt_address":
                     lab_address.Text = txt_address.Text == "" ? "請輸入地址" : "Ok!";
                     break;
                 case "txt_website":
-                    lab_website.Text = txt_website.Text == "" ? "請輸入店家網址" : SLE.Stores.Where(ws => ws.Website == txt_website.Text).Select(wn => wn.Website).Any() ? "該店家網址已存在" : "OK!";
+                    lab_website.Text = txt_website.Text == "" ? "請輸入店家網址" : SLE.Stores.Where(ws => ws.Website == txt_website.Text).Select(ws => ws.Website).Any() ? "該店家網址已存在" : "OK!";
                     break;
                 case "txt_email":
                     lab_email.Text = txt_email.Text == "" ? "請輸入Email" : SLE.Stores.Where(m => m.StoreMail == txt_email.Text).Select(m => m.StoreMail).Any() ? "該信箱已存在" : "OK!";
@@ -88,6 +94,19 @@ namespace Frm_ShanLiang
             }
         }
 
+        private void cmb_inputCheck(object sender, EventArgs e)
+        {
+            switch (((ComboBox)sender).Name)
+            {
+                case "cmb_type":
+                    lab_type.Text = cmb_type.Text == "" ? "請選擇類型" : "Ok!";
+                    break;
+                case "cmb_district":
+                    lab_district.Text = cmb_district.Text == "" ? "請選擇地區類型" : "Ok!";
+                    break;
+            }
+        }
+
         private void btn_signin_Click(object sender, EventArgs e)
         {
             try
@@ -100,13 +119,13 @@ namespace Frm_ShanLiang
                 }
 
                 bool haveTaxID = SLE.Stores.Where(t => t.TaxID == txt_taxID.Text).Select(t => t.TaxID).Any();
-                if (haveTaxID) 
+                if (haveTaxID)
                 {
                     MessageBox.Show("店家統編輸入有誤");
                 }
 
-                Store store = new Store {AccountName = txt_account .Text, TaxID = txt_taxID.Text, RestaurantName = txt_name.Text, RestaurantPhone = txt_phone.Text , DistrictID = 1, RestaurantAddress = txt_address.Text, Website = txt_website.Text, StoreMail = txt_email.Text, Seats = int.Parse(txt_seats.Text), OpeningTime =TimeSpan.Parse(txt_openTime.Text), ClosingTime = TimeSpan.Parse(txt_closeTime.Text) };
-                Account account = new Account { AccountName = txt_account.Text, AccountPassword = txt_password.Text , Identification = 2 };
+                Store store = new Store { AccountName = txt_account.Text, TaxID = txt_taxID.Text, RestaurantName = txt_name.Text, RestaurantPhone = txt_phone.Text, DistrictID = 1, RestaurantAddress = txt_address.Text, Website = txt_website.Text, StoreMail = txt_email.Text, Seats = int.Parse(txt_seats.Text), OpeningTime = TimeSpan.Parse(txt_openTime.Text), ClosingTime = TimeSpan.Parse(txt_closeTime.Text) };
+                Account account = new Account { AccountName = txt_account.Text, AccountPassword = txt_password.Text, Identification = 2 };
 
                 this.SLE.Stores.Add(store);
                 this.SLE.Accounts.Add(account);
@@ -114,7 +133,7 @@ namespace Frm_ShanLiang
 
                 MessageBox.Show("註冊會員成功");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
