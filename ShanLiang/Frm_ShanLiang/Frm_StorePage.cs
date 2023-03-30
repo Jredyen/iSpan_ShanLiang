@@ -179,6 +179,10 @@ namespace Frm_ShanLiang
         {
             new Frm_SignupPage().ShowDialog();
         }
-        
+
+        private void bnt_login_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

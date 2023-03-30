@@ -36,7 +36,7 @@
             this.cmb_restaurantType = new System.Windows.Forms.ComboBox();
             this.cmb_City = new System.Windows.Forms.ComboBox();
             this.txt_keyword = new System.Windows.Forms.TextBox();
-            this.btn_signin = new System.Windows.Forms.Button();
+            this.btn_signinOrSignout = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -49,7 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer_ADchange = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_signOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,8 +75,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.cmb_restaurantType);
             this.splitContainer1.Panel1.Controls.Add(this.cmb_City);
             this.splitContainer1.Panel1.Controls.Add(this.txt_keyword);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_signOut);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_signin);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_signinOrSignout);
             this.splitContainer1.Panel1.Controls.Add(this.btn_search);
             this.splitContainer1.Panel1.Controls.Add(this.btn_login);
             // 
@@ -135,16 +133,16 @@
             this.txt_keyword.TabIndex = 1;
             this.txt_keyword.TextChanged += new System.EventHandler(this.txt_keyword_TextChanged);
             // 
-            // btn_signin
+            // btn_signinSignOut
             // 
-            this.btn_signin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_signin.Location = new System.Drawing.Point(1114, 9);
-            this.btn_signin.Name = "btn_signin";
-            this.btn_signin.Size = new System.Drawing.Size(75, 23);
-            this.btn_signin.TabIndex = 0;
-            this.btn_signin.Text = "註冊";
-            this.btn_signin.UseVisualStyleBackColor = true;
-            this.btn_signin.Click += new System.EventHandler(this.btn_signin_Click);
+            this.btn_signinOrSignout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_signinOrSignout.Location = new System.Drawing.Point(1114, 9);
+            this.btn_signinOrSignout.Name = "btn_signinSignOut";
+            this.btn_signinOrSignout.Size = new System.Drawing.Size(75, 23);
+            this.btn_signinOrSignout.TabIndex = 0;
+            this.btn_signinOrSignout.Text = "註冊";
+            this.btn_signinOrSignout.UseVisualStyleBackColor = true;
+            this.btn_signinOrSignout.Click += new System.EventHandler(this.btn_signinOrSignout_Click);
             // 
             // btn_search
             // 
@@ -267,18 +265,6 @@
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
-            // btn_signOut
-            // 
-            this.btn_signOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_signOut.Location = new System.Drawing.Point(1114, 38);
-            this.btn_signOut.Name = "btn_signOut";
-            this.btn_signOut.Size = new System.Drawing.Size(75, 23);
-            this.btn_signOut.TabIndex = 0;
-            this.btn_signOut.Text = "登出";
-            this.btn_signOut.UseVisualStyleBackColor = true;
-            this.btn_signOut.Visible = false;
-            this.btn_signOut.Click += new System.EventHandler(this.btn_signin_Click);
-            // 
             // Frm_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -308,7 +294,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txt_keyword;
-        private System.Windows.Forms.Button btn_signin;
+        private System.Windows.Forms.Button btn_signinOrSignout;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label label1;
@@ -325,7 +311,6 @@
         private System.Windows.Forms.ComboBox cmb_restaurantType;
         private System.Windows.Forms.ComboBox cmb_area;
         private System.Windows.Forms.Label lab_user;
-        private System.Windows.Forms.Button btn_signOut;
     }
 }
 

@@ -142,6 +142,7 @@
             this.bnt_login.TabIndex = 0;
             this.bnt_login.Text = "登入";
             this.bnt_login.UseVisualStyleBackColor = true;
+            this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click_1);
             // 
             // panel2
             // 

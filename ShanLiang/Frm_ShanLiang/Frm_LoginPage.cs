@@ -13,14 +13,21 @@ using System.Configuration;
 using ShanLiang;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity;
+using System.Runtime.InteropServices;
 
 namespace Frm_ShanLiang
 {
     public partial class Frm_LoginPage : Form
     {
+        Frm_Homepage _homepage;
         public Frm_LoginPage()
         {
-            InitializeComponent();                   
+            InitializeComponent();
+        }
+        public Frm_LoginPage(Frm_Homepage homepage)
+        {
+            InitializeComponent();
+            _homepage = homepage;
         }
 
         private void linkLab_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -66,6 +73,8 @@ namespace Frm_ShanLiang
                                                
                         CNowLoginAccount.nowLoginAccountID = (int)reader[0]; //Jredyen:將現在登入的帳號ID記錄到Class
                         CNowLoginAccount.loginAccountName = (string)reader[1];//Jredyen:將現在登入的帳號名稱記錄到Class
+                        _homepage.accountNameCheckout(CNowLoginAccount.loginAccountName);
+
                         int Identification =(int) reader["Identification"];
                         if (Identification == 1)//如果是1轉跳到會員頁面
                             (new Frm_MemberPage()).Show();
@@ -101,7 +110,6 @@ namespace Frm_ShanLiang
             txt_accountName.Text = "OGGIPizza";
             txt_password.Text = "1122";
         }
-
         
     }
 }

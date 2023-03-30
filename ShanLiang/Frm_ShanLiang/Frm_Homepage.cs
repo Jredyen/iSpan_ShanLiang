@@ -31,18 +31,6 @@ namespace ShanLiang
         {
             InitializeComponent();
 
-
-            //timer_ADchange.Enabled = true;
-            //timer_ADchange.Interval = 5000;
-
-
-            //_adImages.Add(Image.FromFile(@"ubAD1.png"));
-            //_adImages.Add(Image.FromFile(@"ubAD2.png"));
-            //_adImages.Add(Image.FromFile(@"ubAD3.png"));
-
-            //pictureBox1.Image = _adImages[_adIndex];
-
-            
             timer_ADchange.Interval = 3000; 
             timer_ADchange.Start();
             LoadImages();
@@ -80,23 +68,29 @@ namespace ShanLiang
         {
             _images = (from i in _SL.Stores select i.StoreImage).ToList();
         }
-        public void Frm_Homepage_Load(object sender, EventArgs e)
-        {
-           
-
-        }
-       
-
-
         private void btn_login_Click(object sender, EventArgs e)
         {
-            new Frm_LoginPage().ShowDialog();
+            Frm_LoginPage f = new Frm_LoginPage(this);
+            f.Show();
             
         }
 
-        private void btn_signin_Click(object sender, EventArgs e)
+        private void btn_signinOrSignout_Click(object sender, EventArgs e)
         {
-            new Frm_SignupPage().ShowDialog();
+            switch (btn_signinOrSignout.Text)
+            {
+                case "註冊":
+                    new Frm_SignupPage().ShowDialog();
+                    break;
+                case "登出":
+                    CNowLoginAccount.nowLoginAccountID = 0;
+                    CNowLoginAccount.loginAccountName = "";
+                    isLogin();
+                    lab_user.Text = "訪客 您好!";
+                    btn_signinOrSignout.Text = "註冊";
+                    MessageBox.Show("登出成功");
+                    break;
+            }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -248,7 +242,7 @@ namespace ShanLiang
                     pictureBox2.Image = image;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pictureBox2.Image = pictureBox2.ErrorImage;
             }
@@ -295,19 +289,15 @@ namespace ShanLiang
         void isLogin()
         {
             if (CNowLoginAccount.nowLoginAccountID != 0)
-            {
                 btn_login.Visible = false;
-                btn_signin.Visible = false;
-                btn_signOut.Visible = true;
-            }
             else
-            {
                 btn_login.Visible = true;
-                btn_signin.Visible = true;
-                btn_signOut.Visible = false;
-            }
         }
-
-
+        public void accountNameCheckout(string accountName)
+        {
+            isLogin();
+            lab_user.Text = $"歡迎您，{accountName}";
+            btn_signinOrSignout.Text = "登出";
+        }
     }
 }
