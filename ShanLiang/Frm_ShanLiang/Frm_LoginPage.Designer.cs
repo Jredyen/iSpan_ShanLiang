@@ -31,7 +31,6 @@
             this.txt_accountName = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.txt_password = new System.Windows.Forms.TextBox();
-            this.linkLab_losePassword = new System.Windows.Forms.LinkLabel();
             this.linkLab_signin = new System.Windows.Forms.LinkLabel();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_storeDemo = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.linkLab_Storesignin = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             // txt_accountName
             // 
-            this.txt_accountName.Location = new System.Drawing.Point(27, 43);
+            this.txt_accountName.Location = new System.Drawing.Point(29, 43);
             this.txt_accountName.Name = "txt_accountName";
             this.txt_accountName.Size = new System.Drawing.Size(250, 22);
             this.txt_accountName.TabIndex = 0;
@@ -58,7 +58,7 @@
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_login.Location = new System.Drawing.Point(28, 331);
+            this.btn_login.Location = new System.Drawing.Point(29, 250);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(250, 47);
             this.btn_login.TabIndex = 1;
@@ -68,23 +68,11 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(27, 109);
+            this.txt_password.Location = new System.Drawing.Point(29, 109);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(250, 22);
             this.txt_password.TabIndex = 0;
-            // 
-            // linkLab_losePassword
-            // 
-            this.linkLab_losePassword.AutoSize = true;
-            this.linkLab_losePassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.linkLab_losePassword.LinkColor = System.Drawing.Color.Yellow;
-            this.linkLab_losePassword.Location = new System.Drawing.Point(186, 137);
-            this.linkLab_losePassword.Name = "linkLab_losePassword";
-            this.linkLab_losePassword.Size = new System.Drawing.Size(81, 20);
-            this.linkLab_losePassword.TabIndex = 2;
-            this.linkLab_losePassword.TabStop = true;
-            this.linkLab_losePassword.Text = "忘記密碼?";
             // 
             // linkLab_signin
             // 
@@ -92,19 +80,19 @@
             this.linkLab_signin.DisabledLinkColor = System.Drawing.Color.Yellow;
             this.linkLab_signin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.linkLab_signin.LinkColor = System.Drawing.Color.Yellow;
-            this.linkLab_signin.Location = new System.Drawing.Point(205, 312);
+            this.linkLab_signin.Location = new System.Drawing.Point(197, 382);
             this.linkLab_signin.Name = "linkLab_signin";
             this.linkLab_signin.Size = new System.Drawing.Size(73, 20);
             this.linkLab_signin.TabIndex = 2;
             this.linkLab_signin.TabStop = true;
-            this.linkLab_signin.Text = "立即註冊";
+            this.linkLab_signin.Text = "會員註冊";
             this.linkLab_signin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLab_signin_LinkClicked);
             // 
             // btn_cancel
             // 
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_cancel.Location = new System.Drawing.Point(190, 384);
+            this.btn_cancel.Location = new System.Drawing.Point(189, 303);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(87, 31);
             this.btn_cancel.TabIndex = 1;
@@ -149,7 +137,7 @@
             // btn_Demo
             // 
             this.btn_Demo.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_Demo.Location = new System.Drawing.Point(34, 226);
+            this.btn_Demo.Location = new System.Drawing.Point(29, 303);
             this.btn_Demo.Name = "btn_Demo";
             this.btn_Demo.Size = new System.Drawing.Size(86, 22);
             this.btn_Demo.TabIndex = 6;
@@ -160,9 +148,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(30, 308);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(29, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 20);
             this.label3.TabIndex = 7;
@@ -171,7 +160,7 @@
             // btn_storeDemo
             // 
             this.btn_storeDemo.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_storeDemo.Location = new System.Drawing.Point(34, 254);
+            this.btn_storeDemo.Location = new System.Drawing.Point(29, 331);
             this.btn_storeDemo.Name = "btn_storeDemo";
             this.btn_storeDemo.Size = new System.Drawing.Size(86, 22);
             this.btn_storeDemo.TabIndex = 6;
@@ -201,11 +190,25 @@
             this.splitContainer1.Panel2.Controls.Add(this.btn_login);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.btn_cancel);
-            this.splitContainer1.Panel2.Controls.Add(this.linkLab_losePassword);
+            this.splitContainer1.Panel2.Controls.Add(this.linkLab_Storesignin);
             this.splitContainer1.Panel2.Controls.Add(this.linkLab_signin);
             this.splitContainer1.Size = new System.Drawing.Size(632, 450);
             this.splitContainer1.SplitterDistance = 323;
             this.splitContainer1.TabIndex = 8;
+            // 
+            // linkLab_Storesignin
+            // 
+            this.linkLab_Storesignin.AutoSize = true;
+            this.linkLab_Storesignin.DisabledLinkColor = System.Drawing.Color.Yellow;
+            this.linkLab_Storesignin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLab_Storesignin.LinkColor = System.Drawing.Color.Yellow;
+            this.linkLab_Storesignin.Location = new System.Drawing.Point(197, 412);
+            this.linkLab_Storesignin.Name = "linkLab_Storesignin";
+            this.linkLab_Storesignin.Size = new System.Drawing.Size(73, 20);
+            this.linkLab_Storesignin.TabIndex = 2;
+            this.linkLab_Storesignin.TabStop = true;
+            this.linkLab_Storesignin.Text = "店家註冊";
+            this.linkLab_Storesignin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLab_Storesignin_LinkClicked);
             // 
             // Frm_LoginPage
             // 
@@ -240,7 +243,6 @@
         private System.Windows.Forms.TextBox txt_accountName;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.TextBox txt_password;
-        private System.Windows.Forms.LinkLabel linkLab_losePassword;
         private System.Windows.Forms.LinkLabel linkLab_signin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_cancel;
@@ -250,5 +252,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_storeDemo;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.LinkLabel linkLab_Storesignin;
     }
 }

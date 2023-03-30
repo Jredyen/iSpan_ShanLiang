@@ -24,19 +24,24 @@ namespace Frm_ShanLiang
         }
 
         private void linkLab_signin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        {    //轉跳會員註冊
             (new Frm_SignupPage()).Show();
-            //Close();         
+            Close();
         }
-
+        private void linkLab_Storesignin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {   //轉跳店家註冊
+            (new Frm_StoreSignInPage()).Show();
+            Close();
+        }
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             Close();
         }
         ShanLiangEntities dbcontext = new ShanLiangEntities();
+        int _tryCount = 0; //帳號密碼嘗試次數
         private void btn_login_Click(object sender, EventArgs e)
         {   //ADO方式連接
-            //查帳號密碼是否存在資料庫
+            //查帳號密碼是否正確
             try
             {
                 using (SqlConnection conn = new SqlConnection())
@@ -54,28 +59,29 @@ namespace Frm_ShanLiang
                     comm.Parameters.Add("@AccountPassWord", SqlDbType.NVarChar, 50).Value = AccountPassWord;
                     SqlDataReader reader = comm.ExecuteReader();
                     if (reader.HasRows && AccountName != "" && AccountPassWord != "")
-                    {
-                        MessageBox.Show("登入成功");
-                        //判斷要轉跳到哪個頁面
-                        
+                    { 
                         reader.Read();
+                        MessageBox.Show($"歡迎回來~{reader["AccountName"]}");
+                        //判斷要轉跳到哪個頁面
+                                               
                         CNowLoginAccount.nowLoginAccountID = (int)reader[0]; //Jredyen:將現在登入的帳號ID記錄到Class
                         CNowLoginAccount.loginAccountName = (string)reader[1];//Jredyen:將現在登入的帳號名稱記錄到Class
                         int Identification =(int) reader["Identification"];
-                        if (Identification == 1)
-                        {
-                            (new Frm_Homepage()).Show();
-                            Close();
-                        }
-                        else if (Identification == 2)
-                        {
-                            (new Frm_StoreManagerPage()).Show();
-                            Close();
-                        }
+                        if (Identification == 1)//如果是1轉跳到會員頁面
+                            (new Frm_MemberPage()).Show();
+                        else if (Identification == 2)//如果是2轉跳到店家頁面
+                            (new Frm_StorePage()).Show();
+                        this.Close();
                     }
                     else
-                    {
-                        MessageBox.Show("請輸入正確帳號密碼! 登入失敗");
+                    {   //輸入3次錯誤就關閉
+                        MessageBox.Show($"請輸入正確帳號密碼! 登入失敗{_tryCount + 1}次");
+                        _tryCount++;
+                        if (_tryCount > 2)
+                        {
+                            this.Close();
+                            return;
+                        }
                     }
                 }
             }
@@ -95,5 +101,7 @@ namespace Frm_ShanLiang
             txt_accountName.Text = "OGGIPizza";
             txt_password.Text = "1122";
         }
+
+        
     }
 }
