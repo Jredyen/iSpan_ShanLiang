@@ -31,9 +31,7 @@ namespace Frm_ShanLiang
             //載入店家資訊
             ShowStoreData();
 
-
-
-            //隨機載入店家CStorePage._sid = SLE.Stores.OrderBy(id => Guid.NewGuid()).First().StoreID;
+            //隨機載入CStorePage._sid = SLE.Stores.OrderBy(id => Guid.NewGuid()).First().StoreID;
         }
 
         public void ShowStoreData()
