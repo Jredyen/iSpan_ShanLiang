@@ -48,7 +48,7 @@ namespace Frm_ShanLiang
                     conn.Open();
                     SqlCommand comm = new SqlCommand();
                     comm.CommandText = "Select * from Account where AccountName = @AccountName and AccountPassWord = @AccountPassWord ";
-
+                    
                     comm.Connection = conn;
                     comm.Parameters.Add("@AccountName", SqlDbType.NVarChar, 20).Value = AccountName;
                     comm.Parameters.Add("@AccountPassWord", SqlDbType.NVarChar, 50).Value = AccountPassWord;
@@ -58,14 +58,20 @@ namespace Frm_ShanLiang
                         MessageBox.Show("登入成功");
                         //判斷要轉跳到哪個頁面
                         
-                        reader.Read();                                              
+                        reader.Read();
+                        CNowLoginAccount.nowLoginAccountID = (int)reader[0]; //Jredyen:將現在登入的帳號ID記錄到Class
+                        CNowLoginAccount.loginAccountName = (string)reader[1];//Jredyen:將現在登入的帳號名稱記錄到Class
                         int Identification =(int) reader["Identification"];
                         if (Identification == 1)
-                        (new Frm_Homepage()).Show();
+                        {
+                            (new Frm_Homepage()).Show();
+                            Close();
+                        }
                         else if (Identification == 2)
-                        (new Frm_StorePage()).Show();
-                        
-                        //this.Close();
+                        {
+                            (new Frm_StoreManagerPage()).Show();
+                            Close();
+                        }
                     }
                     else
                     {

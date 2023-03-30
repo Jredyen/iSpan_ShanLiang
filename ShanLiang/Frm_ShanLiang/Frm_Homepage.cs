@@ -31,6 +31,7 @@ namespace ShanLiang
         {
             InitializeComponent();
 
+
             //timer_ADchange.Enabled = true;
             //timer_ADchange.Interval = 5000;
 
@@ -87,7 +88,7 @@ namespace ShanLiang
        
 
 
-        private void bnt_login_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
             new Frm_LoginPage().ShowDialog();
             
@@ -291,17 +292,22 @@ namespace ShanLiang
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        void isLogin()
         {
-           
-           
-
-
-
-
+            if (CNowLoginAccount.nowLoginAccountID != 0)
+            {
+                btn_login.Visible = false;
+                btn_signin.Visible = false;
+                btn_signOut.Visible = true;
+            }
+            else
+            {
+                btn_login.Visible = true;
+                btn_signin.Visible = true;
+                btn_signOut.Visible = false;
+            }
         }
 
-       
+
     }
 }
