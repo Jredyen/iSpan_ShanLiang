@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a3fa5022167d4c81b396f8c16deb8bda" Name="Diagram1" ZoomLevel="97">
-        <EntityTypeShape EntityType="ShanLiangModel.Account" Width="1.5" PointX="13" PointY="1.125" />
+        <EntityTypeShape EntityType="ShanLiangModel.Account" Width="1.5" PointX="12" PointY="1" />
         <EntityTypeShape EntityType="ShanLiangModel.Action" Width="1.5" PointX="0.75" PointY="23.75" />
         <EntityTypeShape EntityType="ShanLiangModel.City" Width="1.5" PointX="1.5" PointY="20.75" />
         <EntityTypeShape EntityType="ShanLiangModel.Coupon" Width="1.5" PointX="0.75" PointY="11.625" />
         <EntityTypeShape EntityType="ShanLiangModel.District" Width="1.5" PointX="1.5" PointY="17.625" />
         <EntityTypeShape EntityType="ShanLiangModel.EatType_Method" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShanLiangModel.Identification" Width="1.5" PointX="10.75" PointY="1.375" />
+        <EntityTypeShape EntityType="ShanLiangModel.Identification" Width="1.5" PointX="9.625" PointY="1" />
         <EntityTypeShape EntityType="ShanLiangModel.Meals_Image" Width="1.5" PointX="8.25" PointY="3.75" />
         <EntityTypeShape EntityType="ShanLiangModel.Meals_Menu" Width="1.5" PointX="6" PointY="3.375" />
         <EntityTypeShape EntityType="ShanLiangModel.Member" Width="1.5" PointX="0.75" PointY="7" />

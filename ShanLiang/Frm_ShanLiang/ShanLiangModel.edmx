@@ -724,7 +724,6 @@
           <Property Name="AccountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="AccountPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Identification" Type="Int32" />
-          <NavigationProperty Name="Identification1" Relationship="ShanLiangModel.FK_Account_Identification1" FromRole="Account" ToRole="Identification" />
         </EntityType>
         <EntityType Name="Action">
           <Key>
@@ -779,7 +778,6 @@
           </Key>
           <Property Name="IdentificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdentificationName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Accounts" Relationship="ShanLiangModel.FK_Account_Identification1" FromRole="Identification" ToRole="Account" />
         </EntityType>
         <EntityType Name="Meals_Image">
           <Key>
