@@ -57,9 +57,13 @@ namespace Frm_ShanLiang
 
         private void tabControl_MemberManagementSystem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.tabControl_MemberManagementSystem.SelectedIndex == 1)
+            if (tabControl_MemberManagementSystem.SelectedIndex == 1)
             {
-                this.txt_MemberAccount.Text = "CCustomer.MemberID";
+                txt_MemberAccount.Text = CMemberData._loginAccountName;
+                txt_MemberName.Text = CMemberData._memberName;
+                txt_MemberAddress.Text = CMemberData._address;
+                txt_MemberEMail.Text = CMemberData._email;
+                txt_MemberTelephoneNumber.Text = CMemberData._memberphone;
             }
             
 

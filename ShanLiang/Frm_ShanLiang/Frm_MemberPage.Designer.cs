@@ -36,6 +36,7 @@ namespace Frm_ShanLiang
             this.btn_MemberCoupon = new System.Windows.Forms.Button();
             this.btn_MemberOrderRecord = new System.Windows.Forms.Button();
             this.tabPage_MemberInfoRevision = new System.Windows.Forms.TabPage();
+            this.btn_BactToMemberMainPage = new System.Windows.Forms.Button();
             this.btn_MemberInfoLoad = new System.Windows.Forms.Button();
             this.btn_MemberInfoRevisionDemo = new System.Windows.Forms.Button();
             this.label_MemberInfo = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@ namespace Frm_ShanLiang
             this.label_MemberAddress = new System.Windows.Forms.Label();
             this.txt_MemberAccount = new System.Windows.Forms.TextBox();
             this.label_MemberEMail = new System.Windows.Forms.Label();
-            this.txt_MemberPasswords = new System.Windows.Forms.TextBox();
+            this.txt_MemberPassword = new System.Windows.Forms.TextBox();
             this.txt_MemberName = new System.Windows.Forms.TextBox();
             this.label_MemberTelephoneNumber = new System.Windows.Forms.Label();
             this.txt_MemberTelephoneNumber = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@ namespace Frm_ShanLiang
             this.txt_MemberAddress = new System.Windows.Forms.TextBox();
             this.txt_MemberRevisionConfirm = new System.Windows.Forms.TextBox();
             this.tabPage_MemberOrderRecord = new System.Windows.Forms.TabPage();
+            this.btn_BactToMemberMainPage2 = new System.Windows.Forms.Button();
             this.btn_MemberSearch = new System.Windows.Forms.Button();
             this.txt_MemberSearchByWords = new System.Windows.Forms.TextBox();
             this.label_MemberSearchByDate = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@ namespace Frm_ShanLiang
             this.label_MemberReservationRecord = new System.Windows.Forms.Label();
             this.label_MemberOrderRecord = new System.Windows.Forms.Label();
             this.tabPage_MemberCoupon = new System.Windows.Forms.TabPage();
+            this.btn_BactToMemberMainPage3 = new System.Windows.Forms.Button();
             this.label_MemberCouponQuantity = new System.Windows.Forms.Label();
             this.label_MemberCoupon = new System.Windows.Forms.Label();
             this.label_MemberCoupons = new System.Windows.Forms.Label();
@@ -69,6 +72,7 @@ namespace Frm_ShanLiang
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label_CouponStatus = new System.Windows.Forms.Label();
             this.tabPage1_MemberAction = new System.Windows.Forms.TabPage();
+            this.btn_BactToMemberMainPage4 = new System.Windows.Forms.Button();
             this.label_MemberAction = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_MemberActionChaningedConfirm = new System.Windows.Forms.Button();
@@ -78,10 +82,7 @@ namespace Frm_ShanLiang
             this.rdo_MemberLovedRestaurant = new System.Windows.Forms.RadioButton();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btn_BactToMemberMainPage = new System.Windows.Forms.Button();
-            this.btn_BactToMemberMainPage2 = new System.Windows.Forms.Button();
-            this.btn_BactToMemberMainPage3 = new System.Windows.Forms.Button();
-            this.btn_BactToMemberMainPage4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl_MemberManagementSystem.SuspendLayout();
             this.tabPage_MemberMain.SuspendLayout();
             this.tabPage_MemberInfoRevision.SuspendLayout();
@@ -164,6 +165,7 @@ namespace Frm_ShanLiang
             // 
             // tabPage_MemberInfoRevision
             // 
+            this.tabPage_MemberInfoRevision.Controls.Add(this.label2);
             this.tabPage_MemberInfoRevision.Controls.Add(this.btn_BactToMemberMainPage);
             this.tabPage_MemberInfoRevision.Controls.Add(this.btn_MemberInfoLoad);
             this.tabPage_MemberInfoRevision.Controls.Add(this.btn_MemberInfoRevisionDemo);
@@ -177,6 +179,16 @@ namespace Frm_ShanLiang
             this.tabPage_MemberInfoRevision.TabIndex = 1;
             this.tabPage_MemberInfoRevision.Text = "會員資料修改";
             this.tabPage_MemberInfoRevision.UseVisualStyleBackColor = true;
+            // 
+            // btn_BactToMemberMainPage
+            // 
+            this.btn_BactToMemberMainPage.Location = new System.Drawing.Point(431, 15);
+            this.btn_BactToMemberMainPage.Name = "btn_BactToMemberMainPage";
+            this.btn_BactToMemberMainPage.Size = new System.Drawing.Size(75, 23);
+            this.btn_BactToMemberMainPage.TabIndex = 16;
+            this.btn_BactToMemberMainPage.Text = "會員中心";
+            this.btn_BactToMemberMainPage.UseVisualStyleBackColor = true;
+            this.btn_BactToMemberMainPage.Click += new System.EventHandler(this.btn_BactToMemberMainPage_Click);
             // 
             // btn_MemberInfoLoad
             // 
@@ -215,7 +227,7 @@ namespace Frm_ShanLiang
             this.groupBox1.Controls.Add(this.label_MemberAddress);
             this.groupBox1.Controls.Add(this.txt_MemberAccount);
             this.groupBox1.Controls.Add(this.label_MemberEMail);
-            this.groupBox1.Controls.Add(this.txt_MemberPasswords);
+            this.groupBox1.Controls.Add(this.txt_MemberPassword);
             this.groupBox1.Controls.Add(this.txt_MemberName);
             this.groupBox1.Controls.Add(this.label_MemberTelephoneNumber);
             this.groupBox1.Controls.Add(this.txt_MemberTelephoneNumber);
@@ -275,16 +287,16 @@ namespace Frm_ShanLiang
             this.label_MemberEMail.TabIndex = 10;
             this.label_MemberEMail.Text = "E-Mail";
             // 
-            // txt_MemberPasswords
+            // txt_MemberPassword
             // 
-            this.txt_MemberPasswords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_MemberPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MemberPasswords.Location = new System.Drawing.Point(75, 87);
-            this.txt_MemberPasswords.Name = "txt_MemberPasswords";
-            this.txt_MemberPasswords.PasswordChar = '*';
-            this.txt_MemberPasswords.Size = new System.Drawing.Size(348, 22);
-            this.txt_MemberPasswords.TabIndex = 5;
-            this.txt_MemberPasswords.TextChanged += new System.EventHandler(this.txt_MemberPasswords_TextChanged);
+            this.txt_MemberPassword.Location = new System.Drawing.Point(75, 87);
+            this.txt_MemberPassword.Name = "txt_MemberPassword";
+            this.txt_MemberPassword.PasswordChar = '*';
+            this.txt_MemberPassword.Size = new System.Drawing.Size(348, 22);
+            this.txt_MemberPassword.TabIndex = 5;
+            this.txt_MemberPassword.TextChanged += new System.EventHandler(this.txt_MemberPasswords_TextChanged);
             // 
             // txt_MemberName
             // 
@@ -368,6 +380,16 @@ namespace Frm_ShanLiang
             this.tabPage_MemberOrderRecord.Text = "會員訂位紀錄";
             this.tabPage_MemberOrderRecord.UseVisualStyleBackColor = true;
             // 
+            // btn_BactToMemberMainPage2
+            // 
+            this.btn_BactToMemberMainPage2.Location = new System.Drawing.Point(507, 16);
+            this.btn_BactToMemberMainPage2.Name = "btn_BactToMemberMainPage2";
+            this.btn_BactToMemberMainPage2.Size = new System.Drawing.Size(75, 23);
+            this.btn_BactToMemberMainPage2.TabIndex = 20;
+            this.btn_BactToMemberMainPage2.Text = "會員中心";
+            this.btn_BactToMemberMainPage2.UseVisualStyleBackColor = true;
+            this.btn_BactToMemberMainPage2.Click += new System.EventHandler(this.btn_BactToMemberMainPage2_Click);
+            // 
             // btn_MemberSearch
             // 
             this.btn_MemberSearch.Location = new System.Drawing.Point(206, 116);
@@ -443,6 +465,16 @@ namespace Frm_ShanLiang
             this.tabPage_MemberCoupon.Text = "會員優惠券";
             this.tabPage_MemberCoupon.UseVisualStyleBackColor = true;
             // 
+            // btn_BactToMemberMainPage3
+            // 
+            this.btn_BactToMemberMainPage3.Location = new System.Drawing.Point(503, 21);
+            this.btn_BactToMemberMainPage3.Name = "btn_BactToMemberMainPage3";
+            this.btn_BactToMemberMainPage3.Size = new System.Drawing.Size(75, 23);
+            this.btn_BactToMemberMainPage3.TabIndex = 6;
+            this.btn_BactToMemberMainPage3.Text = "會員中心";
+            this.btn_BactToMemberMainPage3.UseVisualStyleBackColor = true;
+            this.btn_BactToMemberMainPage3.Click += new System.EventHandler(this.btn_BactToMemberMainPage3_Click);
+            // 
             // label_MemberCouponQuantity
             // 
             this.label_MemberCouponQuantity.Location = new System.Drawing.Point(291, 21);
@@ -515,6 +547,16 @@ namespace Frm_ShanLiang
             this.tabPage1_MemberAction.TabIndex = 4;
             this.tabPage1_MemberAction.Text = "會員行動";
             this.tabPage1_MemberAction.UseVisualStyleBackColor = true;
+            // 
+            // btn_BactToMemberMainPage4
+            // 
+            this.btn_BactToMemberMainPage4.Location = new System.Drawing.Point(443, 19);
+            this.btn_BactToMemberMainPage4.Name = "btn_BactToMemberMainPage4";
+            this.btn_BactToMemberMainPage4.Size = new System.Drawing.Size(75, 23);
+            this.btn_BactToMemberMainPage4.TabIndex = 13;
+            this.btn_BactToMemberMainPage4.Text = "會員中心";
+            this.btn_BactToMemberMainPage4.UseVisualStyleBackColor = true;
+            this.btn_BactToMemberMainPage4.Click += new System.EventHandler(this.btn_BactToMemberMainPage4_Click);
             // 
             // label_MemberAction
             // 
@@ -610,45 +652,15 @@ namespace Frm_ShanLiang
             this.dataGridView2.Size = new System.Drawing.Size(437, 262);
             this.dataGridView2.TabIndex = 4;
             // 
-            // btn_BactToMemberMainPage
+            // label2
             // 
-            this.btn_BactToMemberMainPage.Location = new System.Drawing.Point(431, 15);
-            this.btn_BactToMemberMainPage.Name = "btn_BactToMemberMainPage";
-            this.btn_BactToMemberMainPage.Size = new System.Drawing.Size(75, 23);
-            this.btn_BactToMemberMainPage.TabIndex = 16;
-            this.btn_BactToMemberMainPage.Text = "會員中心";
-            this.btn_BactToMemberMainPage.UseVisualStyleBackColor = true;
-            this.btn_BactToMemberMainPage.Click += new System.EventHandler(this.btn_BactToMemberMainPage_Click);
-            // 
-            // btn_BactToMemberMainPage2
-            // 
-            this.btn_BactToMemberMainPage2.Location = new System.Drawing.Point(507, 16);
-            this.btn_BactToMemberMainPage2.Name = "btn_BactToMemberMainPage2";
-            this.btn_BactToMemberMainPage2.Size = new System.Drawing.Size(75, 23);
-            this.btn_BactToMemberMainPage2.TabIndex = 20;
-            this.btn_BactToMemberMainPage2.Text = "會員中心";
-            this.btn_BactToMemberMainPage2.UseVisualStyleBackColor = true;
-            this.btn_BactToMemberMainPage2.Click += new System.EventHandler(this.btn_BactToMemberMainPage2_Click);
-            // 
-            // btn_BactToMemberMainPage3
-            // 
-            this.btn_BactToMemberMainPage3.Location = new System.Drawing.Point(503, 21);
-            this.btn_BactToMemberMainPage3.Name = "btn_BactToMemberMainPage3";
-            this.btn_BactToMemberMainPage3.Size = new System.Drawing.Size(75, 23);
-            this.btn_BactToMemberMainPage3.TabIndex = 6;
-            this.btn_BactToMemberMainPage3.Text = "會員中心";
-            this.btn_BactToMemberMainPage3.UseVisualStyleBackColor = true;
-            this.btn_BactToMemberMainPage3.Click += new System.EventHandler(this.btn_BactToMemberMainPage3_Click);
-            // 
-            // btn_BactToMemberMainPage4
-            // 
-            this.btn_BactToMemberMainPage4.Location = new System.Drawing.Point(443, 19);
-            this.btn_BactToMemberMainPage4.Name = "btn_BactToMemberMainPage4";
-            this.btn_BactToMemberMainPage4.Size = new System.Drawing.Size(75, 23);
-            this.btn_BactToMemberMainPage4.TabIndex = 13;
-            this.btn_BactToMemberMainPage4.Text = "會員中心";
-            this.btn_BactToMemberMainPage4.UseVisualStyleBackColor = true;
-            this.btn_BactToMemberMainPage4.Click += new System.EventHandler(this.btn_BactToMemberMainPage4_Click);
+            this.label2.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(523, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 174);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "TODO: 缺少:\r\n換新密碼要再確認一次是否打錯\r\n更新資料要用現在密碼才能更新";
             // 
             // Frm_MemberPage
             // 
@@ -699,7 +711,7 @@ namespace Frm_ShanLiang
         private System.Windows.Forms.Label label_MemberAddress;
         private System.Windows.Forms.TextBox txt_MemberAccount;
         private System.Windows.Forms.Label label_MemberEMail;
-        private System.Windows.Forms.TextBox txt_MemberPasswords;
+        private System.Windows.Forms.TextBox txt_MemberPassword;
         private System.Windows.Forms.TextBox txt_MemberName;
         private System.Windows.Forms.Label label_MemberTelephoneNumber;
         private System.Windows.Forms.TextBox txt_MemberTelephoneNumber;
@@ -732,5 +744,6 @@ namespace Frm_ShanLiang
         private System.Windows.Forms.Button btn_BactToMemberMainPage2;
         private System.Windows.Forms.Button btn_BactToMemberMainPage3;
         private System.Windows.Forms.Button btn_BactToMemberMainPage4;
+        private System.Windows.Forms.Label label2;
     }
 }

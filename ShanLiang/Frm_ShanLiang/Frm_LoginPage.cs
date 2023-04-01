@@ -20,6 +20,7 @@ namespace Frm_ShanLiang
     public partial class Frm_LoginPage : Form
     {
         Frm_Homepage _homepage;
+        CCustomers GetC = new CCustomers();
         public Frm_LoginPage()
         {
             InitializeComponent();
@@ -66,21 +67,29 @@ namespace Frm_ShanLiang
                     comm.Parameters.Add("@AccountPassWord", SqlDbType.NVarChar, 50).Value = AccountPassWord;
                     SqlDataReader reader = comm.ExecuteReader();
                     if (reader.HasRows && AccountName != "" && AccountPassWord != "")
-                    { 
+                    {
                         reader.Read();
                         MessageBox.Show($"歡迎回來~{reader["AccountName"]}");
                         //判斷要轉跳到哪個頁面
-                                               
-                        CNowLoginAccount.nowLoginAccountID = (int)reader[0]; //Jredyen:將現在登入的帳號ID記錄到Class
-                        CNowLoginAccount.loginAccountName = (string)reader[1];//Jredyen:將現在登入的帳號名稱記錄到Class
-                        _homepage.accountNameCheckout(CNowLoginAccount.loginAccountName);
 
-                        int Identification =(int) reader["Identification"];
-                        if (Identification == 1)//如果是1轉跳到會員頁面
-                            (new Frm_MemberPage()).Show();
-                        else if (Identification == 2)//如果是2轉跳到店家頁面
-                            (new Frm_StorePage()).Show();
-                        this.Close();
+                        CNowLoginAccount._nowLoginAccountID = (int)reader[0]; //Jredyen:將現在登入的帳號ID記錄到Class
+                        CNowLoginAccount._loginAccountName = (string)reader[1];//Jredyen:將現在登入的帳號名稱記錄到Class
+                        CNowLoginAccount._Identification = (int)reader[3];//Jredyen:將現在登入的帳號類型記錄到Class
+                        _homepage.accountNameCheckout(CNowLoginAccount._loginAccountName);
+
+                        int Identification = (int)reader["Identification"];
+                        if (Identification == 1)//如果是1轉跳到會員頁面//不跳轉，改由首頁由使用者操作
+                        {
+                            //new Frm_MemberPage().Show();
+                            GetC.memberDataLoad((string)reader[1]);
+                            Close();
+                        }
+                        else if (Identification == 2)//如果是2轉跳到店家頁面//不跳轉，改由首頁由使用者操作
+                        {
+                            //new Frm_StoreManagerPage().Show();
+                            GetC.storeDataLoad((string)reader[1]);
+                            Close();
+                        }
                     }
                     else
                     {   //輸入3次錯誤就關閉

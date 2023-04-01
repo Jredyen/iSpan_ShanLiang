@@ -67,12 +67,15 @@
     <Compile Include="City.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CMemberData.cs" />
     <Compile Include="CNowLoginAccount.cs" />
     <Compile Include="Coupon.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CStoreData.cs" />
     <Compile Include="CStoreShow.cs" />
     <Compile Include="CStorePage.cs" />
+    <Compile Include="CCustomers.cs" />
     <Compile Include="District.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>

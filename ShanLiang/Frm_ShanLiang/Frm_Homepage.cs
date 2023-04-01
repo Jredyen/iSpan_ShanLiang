@@ -24,6 +24,7 @@ namespace ShanLiang
         List<Image> _adImages = new List<Image>();
         int _adIndex = 0;
         ShanLiangEntities _SL = new ShanLiangEntities();
+        CCustomers _customers = new CCustomers();
         private List<byte[]> _images;
         private int _currentIndex;
 
@@ -68,11 +69,28 @@ namespace ShanLiang
         {
             _images = (from i in _SL.Stores select i.StoreImage).ToList();
         }
-        private void btn_login_Click(object sender, EventArgs e)
+        private void btn_loginOrMypage_Click(object sender, EventArgs e)
         {
-            Frm_LoginPage f = new Frm_LoginPage(this);
-            f.Show();
-            
+            switch (btn_loginOrMypage.Text)
+            {
+                case "登入":
+                    Frm_LoginPage f = new Frm_LoginPage(this);
+                    f.Show();
+                    break;
+                case "我的頁面":
+                    if (CNowLoginAccount._Identification == 1)
+                    {
+                        new Frm_MemberPage().Show();
+                    }
+                    else if (CNowLoginAccount._Identification == 2)
+                    {
+                        new Frm_StoreManagerPage().Show();
+                    }
+                    else return;
+                    break;
+            }
+            //Frm_LoginPage f = new Frm_LoginPage(this);
+            //f.Show();
         }
 
         private void btn_signinOrSignout_Click(object sender, EventArgs e)
@@ -83,11 +101,13 @@ namespace ShanLiang
                     new Frm_SignupPage().ShowDialog();
                     break;
                 case "登出":
-                    CNowLoginAccount.nowLoginAccountID = 0;
-                    CNowLoginAccount.loginAccountName = "";
-                    isLogin();
+                    CNowLoginAccount._nowLoginAccountID = null;
+                    CNowLoginAccount._loginAccountName = null;
+                    _customers.logout();
+                    //isLogin();
                     lab_user.Text = "訪客 您好!";
                     btn_signinOrSignout.Text = "註冊";
+                    btn_loginOrMypage.Text = "登入";
                     MessageBox.Show("登出成功");
                     break;
             }
@@ -286,17 +306,18 @@ namespace ShanLiang
                 MessageBox.Show(ex.Message);
             }
         }
-        void isLogin()
-        {
-            if (CNowLoginAccount.nowLoginAccountID != 0)
-                btn_login.Visible = false;
-            else
-                btn_login.Visible = true;
-        }
+        //void isLogin()
+        //{
+        //    if (CNowLoginAccount._nowLoginAccountID != null)
+        //        btn_login.Visible = false;
+        //    else
+        //        btn_login.Visible = true;
+        //}
         public void accountNameCheckout(string accountName)
         {
-            isLogin();
             lab_user.Text = $"歡迎您，{accountName}";
+            //isLogin();
+            btn_loginOrMypage.Text = "我的頁面";
             btn_signinOrSignout.Text = "登出";
         }
     }

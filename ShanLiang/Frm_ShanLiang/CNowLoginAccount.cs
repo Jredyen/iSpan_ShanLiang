@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Frm_ShanLiang
 {
-    public static class CNowLoginAccount
+    public class CNowLoginAccount
     {
-        public static int nowLoginAccountID { get; set; }
-        public static string loginAccountName { get; set; }
+        public static int? _nowLoginAccountID { get; set; }
+        public static string _loginAccountName { get; set; }
+        public static int _Identification { get; set; }
     }
 }

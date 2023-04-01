@@ -38,7 +38,7 @@
             this.txt_keyword = new System.Windows.Forms.TextBox();
             this.btn_signinOrSignout = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
-            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_loginOrMypage = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -77,7 +77,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.txt_keyword);
             this.splitContainer1.Panel1.Controls.Add(this.btn_signinOrSignout);
             this.splitContainer1.Panel1.Controls.Add(this.btn_search);
-            this.splitContainer1.Panel1.Controls.Add(this.btn_login);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_loginOrMypage);
             // 
             // splitContainer1.Panel2
             // 
@@ -133,11 +133,11 @@
             this.txt_keyword.TabIndex = 1;
             this.txt_keyword.TextChanged += new System.EventHandler(this.txt_keyword_TextChanged);
             // 
-            // btn_signinSignOut
+            // btn_signinOrSignout
             // 
             this.btn_signinOrSignout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_signinOrSignout.Location = new System.Drawing.Point(1114, 9);
-            this.btn_signinOrSignout.Name = "btn_signinSignOut";
+            this.btn_signinOrSignout.Name = "btn_signinOrSignout";
             this.btn_signinOrSignout.Size = new System.Drawing.Size(75, 23);
             this.btn_signinOrSignout.TabIndex = 0;
             this.btn_signinOrSignout.Text = "註冊";
@@ -157,16 +157,16 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // btn_login
+            // btn_loginOrMypage
             // 
-            this.btn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_login.Location = new System.Drawing.Point(1033, 9);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 0;
-            this.btn_login.Text = "登入";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            this.btn_loginOrMypage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_loginOrMypage.Location = new System.Drawing.Point(1033, 9);
+            this.btn_loginOrMypage.Name = "btn_loginOrMypage";
+            this.btn_loginOrMypage.Size = new System.Drawing.Size(75, 23);
+            this.btn_loginOrMypage.TabIndex = 0;
+            this.btn_loginOrMypage.Text = "登入";
+            this.btn_loginOrMypage.UseVisualStyleBackColor = true;
+            this.btn_loginOrMypage.Click += new System.EventHandler(this.btn_loginOrMypage_Click);
             // 
             // tabControl1
             // 
@@ -296,7 +296,7 @@
         private System.Windows.Forms.TextBox txt_keyword;
         private System.Windows.Forms.Button btn_signinOrSignout;
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.Button btn_loginOrMypage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer_ADchange;
