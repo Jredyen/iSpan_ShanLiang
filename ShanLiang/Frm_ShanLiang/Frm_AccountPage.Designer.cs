@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_orderby = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewAccount)).BeginInit();
@@ -47,7 +47,7 @@
             this.DataGridViewAccount.Location = new System.Drawing.Point(274, 36);
             this.DataGridViewAccount.Name = "DataGridViewAccount";
             this.DataGridViewAccount.RowTemplate.Height = 24;
-            this.DataGridViewAccount.Size = new System.Drawing.Size(475, 586);
+            this.DataGridViewAccount.Size = new System.Drawing.Size(452, 586);
             this.DataGridViewAccount.TabIndex = 0;
             // 
             // btn_loadaccount
@@ -99,14 +99,15 @@
             this.btn_orderby.UseVisualStyleBackColor = true;
             this.btn_orderby.Click += new System.EventHandler(this.btn_orderby_Click);
             // 
-            // button2
+            // btn_delete
             // 
-            this.button2.Location = new System.Drawing.Point(10, 367);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "刪除";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_delete.Location = new System.Drawing.Point(10, 367);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(247, 46);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "刪除";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
             // 
@@ -132,12 +133,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 634);
+            this.ClientSize = new System.Drawing.Size(744, 634);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataGridViewIdentification);
             this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_orderby);
             this.Controls.Add(this.btn_loadaccount);
@@ -159,7 +160,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_orderby;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_add;
     }

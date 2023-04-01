@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,21 +28,38 @@ namespace Frm_ShanLiang
 
         private void btn_orderby_Click(object sender, EventArgs e)
         {    //照帳號類別順序瀏覽
-            var q = from p in _SLE.Accounts
-                    orderby p.Identification 
-                    select p;
-            DataGridViewAccount.DataSource = q.ToList();
+            try
+            {
+                var q = from p in _SLE.Accounts
+                        orderby p.Identification
+                        select p;
+                DataGridViewAccount.DataSource = q.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {  //修改帳號資料表
-            var account = (from p in _SLE.Accounts                          
-                           select p).FirstOrDefault();
+            try
+            {
+                var account = (from p in _SLE.Accounts
+                               select p).FirstOrDefault();
 
-            if (account == null) return;
-            account.AccountName = account.AccountName;
-            _SLE.SaveChanges();
-            Read_RefreshDataGridView();         
+                if (account == null) return;
+                account.AccountName = account.AccountName;
+                _SLE.SaveChanges();
+                Read_RefreshDataGridView();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+                  
         }
         void Read_RefreshDataGridView()
         {
@@ -51,10 +69,36 @@ namespace Frm_ShanLiang
 
         private void btn_add_Click(object sender, EventArgs e)
         {   //新增一筆帳號
-            Account account = new Account { AccountName = "Test"};
-            _SLE.Accounts.Add(account);
-            _SLE.SaveChanges();
-            this.Read_RefreshDataGridView();
+            try
+            {
+                Account account = new Account { AccountName = "Test" };
+                _SLE.Accounts.Add(account);
+                _SLE.SaveChanges();
+                this.Read_RefreshDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {    //刪除DataGridView選到的資料
+            try
+            {
+                foreach (DataGridViewRow row in DataGridViewAccount.SelectedRows)
+                {
+                    var account = row.DataBoundItem;
+                    _SLE.Accounts.Remove((Account)account);
+                    _SLE.SaveChanges();
+                }
+                Read_RefreshDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }           
         }
     }
 }
