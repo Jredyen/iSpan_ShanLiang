@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -217,11 +218,33 @@ namespace Frm_ShanLiang
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void dataGridViewStore_SelectionChanged(object sender, EventArgs e)
+        }        
+        private void dataGridViewStore_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //pictureBox1.DataBindings.Add("Image",dataGridViewStore.DataSource, "StoreImage",true);
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridViewStore.Rows[e.RowIndex];
+
+                    // 從資料行取得二進位圖片資料
+                    byte[] imageData = (byte[])row.Cells["StoreImage"].Value;
+
+                    // 將二進位圖片資料轉換成圖片物件
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        image = Image.FromStream(ms);
+                    }
+
+                    // 將圖片顯示在 PictureBox 控制項中
+                    pictureBox1.Image = image;
+                }
+            }
+            catch (Exception)
+            {
+                pictureBox1.Image = pictureBox1.ErrorImage;
+            }
         }
     }
 }

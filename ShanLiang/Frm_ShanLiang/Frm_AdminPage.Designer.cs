@@ -58,6 +58,7 @@
             this.dataGridViewStore = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPageStoreImage = new System.Windows.Forms.TabPage();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIdentification)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -87,6 +88,9 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewAccount
@@ -487,7 +491,7 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer3.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer3.Size = new System.Drawing.Size(1016, 700);
             this.splitContainer3.SplitterDistance = 354;
             this.splitContainer3.TabIndex = 1;
@@ -503,14 +507,16 @@
             this.dataGridViewStore.RowTemplate.Height = 24;
             this.dataGridViewStore.Size = new System.Drawing.Size(1012, 350);
             this.dataGridViewStore.TabIndex = 0;
-            this.dataGridViewStore.SelectionChanged += new System.EventHandler(this.dataGridViewStore_SelectionChanged);
+            this.dataGridViewStore.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStore_CellClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(529, 17);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(456, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(670, 338);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -522,6 +528,20 @@
             this.tabPageStoreImage.TabIndex = 3;
             this.tabPageStoreImage.Text = "店家照片集";
             this.tabPageStoreImage.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer6.Size = new System.Drawing.Size(1016, 342);
+            this.splitContainer6.SplitterDistance = 338;
+            this.splitContainer6.TabIndex = 1;
             // 
             // Frm_AdminPage
             // 
@@ -563,6 +583,9 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -599,5 +622,6 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPageStoreImage;
+        private System.Windows.Forms.SplitContainer splitContainer6;
     }
 }
