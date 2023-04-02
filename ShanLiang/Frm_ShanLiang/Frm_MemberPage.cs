@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -97,6 +98,7 @@ namespace Frm_ShanLiang
             {
                 this.btn_MemberInfoRevisionComfirm.Enabled = true;
                 this.txt_MemberPasswords.ForeColor = Color.Black;
+                CheckConsistency();
                 boolStg = IsStrongPassword(txt_MemberPasswords.Text);
             //"密碼強度強中弱" 至少包含小寫大寫數字 正規表達式
                 this.label_MemberPasswordWarning.Text = boolStg ? "密碼符合格式" : "密碼不符合格式";
@@ -179,7 +181,11 @@ namespace Frm_ShanLiang
                 {
                     
                     MessageBox.Show("密碼不符格式");
-                    //this.btn_MemberInfoRevisionComfirm.Enabled = false;
+                    return;
+                }
+                if (IsConsistency == false)
+                {
+                    MessageBox.Show("密碼不一致");
                     return;
                 }
                 //修改會員姓名
@@ -200,12 +206,7 @@ namespace Frm_ShanLiang
                 MessageBox.Show($"發生{ex}例外"); 
                 
             }
-            finally 
-            {
-                
-            }
             
-
         }
 
         private void btn_MemberInfoLoad_Click(object sender, EventArgs e)
@@ -249,6 +250,8 @@ namespace Frm_ShanLiang
             this.txt_MemberPasswords.Text = "ispanR304";
             this.txt_MemberTelephoneNumber.Text = "0983385150";
             this.txt_MemberAddress.Text = "新北市土城區";
+            this.txt_MemberPasswordsConfirmation.Text = "ispanR304";
+
         }
 
         private void btn_ClearMemberInfo_Click(object sender, EventArgs e)
@@ -256,6 +259,7 @@ namespace Frm_ShanLiang
             
                 this.txt_MemberAccount.Text = "";
                 this.txt_MemberPasswords.Text = "";
+                this.txt_MemberPasswordsConfirmation.Text = "";
                 this.txt_MemberName.Text = "";
                 this.txt_MemberTelephoneNumber.Text = "";
                 this.txt_MemberEMail.Text = "";
@@ -265,13 +269,12 @@ namespace Frm_ShanLiang
         private void rdo_encryption_CheckedChanged(object sender, EventArgs e)
         {
             this.txt_MemberPasswords.PasswordChar = '*';
-
+            this.txt_MemberPasswordsConfirmation.PasswordChar = '*';
         }
         private void rdoDecryption_CheckedChanged(object sender, EventArgs e)
         {
             this.txt_MemberPasswords.PasswordChar = '\0';
-
-        }
+            this.txt_MemberPasswordsConfirmation.PasswordChar = '\0';        }
 
         private void rdo_encryption_Click(object sender, EventArgs e)
         {            
@@ -290,6 +293,27 @@ namespace Frm_ShanLiang
                     select m.Orders;
             this.dataGridView1.DataSource = q.ToList();
 
+        }
+        bool IsConsistency;
+        private void txt_MemberPasswordsConfirmation_TextChanged(object sender, EventArgs e)
+        {
+            CheckConsistency();
+
+        }
+
+        private void CheckConsistency()
+        {
+            if (this.txt_MemberPasswords.Text != this.txt_MemberPasswordsConfirmation.Text)
+            {
+                this.label_MemberPassworsConsistency.Text = "密碼不一致";
+                this.label_MemberPassworsConsistency.ForeColor = Color.Red;
+                IsConsistency = false;
+            }
+            if (this.txt_MemberPasswords.Text == this.txt_MemberPasswordsConfirmation.Text)
+            {
+                this.label_MemberPassworsConsistency.Text = "";
+                IsConsistency = true;
+            }
         }
     }
 }

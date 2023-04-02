@@ -88,6 +88,9 @@ namespace Frm_ShanLiang
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label_MemberPassworsConsistency = new System.Windows.Forms.Label();
+            this.label_MemberNewPasswordsConfirm = new System.Windows.Forms.Label();
+            this.txt_MemberPasswordsConfirmation = new System.Windows.Forms.TextBox();
             this.tabControl_MemberManagementSystem.SuspendLayout();
             this.tabPage_MemberMain.SuspendLayout();
             this.tabPage_MemberInfoRevision.SuspendLayout();
@@ -187,7 +190,7 @@ namespace Frm_ShanLiang
             // 
             // btn_ClearMemberInfo
             // 
-            this.btn_ClearMemberInfo.Location = new System.Drawing.Point(340, 383);
+            this.btn_ClearMemberInfo.Location = new System.Drawing.Point(340, 393);
             this.btn_ClearMemberInfo.Name = "btn_ClearMemberInfo";
             this.btn_ClearMemberInfo.Size = new System.Drawing.Size(75, 23);
             this.btn_ClearMemberInfo.TabIndex = 19;
@@ -197,7 +200,7 @@ namespace Frm_ShanLiang
             // 
             // btn_MemberInfoRevisionComfirm
             // 
-            this.btn_MemberInfoRevisionComfirm.Location = new System.Drawing.Point(36, 383);
+            this.btn_MemberInfoRevisionComfirm.Location = new System.Drawing.Point(36, 393);
             this.btn_MemberInfoRevisionComfirm.Name = "btn_MemberInfoRevisionComfirm";
             this.btn_MemberInfoRevisionComfirm.Size = new System.Drawing.Size(75, 23);
             this.btn_MemberInfoRevisionComfirm.TabIndex = 18;
@@ -217,7 +220,7 @@ namespace Frm_ShanLiang
             // 
             // btn_MemberInfoLoad
             // 
-            this.btn_MemberInfoLoad.Location = new System.Drawing.Point(431, 383);
+            this.btn_MemberInfoLoad.Location = new System.Drawing.Point(431, 393);
             this.btn_MemberInfoLoad.Name = "btn_MemberInfoLoad";
             this.btn_MemberInfoLoad.Size = new System.Drawing.Size(75, 23);
             this.btn_MemberInfoLoad.TabIndex = 15;
@@ -227,7 +230,7 @@ namespace Frm_ShanLiang
             // 
             // btn_MemberInfoRevisionDemo
             // 
-            this.btn_MemberInfoRevisionDemo.Location = new System.Drawing.Point(250, 383);
+            this.btn_MemberInfoRevisionDemo.Location = new System.Drawing.Point(250, 393);
             this.btn_MemberInfoRevisionDemo.Name = "btn_MemberInfoRevisionDemo";
             this.btn_MemberInfoRevisionDemo.Size = new System.Drawing.Size(75, 23);
             this.btn_MemberInfoRevisionDemo.TabIndex = 14;
@@ -249,6 +252,9 @@ namespace Frm_ShanLiang
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label_MemberPassworsConsistency);
+            this.groupBox1.Controls.Add(this.label_MemberNewPasswordsConfirm);
+            this.groupBox1.Controls.Add(this.txt_MemberPasswordsConfirmation);
             this.groupBox1.Controls.Add(this.label_MemberPasswordWarning);
             this.groupBox1.Controls.Add(this.rdoDecryption);
             this.groupBox1.Controls.Add(this.rdo_encryption);
@@ -264,18 +270,18 @@ namespace Frm_ShanLiang
             this.groupBox1.Controls.Add(this.label_MemberName);
             this.groupBox1.Controls.Add(this.txt_MemberEMail);
             this.groupBox1.Controls.Add(this.txt_MemberAddress);
-            this.groupBox1.Location = new System.Drawing.Point(36, 54);
+            this.groupBox1.Location = new System.Drawing.Point(36, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(470, 304);
+            this.groupBox1.Size = new System.Drawing.Size(470, 343);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "提示：會依照會員登入帳號撈出原有資料，讓會員進行修改";
             // 
             // label_MemberPasswordWarning
             // 
-            this.label_MemberPasswordWarning.Location = new System.Drawing.Point(238, 103);
+            this.label_MemberPasswordWarning.Location = new System.Drawing.Point(273, 103);
             this.label_MemberPasswordWarning.Name = "label_MemberPasswordWarning";
-            this.label_MemberPasswordWarning.Size = new System.Drawing.Size(225, 23);
+            this.label_MemberPasswordWarning.Size = new System.Drawing.Size(175, 23);
             this.label_MemberPasswordWarning.TabIndex = 15;
             // 
             // rdoDecryption
@@ -324,7 +330,7 @@ namespace Frm_ShanLiang
             // label_MemberAddress
             // 
             this.label_MemberAddress.AutoSize = true;
-            this.label_MemberAddress.Location = new System.Drawing.Point(18, 262);
+            this.label_MemberAddress.Location = new System.Drawing.Point(18, 318);
             this.label_MemberAddress.Name = "label_MemberAddress";
             this.label_MemberAddress.Size = new System.Drawing.Size(29, 12);
             this.label_MemberAddress.TabIndex = 11;
@@ -343,7 +349,7 @@ namespace Frm_ShanLiang
             // label_MemberEMail
             // 
             this.label_MemberEMail.AutoSize = true;
-            this.label_MemberEMail.Location = new System.Drawing.Point(18, 219);
+            this.label_MemberEMail.Location = new System.Drawing.Point(18, 275);
             this.label_MemberEMail.Name = "label_MemberEMail";
             this.label_MemberEMail.Size = new System.Drawing.Size(37, 12);
             this.label_MemberEMail.TabIndex = 10;
@@ -365,7 +371,7 @@ namespace Frm_ShanLiang
             // 
             this.txt_MemberName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MemberName.Location = new System.Drawing.Point(75, 130);
+            this.txt_MemberName.Location = new System.Drawing.Point(75, 186);
             this.txt_MemberName.Name = "txt_MemberName";
             this.txt_MemberName.Size = new System.Drawing.Size(348, 22);
             this.txt_MemberName.TabIndex = 1;
@@ -373,7 +379,7 @@ namespace Frm_ShanLiang
             // label_MemberTelephoneNumber
             // 
             this.label_MemberTelephoneNumber.AutoSize = true;
-            this.label_MemberTelephoneNumber.Location = new System.Drawing.Point(18, 176);
+            this.label_MemberTelephoneNumber.Location = new System.Drawing.Point(18, 232);
             this.label_MemberTelephoneNumber.Name = "label_MemberTelephoneNumber";
             this.label_MemberTelephoneNumber.Size = new System.Drawing.Size(53, 12);
             this.label_MemberTelephoneNumber.TabIndex = 9;
@@ -383,7 +389,7 @@ namespace Frm_ShanLiang
             // 
             this.txt_MemberTelephoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MemberTelephoneNumber.Location = new System.Drawing.Point(75, 173);
+            this.txt_MemberTelephoneNumber.Location = new System.Drawing.Point(75, 229);
             this.txt_MemberTelephoneNumber.Name = "txt_MemberTelephoneNumber";
             this.txt_MemberTelephoneNumber.Size = new System.Drawing.Size(348, 22);
             this.txt_MemberTelephoneNumber.TabIndex = 2;
@@ -391,7 +397,7 @@ namespace Frm_ShanLiang
             // label_MemberName
             // 
             this.label_MemberName.AutoSize = true;
-            this.label_MemberName.Location = new System.Drawing.Point(18, 133);
+            this.label_MemberName.Location = new System.Drawing.Point(18, 189);
             this.label_MemberName.Name = "label_MemberName";
             this.label_MemberName.Size = new System.Drawing.Size(29, 12);
             this.label_MemberName.TabIndex = 8;
@@ -401,7 +407,7 @@ namespace Frm_ShanLiang
             // 
             this.txt_MemberEMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MemberEMail.Location = new System.Drawing.Point(75, 216);
+            this.txt_MemberEMail.Location = new System.Drawing.Point(75, 272);
             this.txt_MemberEMail.Name = "txt_MemberEMail";
             this.txt_MemberEMail.Size = new System.Drawing.Size(348, 22);
             this.txt_MemberEMail.TabIndex = 3;
@@ -411,7 +417,7 @@ namespace Frm_ShanLiang
             // 
             this.txt_MemberAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MemberAddress.Location = new System.Drawing.Point(75, 259);
+            this.txt_MemberAddress.Location = new System.Drawing.Point(75, 315);
             this.txt_MemberAddress.Name = "txt_MemberAddress";
             this.txt_MemberAddress.Size = new System.Drawing.Size(348, 22);
             this.txt_MemberAddress.TabIndex = 4;
@@ -706,6 +712,33 @@ namespace Frm_ShanLiang
             this.dataGridView2.Size = new System.Drawing.Size(437, 262);
             this.dataGridView2.TabIndex = 4;
             // 
+            // label_MemberPassworsConsistency
+            // 
+            this.label_MemberPassworsConsistency.Location = new System.Drawing.Point(273, 159);
+            this.label_MemberPassworsConsistency.Name = "label_MemberPassworsConsistency";
+            this.label_MemberPassworsConsistency.Size = new System.Drawing.Size(175, 23);
+            this.label_MemberPassworsConsistency.TabIndex = 20;
+            // 
+            // label_MemberNewPasswordsConfirm
+            // 
+            this.label_MemberNewPasswordsConfirm.AutoSize = true;
+            this.label_MemberNewPasswordsConfirm.Location = new System.Drawing.Point(4, 132);
+            this.label_MemberNewPasswordsConfirm.Name = "label_MemberNewPasswordsConfirm";
+            this.label_MemberNewPasswordsConfirm.Size = new System.Drawing.Size(65, 12);
+            this.label_MemberNewPasswordsConfirm.TabIndex = 17;
+            this.label_MemberNewPasswordsConfirm.Text = "新密碼確認";
+            // 
+            // txt_MemberPasswordsConfirmation
+            // 
+            this.txt_MemberPasswordsConfirmation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MemberPasswordsConfirmation.Location = new System.Drawing.Point(75, 129);
+            this.txt_MemberPasswordsConfirmation.Name = "txt_MemberPasswordsConfirmation";
+            this.txt_MemberPasswordsConfirmation.PasswordChar = '*';
+            this.txt_MemberPasswordsConfirmation.Size = new System.Drawing.Size(348, 22);
+            this.txt_MemberPasswordsConfirmation.TabIndex = 16;
+            this.txt_MemberPasswordsConfirmation.TextChanged += new System.EventHandler(this.txt_MemberPasswordsConfirmation_TextChanged);
+            // 
             // Frm_MemberPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -792,5 +825,8 @@ namespace Frm_ShanLiang
         private System.Windows.Forms.RadioButton rdoDecryption;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label_MemberPasswordWarning;
+        private System.Windows.Forms.Label label_MemberPassworsConsistency;
+        private System.Windows.Forms.Label label_MemberNewPasswordsConfirm;
+        private System.Windows.Forms.TextBox txt_MemberPasswordsConfirmation;
     }
 }
