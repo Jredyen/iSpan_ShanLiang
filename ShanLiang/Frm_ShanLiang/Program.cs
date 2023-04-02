@@ -24,7 +24,7 @@ namespace ShanLiang
             //Application.Run(new Frm_LoginPage());
             //Application.Run(new Frm_MemberPage());
             //Application.Run(new Frm_StoreManagerPage());
-            Application.Run(new Frm_AccountPage());
+            Application.Run(new Frm_AdminPage());
         }
     }
 }

@@ -812,10 +812,6 @@
           <Property Name="BrithDate" Type="DateTime" Precision="3" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CustomerLevel" Type="Int32" />
-          <NavigationProperty Name="Member_Coupon" Relationship="ShanLiangModel.FK_Customer_Coupon_Member" FromRole="Member" ToRole="Member_Coupon" />
-          <NavigationProperty Name="Member_Action" Relationship="ShanLiangModel.FK_Member_Action_Member" FromRole="Member" ToRole="Member_Action" />
-          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Member" FromRole="Member" ToRole="Order" />
-          <NavigationProperty Name="Store_Evaluate" Relationship="ShanLiangModel.FK_Store_Evaluate_Member" FromRole="Member" ToRole="Store_Evaluate" />
         </EntityType>
         <EntityType Name="Member_Action">
           <Key>
@@ -921,12 +917,6 @@
           <Property Name="StoreImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="StoreMail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="District" Relationship="ShanLiangModel.FK_Store_District" FromRole="Store" ToRole="District" />
-          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Meals_Menu_Store" FromRole="Store" ToRole="Meals_Menu" />
-          <NavigationProperty Name="Member_Action" Relationship="ShanLiangModel.FK_Member_Action_Store" FromRole="Store" ToRole="Member_Action" />
-          <NavigationProperty Name="Orders" Relationship="ShanLiangModel.FK_Order_Store" FromRole="Store" ToRole="Order" />
-          <NavigationProperty Name="Store_Evaluate" Relationship="ShanLiangModel.FK_Store_Evaluate_Store" FromRole="Store" ToRole="Store_Evaluate" />
-          <NavigationProperty Name="Store_Type" Relationship="ShanLiangModel.FK_Store_Type_Store" FromRole="Store" ToRole="Store_Type" />
         </EntityType>
         <EntityType Name="Store_Evaluate">
           <Key>

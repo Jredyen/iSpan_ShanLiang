@@ -78,15 +78,18 @@ namespace Frm_ShanLiang
                         _homepage.accountNameCheckout(CNowLoginAccount._loginAccountName);
 
                         int Identification = (int)reader["Identification"];
-                        if (Identification == 1)//如果是1轉跳到會員頁面//不跳轉，改由首頁由使用者操作
-                        {
-                            //new Frm_MemberPage().Show();
+                        if (Identification == 1)    //帳號類型:會員 Homepage出現我的頁面按鈕可轉跳
+                        {                            
                             GetC.memberDataLoad((string)reader[1]);
                             Close();
                         }
-                        else if (Identification == 2)//如果是2轉跳到店家頁面//不跳轉，改由首頁由使用者操作
-                        {
-                            //new Frm_StoreManagerPage().Show();
+                        else if (Identification == 2)//帳號類型:店家 Homepage出現我的頁面按鈕可轉跳
+                        {                            
+                            GetC.storeDataLoad((string)reader[1]);
+                            Close();
+                        }
+                        else if (Identification == 0)//帳號類型:管理員 Homepage出現我的頁面按鈕可轉跳
+                        {                         
                             GetC.storeDataLoad((string)reader[1]);
                             Close();
                         }

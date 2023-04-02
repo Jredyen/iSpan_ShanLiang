@@ -86,6 +86,10 @@ namespace ShanLiang
                     {
                         new Frm_StoreManagerPage().Show();
                     }
+                    else if (CNowLoginAccount._Identification == 0)
+                    {
+                        new Frm_AdminPage().Show();
+                    }
                     else return;
                     break;
             }

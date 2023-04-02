@@ -83,11 +83,11 @@
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ExtesionMethods\C_TextBoxTool.cs" />
-    <Compile Include="Frm_AccountPage.cs">
+    <Compile Include="Frm_AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AccountPage.Designer.cs">
-      <DependentUpon>Frm_AccountPage.cs</DependentUpon>
+    <Compile Include="Frm_AdminPage.Designer.cs">
+      <DependentUpon>Frm_AdminPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Homepage.cs">
       <SubType>Form</SubType>
@@ -193,8 +193,8 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Frm_AccountPage.resx">
-      <DependentUpon>Frm_AccountPage.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AdminPage.resx">
+      <DependentUpon>Frm_AdminPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Homepage.resx">
       <DependentUpon>Frm_Homepage.cs</DependentUpon>

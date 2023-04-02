@@ -14,16 +14,6 @@ namespace Frm_ShanLiang
     
     public partial class Store
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Store()
-        {
-            this.Meals_Menu = new HashSet<Meals_Menu>();
-            this.Member_Action = new HashSet<Member_Action>();
-            this.Orders = new HashSet<Order>();
-            this.Store_Evaluate = new HashSet<Store_Evaluate>();
-            this.Store_Type = new HashSet<Store_Type>();
-        }
-    
         public int StoreID { get; set; }
         public string AccountName { get; set; }
         public string TaxID { get; set; }
@@ -40,17 +30,5 @@ namespace Frm_ShanLiang
         public byte[] StoreImage { get; set; }
         public Nullable<int> Rating { get; set; }
         public string StoreMail { get; set; }
-    
-        public virtual District District { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Meals_Menu> Meals_Menu { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member_Action> Member_Action { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Store_Evaluate> Store_Evaluate { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Store_Type> Store_Type { get; set; }
     }
 }
