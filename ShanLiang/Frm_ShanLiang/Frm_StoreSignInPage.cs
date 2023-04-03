@@ -131,5 +131,10 @@ namespace Frm_ShanLiang
             Close();
             new Frm_SignupPage().ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

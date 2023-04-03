@@ -125,6 +125,12 @@
     <Compile Include="Frm_StoreSignInPage.Designer.cs">
       <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_StoreUpdatePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreUpdatePage.Designer.cs">
+      <DependentUpon>Frm_StoreUpdatePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Identification.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
@@ -187,6 +193,11 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="_ShanLiang2_1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ShanLiang2_1DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_Homepage.resx">
       <DependentUpon>Frm_Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StoreSignInPage.resx">
       <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreUpdatePage.resx">
+      <DependentUpon>Frm_StoreUpdatePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -234,6 +248,17 @@
     </EntityDeploy>
     <None Include="ShanLiangModel.edmx.diagram">
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
+    </None>
+    <None Include="_ShanLiang2_1DataSet.xsc">
+      <DependentUpon>_ShanLiang2_1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_ShanLiang2_1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_ShanLiang2_1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_ShanLiang2_1DataSet.xss">
+      <DependentUpon>_ShanLiang2_1DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
