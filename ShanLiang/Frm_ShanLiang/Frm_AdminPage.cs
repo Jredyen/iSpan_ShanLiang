@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace Frm_ShanLiang
         {
             InitializeComponent();
             tabControl1.SelectedIndex = 2;
+            this.pictureBoxStoreImage.AllowDrop = true;
+            this.pictureBoxStoreImage.DragEnter += pictureBoxStoreImage_DragEnter;
+            this.pictureBoxStoreImage.DragDrop += pictureBoxStoreImage_DragDrop;
         }
         ShanLiangEntities _SLE = new ShanLiangEntities();
         void Read_RefreshDataGridViewAccount()
@@ -238,13 +242,46 @@ namespace Frm_ShanLiang
                     }
 
                     // 將圖片顯示在 PictureBox 控制項中
-                    pictureBox1.Image = image;
+                    pictureBoxStoreImage.Image = image;
                 }
             }
             catch (Exception)
             {
-                pictureBox1.Image = pictureBox1.ErrorImage;
+                pictureBoxStoreImage.Image = pictureBoxStoreImage.ErrorImage;
             }
+        }
+
+        private void pictureBoxStoreImage_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void pictureBoxStoreImage_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            pictureBoxStoreImage.Image = Image.FromFile(files[0]);
+            
+        }
+
+        private void btn_updateStoreImage_Click(object sender, EventArgs e)
+        {    //把picturebox裡的照片放到StoreImage裡  (放進去後須按修改才會真的存進DB)
+            try
+            {
+                byte[] bytesImage = { 1, 1 };      //先把照片轉成二進位資料
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                this.pictureBoxStoreImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                bytesImage = ms.GetBuffer();
+
+                //dataGridViewStore.SelectedCells[13].Value = bytesImage; //可以選整欄去找序號13的位置更換圖片
+                dataGridViewStore.SelectedCells[0].Value = bytesImage;  //只能選照片那格去更換照片
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+               
+            }
+
+            
         }
     }
 }

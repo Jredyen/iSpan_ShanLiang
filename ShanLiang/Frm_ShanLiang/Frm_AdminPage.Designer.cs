@@ -56,9 +56,10 @@
             this.btn_deletestore = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewStore = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPageStoreImage = new System.Windows.Forms.TabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.pictureBoxStoreImage = new System.Windows.Forms.PictureBox();
+            this.tabPageStoreImage = new System.Windows.Forms.TabPage();
+            this.btn_updateStoreImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIdentification)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -87,10 +88,11 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoreImage)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewAccount
@@ -103,7 +105,7 @@
             this.dataGridViewAccount.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewAccount.Name = "dataGridViewAccount";
             this.dataGridViewAccount.RowTemplate.Height = 24;
-            this.dataGridViewAccount.Size = new System.Drawing.Size(731, 762);
+            this.dataGridViewAccount.Size = new System.Drawing.Size(967, 762);
             this.dataGridViewAccount.TabIndex = 0;
             // 
             // btn_readaccount
@@ -115,7 +117,7 @@
             this.btn_readaccount.ForeColor = System.Drawing.Color.White;
             this.btn_readaccount.Location = new System.Drawing.Point(3, 36);
             this.btn_readaccount.Name = "btn_readaccount";
-            this.btn_readaccount.Size = new System.Drawing.Size(261, 46);
+            this.btn_readaccount.Size = new System.Drawing.Size(347, 46);
             this.btn_readaccount.TabIndex = 1;
             this.btn_readaccount.Text = "讀取";
             this.btn_readaccount.UseVisualStyleBackColor = false;
@@ -130,7 +132,7 @@
             this.dataGridViewIdentification.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewIdentification.Name = "dataGridViewIdentification";
             this.dataGridViewIdentification.RowTemplate.Height = 24;
-            this.dataGridViewIdentification.Size = new System.Drawing.Size(267, 439);
+            this.dataGridViewIdentification.Size = new System.Drawing.Size(353, 439);
             this.dataGridViewIdentification.TabIndex = 2;
             // 
             // label1
@@ -169,7 +171,7 @@
             this.btn_orderbyaccount.ForeColor = System.Drawing.Color.White;
             this.btn_orderbyaccount.Location = new System.Drawing.Point(3, 244);
             this.btn_orderbyaccount.Name = "btn_orderbyaccount";
-            this.btn_orderbyaccount.Size = new System.Drawing.Size(261, 46);
+            this.btn_orderbyaccount.Size = new System.Drawing.Size(347, 46);
             this.btn_orderbyaccount.TabIndex = 1;
             this.btn_orderbyaccount.Text = "依照帳號類別排序";
             this.btn_orderbyaccount.UseVisualStyleBackColor = false;
@@ -184,7 +186,7 @@
             this.btn_deleteaccount.ForeColor = System.Drawing.Color.White;
             this.btn_deleteaccount.Location = new System.Drawing.Point(3, 192);
             this.btn_deleteaccount.Name = "btn_deleteaccount";
-            this.btn_deleteaccount.Size = new System.Drawing.Size(261, 46);
+            this.btn_deleteaccount.Size = new System.Drawing.Size(347, 46);
             this.btn_deleteaccount.TabIndex = 1;
             this.btn_deleteaccount.Text = "刪除";
             this.btn_deleteaccount.UseVisualStyleBackColor = false;
@@ -199,7 +201,7 @@
             this.btn_updateaccount.ForeColor = System.Drawing.Color.White;
             this.btn_updateaccount.Location = new System.Drawing.Point(3, 88);
             this.btn_updateaccount.Name = "btn_updateaccount";
-            this.btn_updateaccount.Size = new System.Drawing.Size(261, 46);
+            this.btn_updateaccount.Size = new System.Drawing.Size(347, 46);
             this.btn_updateaccount.TabIndex = 1;
             this.btn_updateaccount.Text = "修改";
             this.btn_updateaccount.UseVisualStyleBackColor = false;
@@ -214,7 +216,7 @@
             this.btn_addaccount.ForeColor = System.Drawing.Color.White;
             this.btn_addaccount.Location = new System.Drawing.Point(3, 140);
             this.btn_addaccount.Name = "btn_addaccount";
-            this.btn_addaccount.Size = new System.Drawing.Size(261, 46);
+            this.btn_addaccount.Size = new System.Drawing.Size(347, 46);
             this.btn_addaccount.TabIndex = 1;
             this.btn_addaccount.Text = "新增";
             this.btn_addaccount.UseVisualStyleBackColor = false;
@@ -231,7 +233,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1024, 805);
+            this.tabControl1.Size = new System.Drawing.Size(1346, 805);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPageAccount
@@ -242,7 +244,7 @@
             this.tabPageAccount.Location = new System.Drawing.Point(4, 29);
             this.tabPageAccount.Name = "tabPageAccount";
             this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccount.Size = new System.Drawing.Size(1016, 772);
+            this.tabPageAccount.Size = new System.Drawing.Size(1338, 772);
             this.tabPageAccount.TabIndex = 0;
             this.tabPageAccount.Text = "帳號管理";
             // 
@@ -261,8 +263,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridViewAccount);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 766);
-            this.splitContainer1.SplitterDistance = 271;
+            this.splitContainer1.Size = new System.Drawing.Size(1332, 766);
+            this.splitContainer1.SplitterDistance = 357;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -288,7 +290,7 @@
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.DimGray;
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewIdentification);
-            this.splitContainer2.Size = new System.Drawing.Size(271, 766);
+            this.splitContainer2.Size = new System.Drawing.Size(357, 766);
             this.splitContainer2.SplitterDistance = 319;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -299,7 +301,7 @@
             this.tabpageMember.Location = new System.Drawing.Point(4, 29);
             this.tabpageMember.Name = "tabpageMember";
             this.tabpageMember.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageMember.Size = new System.Drawing.Size(1016, 772);
+            this.tabpageMember.Size = new System.Drawing.Size(1338, 772);
             this.tabpageMember.TabIndex = 1;
             this.tabpageMember.Text = "會員管理";
             this.tabpageMember.UseVisualStyleBackColor = true;
@@ -323,7 +325,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dataGridViewMember);
-            this.splitContainer4.Size = new System.Drawing.Size(1010, 766);
+            this.splitContainer4.Size = new System.Drawing.Size(1332, 766);
             this.splitContainer4.SplitterDistance = 68;
             this.splitContainer4.TabIndex = 2;
             // 
@@ -333,7 +335,7 @@
             this.btn_updatemember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_updatemember.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_updatemember.ForeColor = System.Drawing.Color.White;
-            this.btn_updatemember.Location = new System.Drawing.Point(256, 3);
+            this.btn_updatemember.Location = new System.Drawing.Point(417, 3);
             this.btn_updatemember.Name = "btn_updatemember";
             this.btn_updatemember.Size = new System.Drawing.Size(240, 52);
             this.btn_updatemember.TabIndex = 1;
@@ -347,7 +349,7 @@
             this.btn_deletemember.BackColor = System.Drawing.Color.Red;
             this.btn_deletemember.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_deletemember.ForeColor = System.Drawing.Color.White;
-            this.btn_deletemember.Location = new System.Drawing.Point(762, 3);
+            this.btn_deletemember.Location = new System.Drawing.Point(923, 3);
             this.btn_deletemember.Name = "btn_deletemember";
             this.btn_deletemember.Size = new System.Drawing.Size(240, 52);
             this.btn_deletemember.TabIndex = 1;
@@ -361,7 +363,7 @@
             this.btn_addmember.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_addmember.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_addmember.ForeColor = System.Drawing.Color.White;
-            this.btn_addmember.Location = new System.Drawing.Point(509, 3);
+            this.btn_addmember.Location = new System.Drawing.Point(670, 3);
             this.btn_addmember.Name = "btn_addmember";
             this.btn_addmember.Size = new System.Drawing.Size(240, 52);
             this.btn_addmember.TabIndex = 1;
@@ -375,7 +377,7 @@
             this.btn_readmember.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btn_readmember.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_readmember.ForeColor = System.Drawing.Color.White;
-            this.btn_readmember.Location = new System.Drawing.Point(3, 3);
+            this.btn_readmember.Location = new System.Drawing.Point(164, 3);
             this.btn_readmember.Name = "btn_readmember";
             this.btn_readmember.Size = new System.Drawing.Size(240, 52);
             this.btn_readmember.TabIndex = 1;
@@ -392,7 +394,7 @@
             this.dataGridViewMember.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMember.Name = "dataGridViewMember";
             this.dataGridViewMember.RowTemplate.Height = 24;
-            this.dataGridViewMember.Size = new System.Drawing.Size(1006, 690);
+            this.dataGridViewMember.Size = new System.Drawing.Size(1328, 690);
             this.dataGridViewMember.TabIndex = 0;
             // 
             // tabPageStore
@@ -401,7 +403,7 @@
             this.tabPageStore.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabPageStore.Location = new System.Drawing.Point(4, 29);
             this.tabPageStore.Name = "tabPageStore";
-            this.tabPageStore.Size = new System.Drawing.Size(1016, 772);
+            this.tabPageStore.Size = new System.Drawing.Size(1338, 772);
             this.tabPageStore.TabIndex = 2;
             this.tabPageStore.Text = "店家管理";
             this.tabPageStore.UseVisualStyleBackColor = true;
@@ -425,56 +427,64 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer5.Size = new System.Drawing.Size(1016, 772);
+            this.splitContainer5.Size = new System.Drawing.Size(1338, 772);
             this.splitContainer5.SplitterDistance = 68;
             this.splitContainer5.TabIndex = 6;
             // 
             // btn_readstore
             // 
             this.btn_readstore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_readstore.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btn_readstore.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_readstore.Location = new System.Drawing.Point(6, 3);
+            this.btn_readstore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_readstore.Location = new System.Drawing.Point(167, 3);
             this.btn_readstore.Name = "btn_readstore";
             this.btn_readstore.Size = new System.Drawing.Size(238, 52);
             this.btn_readstore.TabIndex = 5;
             this.btn_readstore.Text = "讀取";
-            this.btn_readstore.UseVisualStyleBackColor = true;
+            this.btn_readstore.UseVisualStyleBackColor = false;
             this.btn_readstore.Click += new System.EventHandler(this.btn_readstore_Click);
             // 
             // btn_updatestore
             // 
             this.btn_updatestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_updatestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_updatestore.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_updatestore.Location = new System.Drawing.Point(261, 3);
+            this.btn_updatestore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_updatestore.Location = new System.Drawing.Point(422, 3);
             this.btn_updatestore.Name = "btn_updatestore";
             this.btn_updatestore.Size = new System.Drawing.Size(238, 52);
             this.btn_updatestore.TabIndex = 2;
             this.btn_updatestore.Text = "修改";
-            this.btn_updatestore.UseVisualStyleBackColor = true;
+            this.btn_updatestore.UseVisualStyleBackColor = false;
             this.btn_updatestore.Click += new System.EventHandler(this.btn_updatestore_Click);
             // 
             // btn_addstore
             // 
             this.btn_addstore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_addstore.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_addstore.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_addstore.Location = new System.Drawing.Point(516, 3);
+            this.btn_addstore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addstore.Location = new System.Drawing.Point(677, 3);
             this.btn_addstore.Name = "btn_addstore";
             this.btn_addstore.Size = new System.Drawing.Size(238, 52);
             this.btn_addstore.TabIndex = 4;
             this.btn_addstore.Text = "新增";
-            this.btn_addstore.UseVisualStyleBackColor = true;
+            this.btn_addstore.UseVisualStyleBackColor = false;
             this.btn_addstore.Click += new System.EventHandler(this.btn_addstore_Click);
             // 
             // btn_deletestore
             // 
             this.btn_deletestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_deletestore.BackColor = System.Drawing.Color.Red;
             this.btn_deletestore.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_deletestore.Location = new System.Drawing.Point(771, 3);
+            this.btn_deletestore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_deletestore.Location = new System.Drawing.Point(932, 3);
             this.btn_deletestore.Name = "btn_deletestore";
             this.btn_deletestore.Size = new System.Drawing.Size(238, 52);
             this.btn_deletestore.TabIndex = 3;
             this.btn_deletestore.Text = "刪除";
-            this.btn_deletestore.UseVisualStyleBackColor = true;
+            this.btn_deletestore.UseVisualStyleBackColor = false;
             this.btn_deletestore.Click += new System.EventHandler(this.btn_deletestore_Click);
             // 
             // splitContainer3
@@ -492,7 +502,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer3.Size = new System.Drawing.Size(1016, 700);
+            this.splitContainer3.Size = new System.Drawing.Size(1338, 700);
             this.splitContainer3.SplitterDistance = 354;
             this.splitContainer3.TabIndex = 1;
             // 
@@ -505,29 +515,9 @@
             this.dataGridViewStore.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewStore.Name = "dataGridViewStore";
             this.dataGridViewStore.RowTemplate.Height = 24;
-            this.dataGridViewStore.Size = new System.Drawing.Size(1012, 350);
+            this.dataGridViewStore.Size = new System.Drawing.Size(1334, 350);
             this.dataGridViewStore.TabIndex = 0;
             this.dataGridViewStore.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStore_CellClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(670, 338);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tabPageStoreImage
-            // 
-            this.tabPageStoreImage.Location = new System.Drawing.Point(4, 29);
-            this.tabPageStoreImage.Name = "tabPageStoreImage";
-            this.tabPageStoreImage.Size = new System.Drawing.Size(1016, 772);
-            this.tabPageStoreImage.TabIndex = 3;
-            this.tabPageStoreImage.Text = "店家照片集";
-            this.tabPageStoreImage.UseVisualStyleBackColor = true;
             // 
             // splitContainer6
             // 
@@ -536,23 +526,63 @@
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
             this.splitContainer6.Name = "splitContainer6";
             // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainer6.Panel1.Controls.Add(this.btn_updateStoreImage);
+            // 
             // splitContainer6.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer6.Size = new System.Drawing.Size(1016, 342);
-            this.splitContainer6.SplitterDistance = 338;
+            this.splitContainer6.Panel2.Controls.Add(this.pictureBoxStoreImage);
+            this.splitContainer6.Size = new System.Drawing.Size(1338, 342);
+            this.splitContainer6.SplitterDistance = 615;
             this.splitContainer6.TabIndex = 1;
+            // 
+            // pictureBoxStoreImage
+            // 
+            this.pictureBoxStoreImage.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxStoreImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxStoreImage.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxStoreImage.Name = "pictureBoxStoreImage";
+            this.pictureBoxStoreImage.Size = new System.Drawing.Size(715, 338);
+            this.pictureBoxStoreImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStoreImage.TabIndex = 0;
+            this.pictureBoxStoreImage.TabStop = false;
+            this.pictureBoxStoreImage.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBoxStoreImage_DragDrop);
+            this.pictureBoxStoreImage.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBoxStoreImage_DragEnter);
+            // 
+            // tabPageStoreImage
+            // 
+            this.tabPageStoreImage.Location = new System.Drawing.Point(4, 29);
+            this.tabPageStoreImage.Name = "tabPageStoreImage";
+            this.tabPageStoreImage.Size = new System.Drawing.Size(1338, 772);
+            this.tabPageStoreImage.TabIndex = 3;
+            this.tabPageStoreImage.Text = "店家照片集";
+            this.tabPageStoreImage.UseVisualStyleBackColor = true;
+            // 
+            // btn_updateStoreImage
+            // 
+            this.btn_updateStoreImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_updateStoreImage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_updateStoreImage.Location = new System.Drawing.Point(18, 21);
+            this.btn_updateStoreImage.Name = "btn_updateStoreImage";
+            this.btn_updateStoreImage.Size = new System.Drawing.Size(238, 52);
+            this.btn_updateStoreImage.TabIndex = 6;
+            this.btn_updateStoreImage.Text = "更換照片";
+            this.btn_updateStoreImage.UseVisualStyleBackColor = true;
+            this.btn_updateStoreImage.Click += new System.EventHandler(this.btn_updateStoreImage_Click);
             // 
             // Frm_AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1024, 805);
+            this.ClientSize = new System.Drawing.Size(1346, 805);
             this.Controls.Add(this.tabControl1);
             this.Name = "Frm_AdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_AdminPage管理員系統";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIdentification)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -582,10 +612,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStoreImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,8 +651,9 @@
         private System.Windows.Forms.DataGridView dataGridViewStore;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxStoreImage;
         private System.Windows.Forms.TabPage tabPageStoreImage;
         private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.Button btn_updateStoreImage;
     }
 }
