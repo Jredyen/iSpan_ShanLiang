@@ -103,46 +103,104 @@ namespace ShanLiang
             try
             {
                 string keyword = txt_keyword.Text;
-                var q = from S in _SL.Stores.AsEnumerable()
-                        //from C in _SL.Cities
-                        //join CC in _SL.Districts on C.CityID equals CC.CityID
-                        join St in _SL.Store_Type.AsEnumerable() on S.StoreID equals St.StoreID
-                        where
-                        //TODO:
-                        //C.CityName == (cmb_City.SelectedItem).ToString() 
-                        
-                    S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
 
-                    S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}") &&
+                if (cmb_area.SelectedItem == null && cmb_restaurantType.SelectedItem == null)
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                            where S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}")
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
+                }
+                else if (cmb_restaurantType.SelectedItem == null && cmb_City.SelectedItem != null && cmb_area.SelectedItem != null)
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                            where
+                            S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
+                            S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}")
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
+                }else
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                                //from C in _SL.Cities
+                                //join CC in _SL.Districts on C.CityID equals CC.CityID
+                            join St in _SL.Store_Type.AsEnumerable() on S.StoreID equals St.StoreID
+                            where
+                            //TODO:
+                            //C.CityName == (cmb_City.SelectedItem).ToString() 
 
 
-                    //S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}{cmb_area.SelectedItem}") ||
+                            S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
 
-                        St.Restaurant_Type.TypeName == cmb_restaurantType.SelectedItem.ToString()
-
-                        //  && S.RestaurantName.Contains($"{txt_keyword.Text}")
+                            S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}") &&
 
 
-                        select new
-                        {
-                            S.StoreID,
-                            S.AccountName,
-                            S.TaxID,
-                            S.RestaurantName,
-                            S.RestaurantAddress,
-                            S.RestaurantPhone,
-                            S.DistrictID,
-                            S.Seats,
-                            S.Longitude,
-                            S.Latitude,
-                            S.OpeningTime,
-                            S.ClosingTime,
-                            S.Website,
-                            S.StoreImage,
-                            S.Rating,
-                            S.StoreMail
-                        };
-                dataGridView1.DataSource = q.ToList();
+                            //S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}{cmb_area.SelectedItem}") ||
+
+                            St.Restaurant_Type.TypeName == cmb_restaurantType.SelectedItem.ToString()
+
+                            //  && S.RestaurantName.Contains($"{txt_keyword.Text}")
+
+
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
+                }
+               
+                
             }
             catch (Exception ex)
             {
