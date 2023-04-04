@@ -40,5 +40,10 @@ namespace Frm_ShanLiang
                 this.storeImagePictureBox.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
         }
+
+        private void storeImageLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
