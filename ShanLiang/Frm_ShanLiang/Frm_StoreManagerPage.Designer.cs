@@ -36,6 +36,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lab_accountName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,33 +45,46 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_allSearch = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ddv_orderDetails = new System.Windows.Forms.DataGridView();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.close_mm = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_newDoubleCheckPassword = new System.Windows.Forms.TextBox();
+            this.txt_newPassword = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_web = new System.Windows.Forms.TextBox();
+            this.txt_storeName = new System.Windows.Forms.TextBox();
+            this.close_hh = new System.Windows.Forms.NumericUpDown();
+            this.open_mm = new System.Windows.Forms.NumericUpDown();
+            this.txt_storePhone = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.open_hh = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_seats = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox_storeType = new System.Windows.Forms.ListBox();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.btn_remove = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txt_searchStyle = new System.Windows.Forms.TextBox();
+            this.listBox_allType = new System.Windows.Forms.ListBox();
+            this.btn_updata = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txt_seats = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
-            this.txt_storeName = new System.Windows.Forms.TextBox();
-            this.txt_storePhone = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.txt_accountName = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -92,8 +106,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lab_accountName = new System.Windows.Forms.Label();
-            this.txt_searchStyle = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -104,9 +116,15 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddv_orderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close_mm)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close_hh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.open_mm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.open_hh)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
@@ -172,7 +190,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_allSearch);
             // 
             // splitContainer1.Panel2
             // 
@@ -180,6 +198,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(916, 611);
             this.splitContainer1.SplitterDistance = 369;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // lab_accountName
+            // 
+            this.lab_accountName.AutoSize = true;
+            this.lab_accountName.Location = new System.Drawing.Point(27, 20);
+            this.lab_accountName.Name = "lab_accountName";
+            this.lab_accountName.Size = new System.Drawing.Size(65, 12);
+            this.lab_accountName.TabIndex = 4;
+            this.lab_accountName.Text = "您好，OOO";
             // 
             // label3
             // 
@@ -246,17 +273,18 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 51);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button1";
+            this.button2.Text = "查詢";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_allSearch
             // 
-            this.button1.Location = new System.Drawing.Point(65, 500);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 51);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_allSearch.Location = new System.Drawing.Point(65, 500);
+            this.btn_allSearch.Name = "btn_allSearch";
+            this.btn_allSearch.Size = new System.Drawing.Size(102, 51);
+            this.btn_allSearch.TabIndex = 1;
+            this.btn_allSearch.Text = "查詢全部";
+            this.btn_allSearch.UseVisualStyleBackColor = true;
+            this.btn_allSearch.Click += new System.EventHandler(this.btn_allSearch_Click);
             // 
             // splitContainer2
             // 
@@ -267,7 +295,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Panel1.Controls.Add(this.ddv_orderDetails);
             // 
             // splitContainer2.Panel2
             // 
@@ -276,15 +304,15 @@
             this.splitContainer2.SplitterDistance = 320;
             this.splitContainer2.TabIndex = 0;
             // 
-            // dataGridView1
+            // ddv_orderDetails
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 320);
-            this.dataGridView1.TabIndex = 0;
+            this.ddv_orderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ddv_orderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ddv_orderDetails.Location = new System.Drawing.Point(0, 0);
+            this.ddv_orderDetails.Name = "ddv_orderDetails";
+            this.ddv_orderDetails.RowTemplate.Height = 24;
+            this.ddv_orderDetails.Size = new System.Drawing.Size(543, 320);
+            this.ddv_orderDetails.TabIndex = 0;
             // 
             // chart1
             // 
@@ -296,6 +324,7 @@
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
@@ -305,22 +334,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.btn_updata);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.txt_seats);
             this.tabPage2.Controls.Add(this.txt_password);
-            this.tabPage2.Controls.Add(this.txt_storeName);
-            this.tabPage2.Controls.Add(this.txt_storePhone);
             this.tabPage2.Controls.Add(this.txt_address);
             this.tabPage2.Controls.Add(this.txt_accountName);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -330,6 +350,248 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "資料管理";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.close_mm);
+            this.groupBox3.Controls.Add(this.groupBox2);
+            this.groupBox3.Controls.Add(this.txt_email);
+            this.groupBox3.Controls.Add(this.txt_web);
+            this.groupBox3.Controls.Add(this.txt_storeName);
+            this.groupBox3.Controls.Add(this.close_hh);
+            this.groupBox3.Controls.Add(this.open_mm);
+            this.groupBox3.Controls.Add(this.txt_storePhone);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.open_hh);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.txt_seats);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Location = new System.Drawing.Point(22, 78);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(453, 412);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "修改基本資訊";
+            // 
+            // close_mm
+            // 
+            this.close_mm.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.close_mm.Location = new System.Drawing.Point(124, 328);
+            this.close_mm.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.close_mm.Name = "close_mm";
+            this.close_mm.Size = new System.Drawing.Size(51, 22);
+            this.close_mm.TabIndex = 9;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txt_newDoubleCheckPassword);
+            this.groupBox2.Controls.Add(this.txt_newPassword);
+            this.groupBox2.Location = new System.Drawing.Point(195, 254);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(233, 152);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "修改密碼";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(23, 82);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(101, 12);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "再輸入一次新密碼";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "新密碼";
+            // 
+            // txt_newDoubleCheckPassword
+            // 
+            this.txt_newDoubleCheckPassword.Location = new System.Drawing.Point(25, 97);
+            this.txt_newDoubleCheckPassword.Name = "txt_newDoubleCheckPassword";
+            this.txt_newDoubleCheckPassword.Size = new System.Drawing.Size(179, 22);
+            this.txt_newDoubleCheckPassword.TabIndex = 0;
+            // 
+            // txt_newPassword
+            // 
+            this.txt_newPassword.Location = new System.Drawing.Point(25, 54);
+            this.txt_newPassword.Name = "txt_newPassword";
+            this.txt_newPassword.Size = new System.Drawing.Size(179, 22);
+            this.txt_newPassword.TabIndex = 0;
+            // 
+            // txt_email
+            // 
+            this.txt_email.Location = new System.Drawing.Point(25, 219);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(403, 22);
+            this.txt_email.TabIndex = 0;
+            // 
+            // txt_web
+            // 
+            this.txt_web.Location = new System.Drawing.Point(25, 173);
+            this.txt_web.Name = "txt_web";
+            this.txt_web.Size = new System.Drawing.Size(403, 22);
+            this.txt_web.TabIndex = 0;
+            // 
+            // txt_storeName
+            // 
+            this.txt_storeName.Location = new System.Drawing.Point(25, 35);
+            this.txt_storeName.Name = "txt_storeName";
+            this.txt_storeName.Size = new System.Drawing.Size(403, 22);
+            this.txt_storeName.TabIndex = 0;
+            // 
+            // close_hh
+            // 
+            this.close_hh.Location = new System.Drawing.Point(40, 328);
+            this.close_hh.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.close_hh.Name = "close_hh";
+            this.close_hh.Size = new System.Drawing.Size(51, 22);
+            this.close_hh.TabIndex = 9;
+            this.close_hh.Value = new decimal(new int[] {
+            21,
+            0,
+            0,
+            0});
+            // 
+            // open_mm
+            // 
+            this.open_mm.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.open_mm.Location = new System.Drawing.Point(124, 285);
+            this.open_mm.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.open_mm.Name = "open_mm";
+            this.open_mm.Size = new System.Drawing.Size(51, 22);
+            this.open_mm.TabIndex = 9;
+            this.open_mm.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // txt_storePhone
+            // 
+            this.txt_storePhone.Location = new System.Drawing.Point(25, 81);
+            this.txt_storePhone.Name = "txt_storePhone";
+            this.txt_storePhone.Size = new System.Drawing.Size(403, 22);
+            this.txt_storePhone.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(23, 204);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 12);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "E-Mail";
+            // 
+            // open_hh
+            // 
+            this.open_hh.Location = new System.Drawing.Point(40, 285);
+            this.open_hh.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.open_hh.Name = "open_hh";
+            this.open_hh.Size = new System.Drawing.Size(51, 22);
+            this.open_hh.TabIndex = 9;
+            this.open_hh.Value = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 158);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 12);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "網址";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "電話";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "店名";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 313);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "閉店時間";
+            // 
+            // txt_seats
+            // 
+            this.txt_seats.Location = new System.Drawing.Point(25, 127);
+            this.txt_seats.Name = "txt_seats";
+            this.txt_seats.Size = new System.Drawing.Size(403, 22);
+            this.txt_seats.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 269);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "營業時間";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "座位";
             // 
             // groupBox1
             // 
@@ -348,24 +610,24 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.listBox1);
+            this.splitContainer5.Panel1.Controls.Add(this.listBox_storeType);
             // 
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer5.Size = new System.Drawing.Size(319, 403);
-            this.splitContainer5.SplitterDistance = 124;
+            this.splitContainer5.SplitterDistance = 123;
             this.splitContainer5.TabIndex = 1;
             // 
-            // listBox1
+            // listBox_storeType
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(124, 403);
-            this.listBox1.TabIndex = 0;
+            this.listBox_storeType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_storeType.FormattingEnabled = true;
+            this.listBox_storeType.ItemHeight = 12;
+            this.listBox_storeType.Location = new System.Drawing.Point(0, 0);
+            this.listBox_storeType.Name = "listBox_storeType";
+            this.listBox_storeType.Size = new System.Drawing.Size(123, 403);
+            this.listBox_storeType.TabIndex = 0;
             // 
             // splitContainer6
             // 
@@ -381,8 +643,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.txt_searchStyle);
-            this.splitContainer6.Panel2.Controls.Add(this.listBox2);
-            this.splitContainer6.Size = new System.Drawing.Size(191, 403);
+            this.splitContainer6.Panel2.Controls.Add(this.listBox_allType);
+            this.splitContainer6.Size = new System.Drawing.Size(192, 403);
             this.splitContainer6.SplitterDistance = 63;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -394,6 +656,7 @@
             this.btn_remove.TabIndex = 2;
             this.btn_remove.Text = ">>";
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // btn_add
             // 
@@ -403,84 +666,50 @@
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "<<";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // listBox2
+            // txt_searchStyle
             // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(0, 27);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(124, 376);
-            this.listBox2.TabIndex = 0;
+            this.txt_searchStyle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_searchStyle.Location = new System.Drawing.Point(0, 0);
+            this.txt_searchStyle.Name = "txt_searchStyle";
+            this.txt_searchStyle.Size = new System.Drawing.Size(125, 22);
+            this.txt_searchStyle.TabIndex = 2;
+            this.txt_searchStyle.TextChanged += new System.EventHandler(this.txt_searchStyle_TextChanged);
             // 
-            // button3
+            // listBox_allType
             // 
-            this.button3.Location = new System.Drawing.Point(258, 509);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.listBox_allType.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBox_allType.FormattingEnabled = true;
+            this.listBox_allType.ItemHeight = 12;
+            this.listBox_allType.Location = new System.Drawing.Point(0, 27);
+            this.listBox_allType.Name = "listBox_allType";
+            this.listBox_allType.Size = new System.Drawing.Size(125, 376);
+            this.listBox_allType.TabIndex = 0;
             // 
-            // label10
+            // btn_updata
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(182, 367);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "閉店時間";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(182, 315);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "營業時間";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(182, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 12);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "座位";
+            this.btn_updata.Location = new System.Drawing.Point(223, 554);
+            this.btn_updata.Name = "btn_updata";
+            this.btn_updata.Size = new System.Drawing.Size(75, 23);
+            this.btn_updata.TabIndex = 2;
+            this.btn_updata.Text = "修改";
+            this.btn_updata.UseVisualStyleBackColor = true;
+            this.btn_updata.Click += new System.EventHandler(this.btn_updata_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(182, 446);
+            this.label12.Location = new System.Drawing.Point(174, 511);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 1;
             this.label12.Text = "密碼";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 137);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 12);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "店名";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "電話";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 89);
+            this.label5.Location = new System.Drawing.Point(193, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 1;
@@ -489,68 +718,33 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(182, 40);
+            this.label4.Location = new System.Drawing.Point(20, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 1;
             this.label4.Text = "帳號名稱";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(184, 382);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(230, 22);
-            this.textBox7.TabIndex = 0;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(184, 330);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(230, 22);
-            this.textBox6.TabIndex = 0;
-            // 
-            // txt_seats
-            // 
-            this.txt_seats.Location = new System.Drawing.Point(184, 269);
-            this.txt_seats.Name = "txt_seats";
-            this.txt_seats.Size = new System.Drawing.Size(230, 22);
-            this.txt_seats.TabIndex = 0;
-            // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(184, 461);
+            this.txt_password.Location = new System.Drawing.Point(176, 526);
             this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(230, 22);
+            this.txt_password.Size = new System.Drawing.Size(179, 22);
             this.txt_password.TabIndex = 0;
-            // 
-            // txt_storeName
-            // 
-            this.txt_storeName.Location = new System.Drawing.Point(184, 152);
-            this.txt_storeName.Name = "txt_storeName";
-            this.txt_storeName.Size = new System.Drawing.Size(230, 22);
-            this.txt_storeName.TabIndex = 0;
-            // 
-            // txt_storePhone
-            // 
-            this.txt_storePhone.Location = new System.Drawing.Point(184, 208);
-            this.txt_storePhone.Name = "txt_storePhone";
-            this.txt_storePhone.Size = new System.Drawing.Size(230, 22);
-            this.txt_storePhone.TabIndex = 0;
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(184, 104);
+            this.txt_address.Location = new System.Drawing.Point(195, 36);
             this.txt_address.Name = "txt_address";
             this.txt_address.ReadOnly = true;
-            this.txt_address.Size = new System.Drawing.Size(230, 22);
+            this.txt_address.Size = new System.Drawing.Size(289, 22);
             this.txt_address.TabIndex = 0;
             // 
             // txt_accountName
             // 
-            this.txt_accountName.Location = new System.Drawing.Point(184, 55);
+            this.txt_accountName.Location = new System.Drawing.Point(22, 36);
             this.txt_accountName.Name = "txt_accountName";
             this.txt_accountName.ReadOnly = true;
-            this.txt_accountName.Size = new System.Drawing.Size(230, 22);
+            this.txt_accountName.Size = new System.Drawing.Size(158, 22);
             this.txt_accountName.TabIndex = 0;
             // 
             // tabPage3
@@ -736,23 +930,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // lab_accountName
-            // 
-            this.lab_accountName.AutoSize = true;
-            this.lab_accountName.Location = new System.Drawing.Point(27, 20);
-            this.lab_accountName.Name = "lab_accountName";
-            this.lab_accountName.Size = new System.Drawing.Size(65, 12);
-            this.lab_accountName.TabIndex = 4;
-            this.lab_accountName.Text = "您好，OOO";
-            // 
-            // txt_searchStyle
-            // 
-            this.txt_searchStyle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txt_searchStyle.Location = new System.Drawing.Point(0, 0);
-            this.txt_searchStyle.Name = "txt_searchStyle";
-            this.txt_searchStyle.Size = new System.Drawing.Size(124, 22);
-            this.txt_searchStyle.TabIndex = 2;
-            // 
             // Frm_StoreManagerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -772,10 +949,18 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddv_orderDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close_mm)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.close_hh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.open_mm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.open_hh)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
@@ -820,11 +1005,11 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_allSearch;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ddv_orderDetails;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_updata;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -833,8 +1018,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox txt_seats;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.TextBox txt_storeName;
@@ -861,12 +1044,26 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox_storeType;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.Button btn_remove;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox_allType;
         private System.Windows.Forms.Label lab_accountName;
         private System.Windows.Forms.TextBox txt_searchStyle;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown close_mm;
+        private System.Windows.Forms.NumericUpDown close_hh;
+        private System.Windows.Forms.NumericUpDown open_mm;
+        private System.Windows.Forms.NumericUpDown open_hh;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_newDoubleCheckPassword;
+        private System.Windows.Forms.TextBox txt_newPassword;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.TextBox txt_web;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }

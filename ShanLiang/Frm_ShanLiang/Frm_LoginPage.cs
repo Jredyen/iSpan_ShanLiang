@@ -20,7 +20,7 @@ namespace Frm_ShanLiang
     public partial class Frm_LoginPage : Form
     {
         Frm_Homepage _homepage;
-        CCustomers GetC = new CCustomers();
+        CCustomers customers = new CCustomers();
         public Frm_LoginPage()
         {
             InitializeComponent();
@@ -81,13 +81,13 @@ namespace Frm_ShanLiang
                         if (Identification == 1)//如果是1轉跳到會員頁面//不跳轉，改由首頁由使用者操作
                         {
                             //new Frm_MemberPage().Show();
-                            GetC.memberDataLoad((string)reader[1]);
+                            customers.memberDataLoad((string)reader[1]);
                             Close();
                         }
                         else if (Identification == 2)//如果是2轉跳到店家頁面//不跳轉，改由首頁由使用者操作
                         {
                             //new Frm_StoreManagerPage().Show();
-                            GetC.storeDataLoad((string)reader[1]);
+                            customers.storeDataLoad((string)reader[1]);
                             Close();
                         }
                     }

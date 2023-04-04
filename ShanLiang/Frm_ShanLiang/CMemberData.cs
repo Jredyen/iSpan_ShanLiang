@@ -8,6 +8,7 @@ namespace Frm_ShanLiang
 {
     internal class CMemberData : CNowLoginAccount
     {
+        internal static int? _memberId {  get; set; }
         internal static string _memberphone { get; set; }
         internal static string _memberName { get; set; }
         internal static string _email { get; set; }

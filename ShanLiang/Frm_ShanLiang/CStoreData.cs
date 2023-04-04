@@ -8,6 +8,7 @@ namespace Frm_ShanLiang
 {
     public class CStoreData : CNowLoginAccount
     {
+        internal static int? _storeID {  get; set; }
         internal static string _storyName { get; set; }
         internal static string _taxID { get; set; }
         internal static string _restaurantName { get; set; }
@@ -16,5 +17,7 @@ namespace Frm_ShanLiang
         internal static int? _seats { get; set; }
         internal static string _website { get; set; }
         internal static string _storeMail { get; set; }
+        internal static TimeSpan? _openTime { get; set; }
+        internal static TimeSpan? _closeTime { get; set; }
     }
 }

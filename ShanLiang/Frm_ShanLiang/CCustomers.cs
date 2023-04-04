@@ -16,6 +16,7 @@ namespace Frm_ShanLiang
             Member member = SLE.Members.Where(n => n.AccountName == accountName).FirstOrDefault();
             if (member != null)
             {
+                CMemberData._memberId = member.MemberID;
                 CMemberData._memberName = member.MemberName;
                 CMemberData._address = member.Address;
                 CMemberData._brithDate = (DateTime)member.BrithDate;
@@ -29,6 +30,7 @@ namespace Frm_ShanLiang
             Store store = SLE.Stores.Where(n => n.AccountName == accountName).FirstOrDefault();
             if (store != null)
             {
+                CStoreData._storeID = store.StoreID;
                 CStoreData._storyName = store.AccountName;
                 CStoreData._taxID = store.TaxID;
                 CStoreData._restaurantName = store.RestaurantName;
@@ -37,6 +39,8 @@ namespace Frm_ShanLiang
                 CStoreData._storeMail = store.StoreMail;
                 CStoreData._seats = (int)store.Seats;
                 CStoreData._website = store.Website;
+                CStoreData._openTime = store.OpeningTime;
+                CStoreData._closeTime = store.ClosingTime;
             }
         }
         internal void logout()
@@ -46,6 +50,7 @@ namespace Frm_ShanLiang
         }
         internal void clearMemberData()
         {
+            CMemberData._memberId = null;
             CMemberData._memberName = null;
             CMemberData._address = null;
             CMemberData._brithDate = null;
@@ -55,6 +60,7 @@ namespace Frm_ShanLiang
         }
         internal void clearStoreData()
         {
+            CStoreData._storeID = null;
             CStoreData._storyName = null;
             CStoreData._taxID = null;
             CStoreData._restaurantName = null;
@@ -63,6 +69,8 @@ namespace Frm_ShanLiang
             CStoreData._storeMail = null;
             CStoreData._seats = null;
             CStoreData._website = null;
+            CStoreData._openTime = null;
+            CStoreData._closeTime = null;
         }
     }
 }
