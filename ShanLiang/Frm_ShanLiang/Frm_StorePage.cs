@@ -31,26 +31,38 @@ namespace Frm_ShanLiang
             //載入店家資訊
             ShowStoreData();
 
-
-
             //隨機載入店家CStorePage._sid = SLE.Stores.OrderBy(id => Guid.NewGuid()).First().StoreID;
         }
 
         public void ShowStoreData()
         {
+            //取得當下_sid的_list
+            Store store = cSP.getCurrent();
+            //店名
+            labResName.Text = store.RestaurantName;
+            //地址
+            labResAddress.Text = store.RestaurantAddress;
+            //電話
+            labResPhone.Text = store.RestaurantPhone;
+            //座位
+            labSeat.Text = $"1 / {store.Seats}";
+            //營業時間
+            labOpenTime.Text = $"{store.OpeningTime} - {store.ClosingTime}";
             //店家圖片
-            var qImg = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.StoreImage);
-            foreach (var item in qImg)
+            if (store.StoreImage == null)
+                pictureBox1.Image = null;
+            else
             {
-                if(item==null)
-                    pictureBox1.Image = null;
-                else
-                {
-                    MemoryStream ms = new MemoryStream(item);
-                    pictureBox1.Image = Image.FromStream(ms);
-                }                                                  
+                MemoryStream ms = new MemoryStream(store.StoreImage);
+                pictureBox1.Image = Image.FromStream(ms);
             }
-            //店家類型
+            //評分            
+            labRating.Text = $"{store.Rating:F1}";
+            labStar.Text = null;
+            for (int i = 0; i < store.Rating; i++)
+                labStar.Text += "★";
+
+            //店家類型(Store_Type)
             var qType = SLE.Store_Type.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Restaurant_Type.TypeName);
             flowLayoutPanel1.Controls.Clear();
             foreach (var item in qType)
@@ -66,40 +78,8 @@ namespace Frm_ShanLiang
                 linkLab.Text = item;
                 flowLayoutPanel1.Controls.Add(linkLab);
             }
-            //店名
-            var qName = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.RestaurantName);
-            foreach (var item in qName)
-                labResName.Text = item;
-            //Store store = cSP.getCurrent();
-            //labResName.Text = store.RestaurantName;
 
-            //評分
-            var qRating = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Rating);
-            labStar.Text = null;
-            foreach (var item in qRating)
-            {
-                labRating.Text = $"{item.Value:F1}";
-                for (int m = 0; m < item.Value; m++)
-                    labStar.Text += "★";
-            }
-            //地址
-            var qAd = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.RestaurantAddress);
-            foreach (var item in qAd)
-                labResAddress.Text = item;
-            //營業時間
-            var qTime = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => new { n.OpeningTime, n.ClosingTime });
-            foreach (var item in qTime)
-                labOpenTime.Text = $"{item.OpeningTime} - {item.ClosingTime}";
-            //電話
-            var qPhone = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.RestaurantPhone);
-            foreach (var item in qPhone)
-                labResPhone.Text = item;
-            //空位
-            var qSeat = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Seats);
-            foreach (var item in qSeat)
-                labSeat.Text = $"1 / {item.ToString()}";
-
-            //評論區
+            //評論區(Store_Evaluate)
             var qCName = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Member.MemberName);
             foreach (var item in qCName)
                 labCmtName.Text = item;
@@ -116,7 +96,6 @@ namespace Frm_ShanLiang
             var qCmt = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Comments);
             foreach (var item in qCmt)
                 labCmt.Text = item;
-
         }                
         public void LoadBtnImg()
         {
@@ -165,28 +144,28 @@ namespace Frm_ShanLiang
                     btnBranch4.BackgroundImage = Image.FromStream(ms);
                 }                
             }
-        }
+        }//載入分店圖片
         private void btnBranch1_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 1;
-            ShowStoreData();            
+            cSP.OutsideShow();
         }
         private void btnBranch2_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 8;
-            ShowStoreData();
+            cSP.OutsideShow();
         }
 
         private void btnBranch3_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 6;
-            ShowStoreData();
+            cSP.OutsideShow();
         }
 
         private void btnBranch4_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 12;
-            ShowStoreData();
+            cSP.OutsideShow();
         }
 
         private void bnt_login_Click(object sender, EventArgs e)
@@ -216,14 +195,16 @@ namespace Frm_ShanLiang
             if(b)
             {
                 b = false;
-                btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_icon;
+                btnLike.Image = Properties.Resources.like_icon;
+
             }
             else
             {
                 b = true;
-                btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_love_icon;                
+                btnLike.Image = Properties.Resources.like_love_icon;        
+                
             }
             
-        }
+        }//收藏
     }
 }
