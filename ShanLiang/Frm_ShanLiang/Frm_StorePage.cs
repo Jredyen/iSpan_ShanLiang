@@ -103,6 +103,20 @@ namespace Frm_ShanLiang
             var qCName = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Member.MemberName);
             foreach (var item in qCName)
                 labCmtName.Text = item;
+            var qCRating = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Rating);
+            labCmtStar.Text = null;
+            foreach (var item in qCRating)
+            {               
+                for (int m = 0; m < item.Value; m++)
+                    labCmtStar.Text += "★";
+            }
+            var qCDate = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.EvaluateDate);
+            foreach (var item in qCDate)
+                labCmtDate.Text = $"{item}";
+            var qCmt = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Comments);
+            foreach (var item in qCmt)
+                labCmt.Text = item;
+
         }                
         public void LoadBtnImg()
         {
@@ -196,17 +210,18 @@ namespace Frm_ShanLiang
             fsr.Show();
         }//進入預約頁面
 
+        bool b = false;
         private void btnLike_Click(object sender, EventArgs e)
-        {
-            if(btnLike.BackColor == SystemColors.Control)
+        {            
+            if(b)
             {
-                btnLike.BackColor = Color.IndianRed;
-
+                b = false;
+                btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_icon;
             }
             else
             {
-                btnLike.BackColor = SystemColors.Control;
-
+                b = true;
+                btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_love_icon;                
             }
             
         }

@@ -255,6 +255,9 @@
     <None Include="Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg" />
     <None Include="Resources\352091_search_icon.png" />
     <None Include="Resources\登入畫面.png" />
+    <None Include="bin\Debug\like_love_icon.png" />
+    <None Include="bin\Debug\user_icon.png" />
+    <None Include="bin\Debug\like_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
