@@ -97,7 +97,12 @@ namespace Frm_ShanLiang
             //空位
             var qSeat = SLE.Stores.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Seats);
             foreach (var item in qSeat)
-                labSeat.Text = $"1 / {item.ToString()}";  
+                labSeat.Text = $"1 / {item.ToString()}";
+
+            //評論區
+            var qCName = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Member.MemberName);
+            foreach (var item in qCName)
+                labCmtName.Text = item;
         }                
         public void LoadBtnImg()
         {
@@ -183,6 +188,27 @@ namespace Frm_ShanLiang
         private void bnt_login_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+            Frm_StoreReserve fsr = new Frm_StoreReserve();
+            fsr.Show();
+        }//進入預約頁面
+
+        private void btnLike_Click(object sender, EventArgs e)
+        {
+            if(btnLike.BackColor == SystemColors.Control)
+            {
+                btnLike.BackColor = Color.IndianRed;
+
+            }
+            else
+            {
+                btnLike.BackColor = SystemColors.Control;
+
+            }
+            
         }
     }
 }
