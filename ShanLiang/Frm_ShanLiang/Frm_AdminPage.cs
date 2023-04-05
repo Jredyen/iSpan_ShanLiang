@@ -18,7 +18,7 @@ namespace Frm_ShanLiang
         public Frm_AdminPage()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 2;
+            tabControl1.SelectedIndex = 0;
             this.pictureBoxStoreImage.AllowDrop = true;
             this.pictureBoxStoreImage.DragEnter += pictureBoxStoreImage_DragEnter;
             this.pictureBoxStoreImage.DragDrop += pictureBoxStoreImage_DragDrop;
@@ -39,7 +39,11 @@ namespace Frm_ShanLiang
             this.dataGridViewStore.DataSource = null;
             this.dataGridViewStore.DataSource = _SLE.Stores.ToList();
         }
-
+        void Read_RefreshDataGridViewStoreImage()
+        {   //更新店家列表
+            this.dataGridViewStoreImage.DataSource = null;
+            this.dataGridViewStoreImage.DataSource = _SLE.Store_Image.ToList();
+        }
 
         //===============================帳號======================================
 
@@ -277,11 +281,109 @@ namespace Frm_ShanLiang
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-               
-            }
+                MessageBox.Show(ex.Message);               
+            }           
+        }
+        //===========================店家照片集==========================================
+        private void btn_readstoreimage_Click(object sender, EventArgs e)
+        {   //讀取Store_Image資料表 把StoreID放到combobox
 
-            
+            Read_RefreshDataGridViewStoreImage();
+
+            var q = (from p in _SLE.Store_Image
+                     select p.StoreID).Distinct();
+            foreach (var ID in q)
+            {
+                comboBoxStoreID.Items.Add(ID);                
+            }
+           
+            //var q = (from p in _SLE.Store_Image   //combobox同時顯示ID與Name 但沒辦法搜尋對應的圖片
+            //         join s in _SLE.Stores
+            //         on p.StoreID equals s.StoreID
+            //         select new { p.StoreID , s.RestaurantName }).Distinct();
+            //foreach (var ID in q)
+            //{
+            //    comboBoxStoreID.Items.Add(ID);
+            //}
+        }
+
+        private void dataGridViewStoreImage_CellClick(object sender, DataGridViewCellEventArgs e)
+        {    //把選到的欄位圖片放到picturebox瀏覽
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridViewStoreImage.Rows[e.RowIndex];                  
+                    byte[] imageData = (byte[])row.Cells["StoreImage"].Value;
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        image = Image.FromStream(ms);
+                    }                   
+                    pictureBoxStoreimages.Image = image;
+                }
+            }
+            catch (Exception)
+            {
+                pictureBoxStoreimages.Image = pictureBoxStoreimages.ErrorImage;
+            }
+        }
+
+        private void comboBoxStoreID_SelectedIndexChanged(object sender, EventArgs e)
+        {  //選擇StoreID會跳出該店家的圖片集
+            int comboboxID = Convert.ToInt16(comboBoxStoreID.Text);  //先將選到的comboBoxStoreID轉型int
+
+            var s = from p in _SLE.Stores     //查詢storeID對應到的店家名
+                    where p.StoreID == comboboxID
+                    select p.RestaurantName;
+            foreach (var storename in s)
+            {
+                LabelRestaurantname.Text = storename;
+            }
+            ShowImage(comboboxID);                     //顯示對應的店家圖片  
+        }
+        public void ShowImage(int storeID)
+        {  //用combobox選到的StoreID去搜尋圖片並放到picturebox
+            flowLayoutPanel1.Controls.Clear();
+            var q = from p in _SLE.Store_Image
+                    where p.StoreID == storeID
+                    select p.StoreImage;
+            foreach (byte[] img in q)
+            {
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Click += (sender, e) =>
+                {
+                    Form f = new Form();
+                    f.BackgroundImage = ((PictureBox)sender).Image;
+                    f.BackgroundImageLayout = ImageLayout.Stretch;
+                    f.Show();
+                };
+                MemoryStream ms = new MemoryStream(img);
+
+                Image image = Image.FromStream(ms);
+                pictureBox.Image = image;                              //轉好的資料放到pictureBox
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; //設定pictureBox屬性
+                pictureBox.BorderStyle = BorderStyle.Fixed3D;
+                pictureBox.Margin = new Padding(5, 5, 5, 5);
+                pictureBox.Padding = new Padding(5, 5, 5, 5);
+                pictureBox.BackColor = Color.Yellow;
+                pictureBox.Width = pictureBox.Height = 300;
+
+                pictureBox.MouseEnter += PictureBox_MouseEnter; ;
+                pictureBox.MouseLeave += PictureBox_MouseLeave; ;
+
+                flowLayoutPanel1.Controls.Add(pictureBox);
+            }
+        }
+
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+        {  //滑鼠放到圖片上的變化
+            ((PictureBox)sender).BackColor = Color.Red;
+        }
+
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {   //滑鼠離開圖片上的變化
+            ((PictureBox)sender).BackColor = Color.Yellow;
         }
     }
 }

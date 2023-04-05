@@ -12,8 +12,6 @@
         <EntityTypeShape EntityType="ShanLiangModel.District" Width="1.5" PointX="1.5" PointY="17.625" />
         <EntityTypeShape EntityType="ShanLiangModel.EatType_Method" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="ShanLiangModel.Identification" Width="1.5" PointX="9.625" PointY="1" />
-        <EntityTypeShape EntityType="ShanLiangModel.Meals_Image" Width="1.5" PointX="8.25" PointY="3.75" />
-        <EntityTypeShape EntityType="ShanLiangModel.Meals_Menu" Width="1.5" PointX="6" PointY="3.375" />
         <EntityTypeShape EntityType="ShanLiangModel.Member" Width="1.5" PointX="0.75" PointY="7" />
         <EntityTypeShape EntityType="ShanLiangModel.Member_Action" Width="1.5" PointX="3" PointY="11.375" />
         <EntityTypeShape EntityType="ShanLiangModel.Member_Coupon" Width="1.5" PointX="3" PointY="3.375" />
@@ -33,9 +31,6 @@
         <AssociationConnector Association="ShanLiangModel.FK_Order_Coupon" />
         <AssociationConnector Association="ShanLiangModel.FK_Store_District" />
         <AssociationConnector Association="ShanLiangModel.FK_Order_EatTypeMethod" />
-        <AssociationConnector Association="ShanLiangModel.FK_Meals_Image_Meals_Menu" />
-        <AssociationConnector Association="ShanLiangModel.FK_Meals_Menu_Store" />
-        <AssociationConnector Association="ShanLiangModel.FK_Order_Details_Meals_Menu" />
         <AssociationConnector Association="ShanLiangModel.FK_Customer_Coupon_Member" />
         <AssociationConnector Association="ShanLiangModel.FK_Member_Action_Member" />
         <AssociationConnector Association="ShanLiangModel.FK_Order_Member" />
@@ -49,6 +44,9 @@
         <AssociationConnector Association="ShanLiangModel.FK_Store_Type_Restaurant_Type" />
         <AssociationConnector Association="ShanLiangModel.FK_Store_Evaluate_Store" />
         <AssociationConnector Association="ShanLiangModel.FK_Store_Type_Store" />
+        <EntityTypeShape EntityType="ShanLiangModel.Store_Image" Width="1.5" PointX="6.625" PointY="15.375" IsExpanded="true" />
+        <AssociationConnector Association="ShanLiangModel.FK_Meals_Menu_Store" ManuallyRouted="false" >
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

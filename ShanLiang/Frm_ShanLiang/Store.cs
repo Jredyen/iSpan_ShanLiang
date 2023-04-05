@@ -14,6 +14,12 @@ namespace Frm_ShanLiang
     
     public partial class Store
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Store()
+        {
+            this.Store_Image = new HashSet<Store_Image>();
+        }
+    
         public int StoreID { get; set; }
         public string AccountName { get; set; }
         public string TaxID { get; set; }
@@ -30,5 +36,8 @@ namespace Frm_ShanLiang
         public byte[] StoreImage { get; set; }
         public Nullable<int> Rating { get; set; }
         public string StoreMail { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Store_Image> Store_Image { get; set; }
     }
 }

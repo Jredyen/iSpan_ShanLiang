@@ -12,12 +12,10 @@ namespace Frm_ShanLiang
     using System;
     using System.Collections.Generic;
     
-    public partial class Meals_Image
+    public partial class Store_Image
     {
-        public int ImageNo_ { get; set; }
-        public Nullable<int> MealsID { get; set; }
-        public byte[] MealsImage { get; set; }
-    
-        public virtual Meals_Menu Meals_Menu { get; set; }
+        public int ImageNo { get; set; }
+        public Nullable<int> StoreID { get; set; }
+        public byte[] StoreImage { get; set; }
     }
 }

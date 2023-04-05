@@ -19,7 +19,6 @@ namespace Frm_ShanLiang
         public string MealsName { get; set; }
         public Nullable<decimal> MealsPrice { get; set; }
     
-        public virtual Meals_Menu Meals_Menu { get; set; }
         public virtual Order Order { get; set; }
     }
 }

@@ -61,23 +61,6 @@
           <Property Name="IdentificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdentificationName" Type="nvarchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="Meals_Image">
-          <Key>
-            <PropertyRef Name="ImageNo." />
-          </Key>
-          <Property Name="ImageNo." Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MealsID" Type="int" />
-          <Property Name="MealsImage" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="Meals_Menu">
-          <Key>
-            <PropertyRef Name="MealsID" />
-          </Key>
-          <Property Name="MealsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StoreID" Type="int" />
-          <Property Name="MealsName" Type="nvarchar" MaxLength="30" />
-          <Property Name="MealsPrice" Type="money" />
-        </EntityType>
         <EntityType Name="Member">
           <Key>
             <PropertyRef Name="MemberID" />
@@ -188,6 +171,14 @@
           <Property Name="Rating" Type="int" />
           <Property Name="EvaluateDate" Type="date" />
         </EntityType>
+        <EntityType Name="Store_Image">
+          <Key>
+            <PropertyRef Name="ImageNo" />
+          </Key>
+          <Property Name="ImageNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="StoreImage" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Store_Type">
           <Key>
             <PropertyRef Name="No." />
@@ -254,26 +245,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Meals_Image_Meals_Menu">
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="0..1" />
-          <End Role="Meals_Image" Type="Self.Meals_Image" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Meals_Menu">
-              <PropertyRef Name="MealsID" />
-            </Principal>
-            <Dependent Role="Meals_Image">
-              <PropertyRef Name="MealsID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Meals_Menu_Store">
           <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="*" />
+          <End Role="Store_Image" Type="Self.Store_Image" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Store">
               <PropertyRef Name="StoreID" />
             </Principal>
-            <Dependent Role="Meals_Menu">
+            <Dependent Role="Store_Image">
               <PropertyRef Name="StoreID" />
             </Dependent>
           </ReferentialConstraint>
@@ -335,18 +314,6 @@
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="CouponID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Details_Meals_Menu">
-          <End Role="Meals_Menu" Type="Self.Meals_Menu" Multiplicity="1" />
-          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Meals_Menu">
-              <PropertyRef Name="MealsID" />
-            </Principal>
-            <Dependent Role="Order_Details">
-              <PropertyRef Name="MealsID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -490,8 +457,6 @@
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EatType_Method" EntityType="Self.EatType_Method" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Identification" EntityType="Self.Identification" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Meals_Image" EntityType="Self.Meals_Image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Meals_Menu" EntityType="Self.Meals_Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member_Action" EntityType="Self.Member_Action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member_Coupon" EntityType="Self.Member_Coupon" Schema="dbo" store:Type="Tables" />
@@ -502,6 +467,7 @@
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Store_Evaluate" EntityType="Self.Store_Evaluate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store_Image" EntityType="Self.Store_Image" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Store_Type" EntityType="Self.Store_Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Account_Identification1" Association="Self.FK_Account_Identification1">
@@ -520,13 +486,9 @@
             <End Role="City" EntitySet="City" />
             <End Role="District" EntitySet="District" />
           </AssociationSet>
-          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="Self.FK_Meals_Image_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Meals_Image" EntitySet="Meals_Image" />
-          </AssociationSet>
           <AssociationSet Name="FK_Meals_Menu_Store" Association="Self.FK_Meals_Menu_Store">
             <End Role="Store" EntitySet="Store" />
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
+            <End Role="Store_Image" EntitySet="Store_Image" />
           </AssociationSet>
           <AssociationSet Name="FK_Member_Action_Action" Association="Self.FK_Member_Action_Action">
             <End Role="Action" EntitySet="Action" />
@@ -547,10 +509,6 @@
           <AssociationSet Name="FK_Order_Coupon" Association="Self.FK_Order_Coupon">
             <End Role="Coupon" EntitySet="Coupon" />
             <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="Self.FK_Order_Details_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Details_Order" Association="Self.FK_Order_Details_Order">
             <End Role="Order" EntitySet="Order" />
@@ -609,8 +567,6 @@
           <EntitySet Name="Districts" EntityType="ShanLiangModel.District" />
           <EntitySet Name="EatType_Method" EntityType="ShanLiangModel.EatType_Method" />
           <EntitySet Name="Identifications" EntityType="ShanLiangModel.Identification" />
-          <EntitySet Name="Meals_Image" EntityType="ShanLiangModel.Meals_Image" />
-          <EntitySet Name="Meals_Menu" EntityType="ShanLiangModel.Meals_Menu" />
           <EntitySet Name="Members" EntityType="ShanLiangModel.Member" />
           <EntitySet Name="Member_Action" EntityType="ShanLiangModel.Member_Action" />
           <EntitySet Name="Member_Coupon" EntityType="ShanLiangModel.Member_Coupon" />
@@ -650,18 +606,6 @@
           <AssociationSet Name="FK_Order_EatTypeMethod" Association="ShanLiangModel.FK_Order_EatTypeMethod">
             <End Role="EatType_Method" EntitySet="EatType_Method" />
             <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meals_Image_Meals_Menu" Association="ShanLiangModel.FK_Meals_Image_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Meals_Image" EntitySet="Meals_Image" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meals_Menu_Store" Association="ShanLiangModel.FK_Meals_Menu_Store">
-            <End Role="Store" EntitySet="Stores" />
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Details_Meals_Menu" Association="ShanLiangModel.FK_Order_Details_Meals_Menu">
-            <End Role="Meals_Menu" EntitySet="Meals_Menu" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Customer_Coupon_Member" Association="ShanLiangModel.FK_Customer_Coupon_Member">
             <End Role="Member" EntitySet="Members" />
@@ -714,6 +658,11 @@
           <AssociationSet Name="FK_Store_Type_Store" Association="ShanLiangModel.FK_Store_Type_Store">
             <End Role="Store" EntitySet="Stores" />
             <End Role="Store_Type" EntitySet="Store_Type" />
+          </AssociationSet>
+          <EntitySet Name="Store_Image" EntityType="ShanLiangModel.Store_Image" />
+          <AssociationSet Name="FK_Meals_Menu_Store" Association="ShanLiangModel.FK_Meals_Menu_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Store_Image" EntitySet="Store_Image" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
@@ -778,27 +727,6 @@
           </Key>
           <Property Name="IdentificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdentificationName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Meals_Image">
-          <Key>
-            <PropertyRef Name="ImageNo_" />
-          </Key>
-          <Property Name="ImageNo_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MealsID" Type="Int32" />
-          <Property Name="MealsImage" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Meals_Image_Meals_Menu" FromRole="Meals_Image" ToRole="Meals_Menu" />
-        </EntityType>
-        <EntityType Name="Meals_Menu">
-          <Key>
-            <PropertyRef Name="MealsID" />
-          </Key>
-          <Property Name="MealsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StoreID" Type="Int32" />
-          <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Meals_Image" Relationship="ShanLiangModel.FK_Meals_Image_Meals_Menu" FromRole="Meals_Menu" ToRole="Meals_Image" />
-          <NavigationProperty Name="Store" Relationship="ShanLiangModel.FK_Meals_Menu_Store" FromRole="Meals_Menu" ToRole="Store" />
-          <NavigationProperty Name="Order_Details" Relationship="ShanLiangModel.FK_Order_Details_Meals_Menu" FromRole="Meals_Menu" ToRole="Order_Details" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -869,7 +797,6 @@
           <Property Name="MealsID" Type="Int32" Nullable="false" />
           <Property Name="MealsName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MealsPrice" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Meals_Menu" Relationship="ShanLiangModel.FK_Order_Details_Meals_Menu" FromRole="Order_Details" ToRole="Meals_Menu" />
           <NavigationProperty Name="Order" Relationship="ShanLiangModel.FK_Order_Details_Order" FromRole="Order_Details" ToRole="Order" />
         </EntityType>
         <EntityType Name="Payment_Method">
@@ -917,6 +844,7 @@
           <Property Name="StoreImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="StoreMail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Store_Image" Relationship="ShanLiangModel.FK_Meals_Menu_Store" FromRole="Store" ToRole="Store_Image" />
         </EntityType>
         <EntityType Name="Store_Evaluate">
           <Key>
@@ -1032,42 +960,6 @@
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="EatTypeMethodID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Meals_Image_Meals_Menu">
-          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="0..1" />
-          <End Type="ShanLiangModel.Meals_Image" Role="Meals_Image" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Meals_Menu">
-              <PropertyRef Name="MealsID" />
-            </Principal>
-            <Dependent Role="Meals_Image">
-              <PropertyRef Name="MealsID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Meals_Menu_Store">
-          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
-          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Store">
-              <PropertyRef Name="StoreID" />
-            </Principal>
-            <Dependent Role="Meals_Menu">
-              <PropertyRef Name="StoreID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Details_Meals_Menu">
-          <End Type="ShanLiangModel.Meals_Menu" Role="Meals_Menu" Multiplicity="1" />
-          <End Type="ShanLiangModel.Order_Details" Role="Order_Details" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Meals_Menu">
-              <PropertyRef Name="MealsID" />
-            </Principal>
-            <Dependent Role="Order_Details">
-              <PropertyRef Name="MealsID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1227,6 +1119,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Store_Image">
+          <Key>
+            <PropertyRef Name="ImageNo" />
+          </Key>
+          <Property Name="ImageNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="StoreImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Meals_Menu_Store">
+          <End Type="ShanLiangModel.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="ShanLiangModel.Store_Image" Role="Store_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Store_Image">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1293,25 +1205,6 @@
               <MappingFragment StoreEntitySet="Identification">
                 <ScalarProperty Name="IdentificationName" ColumnName="IdentificationName" />
                 <ScalarProperty Name="IdentificationID" ColumnName="IdentificationID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Meals_Image">
-            <EntityTypeMapping TypeName="ShanLiangModel.Meals_Image">
-              <MappingFragment StoreEntitySet="Meals_Image">
-                <ScalarProperty Name="MealsImage" ColumnName="MealsImage" />
-                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
-                <ScalarProperty Name="ImageNo_" ColumnName="ImageNo." />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Meals_Menu">
-            <EntityTypeMapping TypeName="ShanLiangModel.Meals_Menu">
-              <MappingFragment StoreEntitySet="Meals_Menu">
-                <ScalarProperty Name="MealsPrice" ColumnName="MealsPrice" />
-                <ScalarProperty Name="MealsName" ColumnName="MealsName" />
-                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-                <ScalarProperty Name="MealsID" ColumnName="MealsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1451,6 +1344,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Store_Image">
+            <EntityTypeMapping TypeName="ShanLiangModel.Store_Image">
+              <MappingFragment StoreEntitySet="Store_Image">
+                <ScalarProperty Name="StoreImage" ColumnName="StoreImage" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="ImageNo" ColumnName="ImageNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
