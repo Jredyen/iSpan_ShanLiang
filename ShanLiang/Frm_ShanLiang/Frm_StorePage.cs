@@ -37,7 +37,7 @@ namespace Frm_ShanLiang
         public void ShowStoreData()
         {
             //取得當下_sid的_list
-            Store store = cSP.getCurrent();
+            Store store = cSP.GetCurrent();
             //店名
             labResName.Text = store.RestaurantName;
             //地址
@@ -148,24 +148,24 @@ namespace Frm_ShanLiang
         private void btnBranch1_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 1;
-            cSP.OutsideShow();
+            cSP.ShowNewStore();
         }
         private void btnBranch2_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 8;
-            cSP.OutsideShow();
+            cSP.ShowNewStore();
         }
 
         private void btnBranch3_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 6;
-            cSP.OutsideShow();
+            cSP.ShowNewStore();
         }
 
         private void btnBranch4_Click(object sender, EventArgs e)
         {
             CStorePage._sid = 12;
-            cSP.OutsideShow();
+            cSP.ShowNewStore();
         }
 
         private void bnt_login_Click(object sender, EventArgs e)

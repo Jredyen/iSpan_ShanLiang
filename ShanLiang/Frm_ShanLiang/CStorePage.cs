@@ -65,7 +65,7 @@ namespace Frm_ShanLiang
 
             _list.Add(store);//加入一筆新Store進_list
         }
-        public Store getCurrent()
+        public Store GetCurrent()
         {
             foreach (var item in _list)
                 if(item.StoreID == _sid)
@@ -75,7 +75,7 @@ namespace Frm_ShanLiang
             return null;
         }//取得當下_sid的_list
 
-        public void OutsideShow()
+        public void ShowNewStore()
         {
             LoadStoreData();
             cSS();
