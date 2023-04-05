@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.AxHost;
 
 namespace Frm_ShanLiang
@@ -79,23 +80,29 @@ namespace Frm_ShanLiang
                 flowLayoutPanel1.Controls.Add(linkLab);
             }
 
-            //評論區(Store_Evaluate)
-            var qCName = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Member.MemberName);
-            foreach (var item in qCName)
-                labCmtName.Text = item;
-            var qCRating = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Rating);
-            labCmtStar.Text = null;
-            foreach (var item in qCRating)
-            {               
-                for (int m = 0; m < item.Value; m++)
-                    labCmtStar.Text += "★";
+            //評論區(Store_Evaluate)         
+            var qS_E = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).
+                Select(n => new {  n.StoreID, n.Member.MemberName, n.Rating, n.EvaluateDate, n.Comments });
+            if (qS_E.Count() == 0)
+            {
+                labCmtName.Text = null;
+                labCmtStar.Text = null;
+                labCmtDate.Text = null;
+                labCmt.Text = null;
             }
-            var qCDate = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.EvaluateDate);
-            foreach (var item in qCDate)
-                labCmtDate.Text = $"{item}";
-            var qCmt = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).Select(n => n.Comments);
-            foreach (var item in qCmt)
-                labCmt.Text = item;
+            else
+            {
+                foreach (var item in qS_E)
+                {
+                    labCmtName.Text = item.MemberName;
+                    labCmtStar.Text = null;
+                    for (int m = 0; m < item.Rating; m++)
+                        labCmtStar.Text += "★";
+                    labCmtDate.Text = $"{item.EvaluateDate}";
+                    labCmt.Text = item.Comments;
+                }                   
+            }            
+
         }                
         public void LoadBtnImg()
         {
@@ -176,11 +183,6 @@ namespace Frm_ShanLiang
         private void btn_signin_Click(object sender, EventArgs e)
         {
             new Frm_SignupPage().ShowDialog();
-        }
-
-        private void bnt_login_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void btnReserve_Click(object sender, EventArgs e)

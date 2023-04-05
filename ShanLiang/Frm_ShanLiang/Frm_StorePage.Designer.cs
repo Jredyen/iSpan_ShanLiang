@@ -39,7 +39,11 @@
             this.labSeat = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReserve = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLike = new System.Windows.Forms.Button();
+            this.btnShare = new System.Windows.Forms.Button();
+            this.btnCommemt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,6 +51,7 @@
             this.labCmt = new System.Windows.Forms.Label();
             this.labCmtName = new System.Windows.Forms.Label();
             this.labCmtDate = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBranch1 = new System.Windows.Forms.Button();
             this.btnBranch4 = new System.Windows.Forms.Button();
             this.btnBranch3 = new System.Windows.Forms.Button();
@@ -68,16 +73,11 @@
             this.labResName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.picBoxComment = new System.Windows.Forms.PictureBox();
             this.labCommentNum = new System.Windows.Forms.Label();
+            this.picBoxLike = new System.Windows.Forms.PictureBox();
             this.labLikeNum = new System.Windows.Forms.Label();
             this.labStar = new System.Windows.Forms.Label();
-            this.btnReserve = new System.Windows.Forms.Button();
-            this.btnLike = new System.Windows.Forms.Button();
-            this.btnShare = new System.Windows.Forms.Button();
-            this.btnCommemt = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picBoxComment = new System.Windows.Forms.PictureBox();
-            this.picBoxLike = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -87,8 +87,8 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,7 +158,7 @@
             this.bnt_login.TabIndex = 0;
             this.bnt_login.Text = "登入";
             this.bnt_login.UseVisualStyleBackColor = true;
-            this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click_1);
+            this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click);
             // 
             // panel2
             // 
@@ -173,7 +173,7 @@
             this.panel2.Controls.Add(this.btnLike);
             this.panel2.Controls.Add(this.btnShare);
             this.panel2.Controls.Add(this.btnCommemt);
-            this.panel2.Location = new System.Drawing.Point(1108, 676);
+            this.panel2.Location = new System.Drawing.Point(1105, 374);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(595, 483);
@@ -227,6 +227,20 @@
             this.label1.Text = "現場空位";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnReserve
+            // 
+            this.btnReserve.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReserve.Image = ((System.Drawing.Image)(resources.GetObject("btnReserve.Image")));
+            this.btnReserve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserve.Location = new System.Drawing.Point(160, 290);
+            this.btnReserve.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(270, 57);
+            this.btnReserve.TabIndex = 4;
+            this.btnReserve.Text = "線上預約";
+            this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
+            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -237,6 +251,46 @@
             this.label4.Size = new System.Drawing.Size(270, 34);
             this.label4.TabIndex = 3;
             this.label4.Text = "候位情形";
+            // 
+            // btnLike
+            // 
+            this.btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_icon;
+            this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLike.Location = new System.Drawing.Point(340, 71);
+            this.btnLike.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLike.Name = "btnLike";
+            this.btnLike.Size = new System.Drawing.Size(90, 57);
+            this.btnLike.TabIndex = 2;
+            this.btnLike.Text = "收藏";
+            this.btnLike.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
+            // 
+            // btnShare
+            // 
+            this.btnShare.Image = ((System.Drawing.Image)(resources.GetObject("btnShare.Image")));
+            this.btnShare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShare.Location = new System.Drawing.Point(160, 71);
+            this.btnShare.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShare.Name = "btnShare";
+            this.btnShare.Size = new System.Drawing.Size(90, 57);
+            this.btnShare.TabIndex = 1;
+            this.btnShare.Text = "分享";
+            this.btnShare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShare.UseVisualStyleBackColor = true;
+            // 
+            // btnCommemt
+            // 
+            this.btnCommemt.Image = ((System.Drawing.Image)(resources.GetObject("btnCommemt.Image")));
+            this.btnCommemt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCommemt.Location = new System.Drawing.Point(250, 71);
+            this.btnCommemt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCommemt.Name = "btnCommemt";
+            this.btnCommemt.Size = new System.Drawing.Size(90, 57);
+            this.btnCommemt.TabIndex = 0;
+            this.btnCommemt.Text = "評論";
+            this.btnCommemt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCommemt.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -265,7 +319,7 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.labStar);
-            this.panel1.Location = new System.Drawing.Point(12, 676);
+            this.panel1.Location = new System.Drawing.Point(9, 374);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1086, 1362);
@@ -299,7 +353,7 @@
             this.labCmtStar.AutoSize = true;
             this.labCmtStar.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.labCmtStar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.labCmtStar.Location = new System.Drawing.Point(53, 38);
+            this.labCmtStar.Location = new System.Drawing.Point(58, 38);
             this.labCmtStar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labCmtStar.Name = "labCmtStar";
             this.labCmtStar.Size = new System.Drawing.Size(32, 26);
@@ -320,7 +374,7 @@
             // 
             this.labCmtName.AutoSize = true;
             this.labCmtName.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labCmtName.Location = new System.Drawing.Point(53, 13);
+            this.labCmtName.Location = new System.Drawing.Point(58, 13);
             this.labCmtName.Name = "labCmtName";
             this.labCmtName.Size = new System.Drawing.Size(52, 25);
             this.labCmtName.TabIndex = 26;
@@ -336,6 +390,17 @@
             this.labCmtDate.Size = new System.Drawing.Size(41, 20);
             this.labCmtDate.TabIndex = 29;
             this.labCmtDate.Text = "日期";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // btnBranch1
             // 
@@ -562,6 +627,17 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(264, 44);
             this.flowLayoutPanel2.TabIndex = 6;
             // 
+            // picBoxComment
+            // 
+            this.picBoxComment.Image = ((System.Drawing.Image)(resources.GetObject("picBoxComment.Image")));
+            this.picBoxComment.Location = new System.Drawing.Point(4, 4);
+            this.picBoxComment.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxComment.Name = "picBoxComment";
+            this.picBoxComment.Size = new System.Drawing.Size(30, 30);
+            this.picBoxComment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picBoxComment.TabIndex = 7;
+            this.picBoxComment.TabStop = false;
+            // 
             // labCommentNum
             // 
             this.labCommentNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -573,6 +649,17 @@
             this.labCommentNum.Size = new System.Drawing.Size(40, 31);
             this.labCommentNum.TabIndex = 8;
             this.labCommentNum.Text = "87";
+            // 
+            // picBoxLike
+            // 
+            this.picBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLike.Image")));
+            this.picBoxLike.Location = new System.Drawing.Point(90, 4);
+            this.picBoxLike.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxLike.Name = "picBoxLike";
+            this.picBoxLike.Size = new System.Drawing.Size(30, 30);
+            this.picBoxLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picBoxLike.TabIndex = 9;
+            this.picBoxLike.TabStop = false;
             // 
             // labLikeNum
             // 
@@ -598,98 +685,11 @@
             this.labStar.TabIndex = 5;
             this.labStar.Text = "★";
             // 
-            // btnReserve
-            // 
-            this.btnReserve.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReserve.Image = ((System.Drawing.Image)(resources.GetObject("btnReserve.Image")));
-            this.btnReserve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReserve.Location = new System.Drawing.Point(160, 290);
-            this.btnReserve.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(270, 57);
-            this.btnReserve.TabIndex = 4;
-            this.btnReserve.Text = "線上預約";
-            this.btnReserve.UseVisualStyleBackColor = true;
-            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
-            // 
-            // btnLike
-            // 
-            this.btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_icon;
-            this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLike.Location = new System.Drawing.Point(340, 71);
-            this.btnLike.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLike.Name = "btnLike";
-            this.btnLike.Size = new System.Drawing.Size(90, 57);
-            this.btnLike.TabIndex = 2;
-            this.btnLike.Text = "收藏";
-            this.btnLike.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLike.UseVisualStyleBackColor = true;
-            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
-            // 
-            // btnShare
-            // 
-            this.btnShare.Image = ((System.Drawing.Image)(resources.GetObject("btnShare.Image")));
-            this.btnShare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShare.Location = new System.Drawing.Point(160, 71);
-            this.btnShare.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(90, 57);
-            this.btnShare.TabIndex = 1;
-            this.btnShare.Text = "分享";
-            this.btnShare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShare.UseVisualStyleBackColor = true;
-            // 
-            // btnCommemt
-            // 
-            this.btnCommemt.Image = ((System.Drawing.Image)(resources.GetObject("btnCommemt.Image")));
-            this.btnCommemt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommemt.Location = new System.Drawing.Point(250, 71);
-            this.btnCommemt.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCommemt.Name = "btnCommemt";
-            this.btnCommemt.Size = new System.Drawing.Size(90, 57);
-            this.btnCommemt.TabIndex = 0;
-            this.btnCommemt.Text = "評論";
-            this.btnCommemt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCommemt.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // picBoxComment
-            // 
-            this.picBoxComment.Image = ((System.Drawing.Image)(resources.GetObject("picBoxComment.Image")));
-            this.picBoxComment.Location = new System.Drawing.Point(4, 4);
-            this.picBoxComment.Margin = new System.Windows.Forms.Padding(4);
-            this.picBoxComment.Name = "picBoxComment";
-            this.picBoxComment.Size = new System.Drawing.Size(30, 30);
-            this.picBoxComment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picBoxComment.TabIndex = 7;
-            this.picBoxComment.TabStop = false;
-            // 
-            // picBoxLike
-            // 
-            this.picBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLike.Image")));
-            this.picBoxLike.Location = new System.Drawing.Point(90, 4);
-            this.picBoxLike.Margin = new System.Windows.Forms.Padding(4);
-            this.picBoxLike.Name = "picBoxLike";
-            this.picBoxLike.Size = new System.Drawing.Size(30, 30);
-            this.picBoxLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picBoxLike.TabIndex = 9;
-            this.picBoxLike.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 306);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1691, 358);
@@ -720,9 +720,9 @@
             this.flowLayoutPanel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -77,9 +77,18 @@ namespace Frm_ShanLiang
 
         public void ShowNewStore()
         {
-            LoadStoreData();
+            bool b = false;
+            foreach (var item in _list)
+                if (item.StoreID == _sid)
+                {
+                    b = true;                    
+                }                
+            if (!b)
+            {
+                LoadStoreData();
+            }
             cSS();
-        }
-        
+        }//已有的ID直接ShowStoreData()，沒有的再先LoadStoreData()
+
     }
 }
