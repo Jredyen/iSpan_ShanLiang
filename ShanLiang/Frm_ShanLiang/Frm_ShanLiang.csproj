@@ -83,6 +83,12 @@
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ExtesionMethods\C_TextBoxTool.cs" />
+    <Compile Include="Frm_AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminPage.Designer.cs">
+      <DependentUpon>Frm_AdminPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,12 +132,6 @@
       <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Identification.cs">
-      <DependentUpon>ShanLiangModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Meals_Image.cs">
-      <DependentUpon>ShanLiangModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Meals_Menu.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
@@ -181,12 +181,18 @@
     <Compile Include="Store_Evaluate.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Store_Image.cs">
+      <DependentUpon>ShanLiangModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Store_Type.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_AdminPage.resx">
+      <DependentUpon>Frm_AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Homepage.resx">
       <DependentUpon>Frm_Homepage.cs</DependentUpon>
     </EmbeddedResource>

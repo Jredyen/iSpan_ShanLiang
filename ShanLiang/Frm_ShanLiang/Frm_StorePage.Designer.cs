@@ -217,7 +217,7 @@
             this.button2.Text = "線上預約";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // LabelRestaurantname
             // 
             this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));

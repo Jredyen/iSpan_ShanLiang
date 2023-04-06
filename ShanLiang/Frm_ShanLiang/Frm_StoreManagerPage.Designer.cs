@@ -715,7 +715,7 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "地址";
             // 
-            // label4
+            // LabelRestaurantname
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 21);

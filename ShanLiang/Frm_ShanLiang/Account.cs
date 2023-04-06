@@ -18,7 +18,5 @@ namespace Frm_ShanLiang
         public string AccountName { get; set; }
         public string AccountPassword { get; set; }
         public Nullable<int> Identification { get; set; }
-    
-        public virtual Identification Identification1 { get; set; }
     }
 }

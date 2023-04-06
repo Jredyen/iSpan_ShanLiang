@@ -14,15 +14,6 @@ namespace Frm_ShanLiang
     
     public partial class Member
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Member()
-        {
-            this.Member_Coupon = new HashSet<Member_Coupon>();
-            this.Member_Action = new HashSet<Member_Action>();
-            this.Orders = new HashSet<Order>();
-            this.Store_Evaluate = new HashSet<Store_Evaluate>();
-        }
-    
         public int MemberID { get; set; }
         public string AccountName { get; set; }
         public string Memberphone { get; set; }
@@ -31,14 +22,5 @@ namespace Frm_ShanLiang
         public Nullable<System.DateTime> BrithDate { get; set; }
         public string Address { get; set; }
         public Nullable<int> CustomerLevel { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member_Coupon> Member_Coupon { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member_Action> Member_Action { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Store_Evaluate> Store_Evaluate { get; set; }
     }
 }

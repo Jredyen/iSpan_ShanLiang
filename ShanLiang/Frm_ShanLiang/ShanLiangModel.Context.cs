@@ -32,8 +32,6 @@ namespace Frm_ShanLiang
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<EatType_Method> EatType_Method { get; set; }
         public virtual DbSet<Identification> Identifications { get; set; }
-        public virtual DbSet<Meals_Image> Meals_Image { get; set; }
-        public virtual DbSet<Meals_Menu> Meals_Menu { get; set; }
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<Member_Action> Member_Action { get; set; }
         public virtual DbSet<Member_Coupon> Member_Coupon { get; set; }
@@ -46,5 +44,6 @@ namespace Frm_ShanLiang
         public virtual DbSet<Store_Evaluate> Store_Evaluate { get; set; }
         public virtual DbSet<Store_Type> Store_Type { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Store_Image> Store_Image { get; set; }
     }
 }

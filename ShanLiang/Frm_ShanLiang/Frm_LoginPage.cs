@@ -84,10 +84,14 @@ namespace Frm_ShanLiang
                             customers.memberDataLoad((string)reader[1]);
                             Close();
                         }
-                        else if (Identification == 2)//如果是2轉跳到店家頁面//不跳轉，改由首頁由使用者操作
-                        {
-                            //new Frm_StoreManagerPage().Show();
+                        else if (Identification == 2)//帳號類型:店家 Homepage出現我的頁面按鈕可轉跳
+                        {                            
                             customers.storeDataLoad((string)reader[1]);
+                            Close();
+                        }
+                        else if (Identification == 0)//帳號類型:管理員 Homepage出現我的頁面按鈕可轉跳
+                        {                         
+                            //customers.storeDataLoad((string)reader[1]);
                             Close();
                         }
                     }

@@ -241,7 +241,7 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "密碼";
             // 
-            // label4
+            // LabelRestaurantname
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(474, 139);
