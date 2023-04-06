@@ -241,7 +241,7 @@
             // 
             // btnLike
             // 
-            this.btnLike.Image = ((System.Drawing.Image)(resources.GetObject("btnLike.Image")));
+            this.btnLike.Image = global::Frm_ShanLiang.Properties.Resources.like_icon;
             this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLike.Location = new System.Drawing.Point(227, 47);
             this.btnLike.Name = "btnLike";

@@ -258,8 +258,8 @@
     <None Include="bin\Debug\like_love_icon.png" />
     <None Include="bin\Debug\user_icon.png" />
     <None Include="bin\Debug\like_icon.png" />
-    <None Include="Resources\heart_icon.png" />
     <None Include="Resources\like_icon.png" />
+    <None Include="Resources\like_love_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
