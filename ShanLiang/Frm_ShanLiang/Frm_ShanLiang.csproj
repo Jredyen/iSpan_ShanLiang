@@ -219,14 +219,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,6 +252,7 @@
     <None Include="bin\Debug\like_love_icon.png" />
     <None Include="bin\Debug\user_icon.png" />
     <None Include="bin\Debug\like_icon.png" />
+    <None Include="Resources\heart_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>

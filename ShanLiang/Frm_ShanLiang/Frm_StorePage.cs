@@ -194,18 +194,18 @@ namespace Frm_ShanLiang
         bool b = false;
         private void btnLike_Click(object sender, EventArgs e)
         {            
-            if(b)
-            {
-                b = false;
-                btnLike.Image = Properties.Resources.like_icon;
+            //if(b)
+            //{
+            //    b = false;
+            //    btnLike.Image = Properties.Resources.like_icon;
 
-            }
-            else
-            {
-                b = true;
-                btnLike.Image = Properties.Resources.like_love_icon;        
+            //}
+            //else
+            //{
+            //    b = true;
+            //    btnLike.Image = Properties.Resources.like_love_icon;        
                 
-            }
+            //}
             
         }//收藏
     }
