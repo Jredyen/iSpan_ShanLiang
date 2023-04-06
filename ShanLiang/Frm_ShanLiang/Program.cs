@@ -17,7 +17,7 @@ namespace ShanLiang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Homepage());
+            //Application.Run(new Frm_Homepage());
             Application.Run(new Frm_StorePage());
             //Application.Run(new Frm_StoreReserve());
             //Application.Run(new Frm_StoreSignInPage());

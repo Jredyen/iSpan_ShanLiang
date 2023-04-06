@@ -241,6 +241,7 @@
             // 
             // btnLike
             // 
+            this.btnLike.Image = ((System.Drawing.Image)(resources.GetObject("btnLike.Image")));
             this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLike.Location = new System.Drawing.Point(227, 47);
             this.btnLike.Name = "btnLike";
@@ -313,7 +314,7 @@
             this.flowLayoutPanel4.Controls.Add(this.groupBox1);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(37, 413);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(647, 100);
             this.flowLayoutPanel4.TabIndex = 30;
@@ -326,9 +327,9 @@
             this.groupBox1.Controls.Add(this.labCmtDate);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(644, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -384,7 +385,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(3, 9);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 33);
             this.pictureBox2.TabIndex = 0;

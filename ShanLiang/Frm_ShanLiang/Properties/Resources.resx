@@ -121,16 +121,16 @@
   <data name="登入畫面" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\登入畫面.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1000-_0001_0.33L瓶裝金牌啤酒產品照-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="like_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\like_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="352091_search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\352091_search_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="heart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="like_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\like_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

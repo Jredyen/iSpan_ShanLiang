@@ -160,6 +160,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant_Type.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
@@ -220,6 +225,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -253,6 +259,7 @@
     <None Include="bin\Debug\user_icon.png" />
     <None Include="bin\Debug\like_icon.png" />
     <None Include="Resources\heart_icon.png" />
+    <None Include="Resources\like_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
