@@ -89,6 +89,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(250, 22);
             this.txt_password.TabIndex = 1;
+            this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
             // 
             // txt_account
@@ -105,6 +106,7 @@
             this.txt_doubleCheckPassword.Name = "txt_doubleCheckPassword";
             this.txt_doubleCheckPassword.Size = new System.Drawing.Size(250, 22);
             this.txt_doubleCheckPassword.TabIndex = 2;
+            this.txt_doubleCheckPassword.UseSystemPasswordChar = true;
             this.txt_doubleCheckPassword.TextChanged += new System.EventHandler(this.txt_doubleCheckPassword_TextChanged);
             // 
             // txt_name
@@ -241,7 +243,7 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "密碼";
             // 
-            // LabelRestaurantname
+            // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(474, 139);
@@ -338,7 +340,7 @@
             this.pictureBox_signIn.TabIndex = 14;
             this.pictureBox_signIn.TabStop = false;
             // 
-            // Frm_SignInPage
+            // Frm_SignupPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -375,8 +377,8 @@
             this.Controls.Add(this.txt_doubleCheckPassword);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_account);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_SignInPage";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "Frm_SignupPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_SignInPage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_signIn)).EndInit();

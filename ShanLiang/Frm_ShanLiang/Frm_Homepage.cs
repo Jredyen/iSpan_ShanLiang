@@ -320,7 +320,7 @@ namespace ShanLiang
             {
                 
                 string keyword = txt_keyword.Text;
-                var query = from S in _SL.Stores
+                var query = (from S in _SL.Stores
                             join St in _SL.Store_Type on S.StoreID equals St.StoreID
                             where 
                             S.RestaurantAddress.Contains(keyword) ||
@@ -343,7 +343,7 @@ namespace ShanLiang
                                 S.StoreImage,
                                 S.Rating, 
                                 S.StoreMail
-                            };
+                            }).Distinct();
                 dataGridView1.DataSource = query.ToList();
             }
             catch (Exception ex)

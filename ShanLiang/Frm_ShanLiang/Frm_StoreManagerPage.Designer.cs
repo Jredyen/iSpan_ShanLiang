@@ -431,6 +431,7 @@
             this.txt_newDoubleCheckPassword.Name = "txt_newDoubleCheckPassword";
             this.txt_newDoubleCheckPassword.Size = new System.Drawing.Size(179, 22);
             this.txt_newDoubleCheckPassword.TabIndex = 0;
+            this.txt_newDoubleCheckPassword.UseSystemPasswordChar = true;
             // 
             // txt_newPassword
             // 
@@ -438,6 +439,7 @@
             this.txt_newPassword.Name = "txt_newPassword";
             this.txt_newPassword.Size = new System.Drawing.Size(179, 22);
             this.txt_newPassword.TabIndex = 0;
+            this.txt_newPassword.UseSystemPasswordChar = true;
             // 
             // txt_email
             // 
@@ -715,7 +717,7 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "地址";
             // 
-            // LabelRestaurantname
+            // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 21);
@@ -730,6 +732,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(179, 22);
             this.txt_password.TabIndex = 0;
+            this.txt_password.UseSystemPasswordChar = true;
             // 
             // txt_address
             // 

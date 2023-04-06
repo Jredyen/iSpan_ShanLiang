@@ -136,6 +136,7 @@ namespace Frm_ShanLiang
             this.btn_signin.TabIndex = 0;
             this.btn_signin.Text = "註冊";
             this.btn_signin.UseVisualStyleBackColor = true;
+            this.btn_signin.Visible = false;
             // 
             // btn_search
             // 
@@ -154,6 +155,7 @@ namespace Frm_ShanLiang
             this.bnt_login.TabIndex = 0;
             this.bnt_login.Text = "登入";
             this.bnt_login.UseVisualStyleBackColor = true;
+            this.bnt_login.Visible = false;
             this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click);
             // 
             // panel2
@@ -231,7 +233,7 @@ namespace Frm_ShanLiang
             this.btnReserve.UseVisualStyleBackColor = true;
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
-            // LabelRestaurantname
+            // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -243,7 +245,6 @@ namespace Frm_ShanLiang
             // 
             // btnLike
             // 
-            this.btnLike.Image = Image.FromFile(@"..\..\Resources/like_icon.png");/*global::Frm_ShanLiang.Properties.Resources.like_icon;*/
             this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLike.Location = new System.Drawing.Point(227, 47);
             this.btnLike.Name = "btnLike";

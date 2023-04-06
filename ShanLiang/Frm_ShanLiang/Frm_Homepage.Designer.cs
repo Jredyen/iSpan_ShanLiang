@@ -94,6 +94,7 @@
             // 
             // lab_user
             // 
+            this.lab_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lab_user.AutoSize = true;
             this.lab_user.Location = new System.Drawing.Point(773, 40);
             this.lab_user.Name = "lab_user";
@@ -130,6 +131,7 @@
             // 
             // txt_keyword
             // 
+            this.txt_keyword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_keyword.Location = new System.Drawing.Point(476, 9);
             this.txt_keyword.Name = "txt_keyword";
             this.txt_keyword.Size = new System.Drawing.Size(421, 22);
@@ -149,6 +151,7 @@
             // 
             // btn_search
             // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_search.AutoSize = true;
             this.btn_search.BackColor = System.Drawing.SystemColors.Window;
             this.btn_search.Image = global::Frm_ShanLiang.Properties.Resources._352091_search_icon;

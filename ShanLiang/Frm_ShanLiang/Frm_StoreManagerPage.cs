@@ -16,6 +16,7 @@ namespace Frm_ShanLiang
     public partial class Frm_StoreManagerPage : Form
     {
         ShanLiangEntities SLE = new ShanLiangEntities();
+        CCustomers customers = new CCustomers();
         List<string> _storeType;
         public Frm_StoreManagerPage()
         {
@@ -107,12 +108,18 @@ namespace Frm_ShanLiang
 
                 //TODO:更新店家類型
 
+                customers.storeDataLoad(CNowLoginAccount._loginAccountName);
+
 
                 if (txt_newPassword.Text != "" && txt_newPassword.Text == txt_newDoubleCheckPassword.Text)
                 {
                     var accountData = SLE.Accounts.Where(n => n.AccountPassword == txt_password.Text && n.AccountName == CNowLoginAccount._loginAccountName).Select(n => n).First();
                     accountData.AccountPassword = txt_newPassword.Text;
                 }
+                //else
+                //{
+                //    return;
+                //}
                 SLE.SaveChanges();
                 MessageBox.Show("資料修改成功");
             }

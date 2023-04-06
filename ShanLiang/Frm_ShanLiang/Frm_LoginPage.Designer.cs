@@ -41,6 +41,7 @@
             this.btn_storeDemo = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.linkLab_Storesignin = new System.Windows.Forms.LinkLabel();
+            this.btn_AdminDemo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -184,6 +185,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.txt_accountName);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_AdminDemo);
             this.splitContainer1.Panel2.Controls.Add(this.btn_storeDemo);
             this.splitContainer1.Panel2.Controls.Add(this.txt_password);
             this.splitContainer1.Panel2.Controls.Add(this.btn_Demo);
@@ -209,6 +211,17 @@
             this.linkLab_Storesignin.TabStop = true;
             this.linkLab_Storesignin.Text = "店家註冊";
             this.linkLab_Storesignin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLab_Storesignin_LinkClicked);
+            // 
+            // btn_AdminDemo
+            // 
+            this.btn_AdminDemo.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_AdminDemo.Location = new System.Drawing.Point(29, 357);
+            this.btn_AdminDemo.Name = "btn_AdminDemo";
+            this.btn_AdminDemo.Size = new System.Drawing.Size(86, 22);
+            this.btn_AdminDemo.TabIndex = 6;
+            this.btn_AdminDemo.Text = "後台Demo";
+            this.btn_AdminDemo.UseVisualStyleBackColor = true;
+            this.btn_AdminDemo.Click += new System.EventHandler(this.btn_AdminDemo_Click);
             // 
             // Frm_LoginPage
             // 
@@ -253,5 +266,6 @@
         private System.Windows.Forms.Button btn_storeDemo;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.LinkLabel linkLab_Storesignin;
+        private System.Windows.Forms.Button btn_AdminDemo;
     }
 }

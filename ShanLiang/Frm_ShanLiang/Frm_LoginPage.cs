@@ -123,6 +123,12 @@ namespace Frm_ShanLiang
             txt_accountName.Text = "OGGIPizza";
             txt_password.Text = "1122";
         }
-        
+
+        private void btn_AdminDemo_Click(object sender, EventArgs e)
+        {
+            //後台帳號
+            txt_accountName.Text = "admin";
+            txt_password.Text = "aaaa";
+        }
     }
 }
