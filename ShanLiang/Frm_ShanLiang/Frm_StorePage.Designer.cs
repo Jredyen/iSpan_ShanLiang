@@ -275,6 +275,7 @@
             this.btnCommemt.Text = "評論";
             this.btnCommemt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCommemt.UseVisualStyleBackColor = true;
+            this.btnCommemt.Click += new System.EventHandler(this.btnCommemt_Click);
             // 
             // panel1
             // 
