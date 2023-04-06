@@ -57,10 +57,7 @@
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_seats = new System.Windows.Forms.TextBox();
-            this.txt_openTime = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_closeTime = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_taxID = new System.Windows.Forms.TextBox();
@@ -70,21 +67,30 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txt_website = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pic_showStoreImage = new System.Windows.Forms.PictureBox();
+            this.btn_browseStoreImage = new System.Windows.Forms.Button();
             this.lab_taxID = new System.Windows.Forms.Label();
             this.lab_district = new System.Windows.Forms.Label();
             this.lab_website = new System.Windows.Forms.Label();
             this.lab_seats = new System.Windows.Forms.Label();
-            this.lab_openTime = new System.Windows.Forms.Label();
-            this.lab_closeTime = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmb_city = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_demo = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmb_openTime_hour = new System.Windows.Forms.ComboBox();
+            this.cmb_openTime_minute = new System.Windows.Forms.ComboBox();
+            this.cmb_closeTime_minute = new System.Windows.Forms.ComboBox();
+            this.cmb_closeTime_hour = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_showStoreImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lab_linkToMemberSignIn
             // 
             this.lab_linkToMemberSignIn.AutoSize = true;
-            this.lab_linkToMemberSignIn.Location = new System.Drawing.Point(210, 661);
+            this.lab_linkToMemberSignIn.Location = new System.Drawing.Point(210, 664);
             this.lab_linkToMemberSignIn.Name = "lab_linkToMemberSignIn";
             this.lab_linkToMemberSignIn.Size = new System.Drawing.Size(58, 12);
             this.lab_linkToMemberSignIn.TabIndex = 31;
@@ -95,16 +101,16 @@
             // lab_type
             // 
             this.lab_type.AutoSize = true;
-            this.lab_type.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lab_type.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lab_type.Location = new System.Drawing.Point(468, 276);
             this.lab_type.Name = "lab_type";
-            this.lab_type.Size = new System.Drawing.Size(0, 20);
+            this.lab_type.Size = new System.Drawing.Size(0, 12);
             this.lab_type.TabIndex = 29;
             // 
             // lab_address
             // 
             this.lab_address.AutoSize = true;
-            this.lab_address.Location = new System.Drawing.Point(468, 359);
+            this.lab_address.Location = new System.Drawing.Point(468, 400);
             this.lab_address.Name = "lab_address";
             this.lab_address.Size = new System.Drawing.Size(0, 12);
             this.lab_address.TabIndex = 28;
@@ -112,7 +118,7 @@
             // lab_email
             // 
             this.lab_email.AutoSize = true;
-            this.lab_email.Location = new System.Drawing.Point(468, 439);
+            this.lab_email.Location = new System.Drawing.Point(468, 480);
             this.lab_email.Name = "lab_email";
             this.lab_email.Size = new System.Drawing.Size(0, 12);
             this.lab_email.TabIndex = 27;
@@ -159,7 +165,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(375, 652);
+            this.btn_cancel.Location = new System.Drawing.Point(375, 655);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(87, 31);
             this.btn_cancel.TabIndex = 22;
@@ -170,7 +176,7 @@
             // btn_signin
             // 
             this.btn_signin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_signin.Location = new System.Drawing.Point(212, 593);
+            this.btn_signin.Location = new System.Drawing.Point(212, 596);
             this.btn_signin.Name = "btn_signin";
             this.btn_signin.Size = new System.Drawing.Size(250, 47);
             this.btn_signin.TabIndex = 21;
@@ -181,7 +187,7 @@
             // txt_address
             // 
             this.txt_address.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_address.Location = new System.Drawing.Point(212, 349);
+            this.txt_address.Location = new System.Drawing.Point(212, 390);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(250, 29);
             this.txt_address.TabIndex = 19;
@@ -191,6 +197,7 @@
             // 
             this.txt_phone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txt_phone.Location = new System.Drawing.Point(212, 233);
+            this.txt_phone.MaxLength = 14;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(250, 29);
             this.txt_phone.TabIndex = 17;
@@ -209,6 +216,7 @@
             // 
             this.txt_doubleCheckPassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txt_doubleCheckPassword.Location = new System.Drawing.Point(212, 113);
+            this.txt_doubleCheckPassword.MaxLength = 12;
             this.txt_doubleCheckPassword.Name = "txt_doubleCheckPassword";
             this.txt_doubleCheckPassword.PasswordChar = '*';
             this.txt_doubleCheckPassword.Size = new System.Drawing.Size(250, 29);
@@ -219,6 +227,7 @@
             // 
             this.txt_password.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txt_password.Location = new System.Drawing.Point(212, 73);
+            this.txt_password.MaxLength = 12;
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(250, 29);
@@ -298,7 +307,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(74, 353);
+            this.label8.Location = new System.Drawing.Point(74, 393);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 20);
             this.label8.TabIndex = 39;
@@ -306,28 +315,30 @@
             // 
             // cmb_type
             // 
+            this.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_type.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmb_type.FormattingEnabled = true;
             this.cmb_type.Location = new System.Drawing.Point(212, 273);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(250, 28);
             this.cmb_type.TabIndex = 40;
-            this.cmb_type.TextChanged += new System.EventHandler(this.txt_inputCheck);
+            this.cmb_type.SelectedIndexChanged += new System.EventHandler(this.cmb_type_SelectedIndexChanged);
+            this.cmb_type.TextChanged += new System.EventHandler(this.cmb_inputCheck);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(74, 433);
+            this.label9.Location = new System.Drawing.Point(74, 474);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 42;
-            this.label9.Text = "店家Mail";
+            this.label9.Text = "店家信箱";
             // 
             // txt_email
             // 
             this.txt_email.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_email.Location = new System.Drawing.Point(212, 429);
+            this.txt_email.Location = new System.Drawing.Point(212, 470);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(250, 29);
             this.txt_email.TabIndex = 41;
@@ -337,7 +348,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(74, 473);
+            this.label10.Location = new System.Drawing.Point(74, 514);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 20);
             this.label10.TabIndex = 43;
@@ -346,49 +357,21 @@
             // txt_seats
             // 
             this.txt_seats.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_seats.Location = new System.Drawing.Point(212, 469);
+            this.txt_seats.Location = new System.Drawing.Point(212, 510);
             this.txt_seats.Name = "txt_seats";
             this.txt_seats.Size = new System.Drawing.Size(250, 29);
             this.txt_seats.TabIndex = 44;
             this.txt_seats.TextChanged += new System.EventHandler(this.txt_inputCheck);
             // 
-            // txt_openTime
-            // 
-            this.txt_openTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_openTime.Location = new System.Drawing.Point(212, 509);
-            this.txt_openTime.Name = "txt_openTime";
-            this.txt_openTime.Size = new System.Drawing.Size(250, 29);
-            this.txt_openTime.TabIndex = 46;
-            this.txt_openTime.TextChanged += new System.EventHandler(this.txt_inputCheck);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(66, 512);
+            this.label11.Location = new System.Drawing.Point(66, 553);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 20);
+            this.label11.Size = new System.Drawing.Size(105, 20);
             this.label11.TabIndex = 45;
-            this.label11.Text = "店家開始營業時間";
-            // 
-            // txt_closeTime
-            // 
-            this.txt_closeTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_closeTime.Location = new System.Drawing.Point(212, 549);
-            this.txt_closeTime.Name = "txt_closeTime";
-            this.txt_closeTime.Size = new System.Drawing.Size(250, 29);
-            this.txt_closeTime.TabIndex = 48;
-            this.txt_closeTime.TextChanged += new System.EventHandler(this.txt_inputCheck);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(66, 552);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 20);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "店家結束營業時間";
+            this.label11.Text = "店家營業時間";
             // 
             // label13
             // 
@@ -403,7 +386,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(337, 479);
+            this.label14.Location = new System.Drawing.Point(337, 520);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 12);
             this.label14.TabIndex = 50;
@@ -412,6 +395,7 @@
             // 
             this.txt_taxID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txt_taxID.Location = new System.Drawing.Point(212, 153);
+            this.txt_taxID.MaxLength = 8;
             this.txt_taxID.Name = "txt_taxID";
             this.txt_taxID.Size = new System.Drawing.Size(250, 29);
             this.txt_taxID.TabIndex = 49;
@@ -421,7 +405,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(74, 393);
+            this.label15.Location = new System.Drawing.Point(74, 433);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 20);
             this.label15.TabIndex = 53;
@@ -430,26 +414,28 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(337, 435);
+            this.label16.Location = new System.Drawing.Point(337, 476);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(0, 12);
             this.label16.TabIndex = 52;
             // 
             // cmb_district
             // 
+            this.cmb_district.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_district.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmb_district.FormattingEnabled = true;
-            this.cmb_district.Location = new System.Drawing.Point(212, 311);
+            this.cmb_district.Location = new System.Drawing.Point(212, 351);
             this.cmb_district.Name = "cmb_district";
             this.cmb_district.Size = new System.Drawing.Size(250, 28);
             this.cmb_district.TabIndex = 57;
-            this.cmb_district.TextChanged += new System.EventHandler(this.txt_inputCheck);
+            this.cmb_district.SelectedIndexChanged += new System.EventHandler(this.cmb_district_SelectedIndexChanged);
+            this.cmb_district.TextChanged += new System.EventHandler(this.cmb_inputCheck);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.Location = new System.Drawing.Point(74, 313);
+            this.label17.Location = new System.Drawing.Point(74, 353);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(73, 20);
             this.label17.TabIndex = 56;
@@ -458,7 +444,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(337, 347);
+            this.label18.Location = new System.Drawing.Point(337, 388);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(0, 12);
             this.label18.TabIndex = 55;
@@ -466,30 +452,33 @@
             // txt_website
             // 
             this.txt_website.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txt_website.Location = new System.Drawing.Point(212, 389);
+            this.txt_website.Location = new System.Drawing.Point(212, 430);
             this.txt_website.Name = "txt_website";
             this.txt_website.Size = new System.Drawing.Size(250, 29);
             this.txt_website.TabIndex = 58;
             this.txt_website.TextChanged += new System.EventHandler(this.txt_inputCheck);
             // 
-            // pictureBox1
+            // pic_showStoreImage
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(600, 183);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(369, 315);
-            this.pictureBox1.TabIndex = 59;
-            this.pictureBox1.TabStop = false;
+            this.pic_showStoreImage.BackColor = System.Drawing.SystemColors.Window;
+            this.pic_showStoreImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_showStoreImage.Location = new System.Drawing.Point(626, 183);
+            this.pic_showStoreImage.Name = "pic_showStoreImage";
+            this.pic_showStoreImage.Size = new System.Drawing.Size(369, 315);
+            this.pic_showStoreImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_showStoreImage.TabIndex = 59;
+            this.pic_showStoreImage.TabStop = false;
             // 
-            // button1
+            // btn_browseStoreImage
             // 
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(693, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 46);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Browse...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_browseStoreImage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_browseStoreImage.Location = new System.Drawing.Point(719, 528);
+            this.btn_browseStoreImage.Name = "btn_browseStoreImage";
+            this.btn_browseStoreImage.Size = new System.Drawing.Size(210, 46);
+            this.btn_browseStoreImage.TabIndex = 60;
+            this.btn_browseStoreImage.Text = "Browse...";
+            this.btn_browseStoreImage.UseVisualStyleBackColor = true;
+            this.btn_browseStoreImage.Click += new System.EventHandler(this.btn_browseStoreImage_Click);
             // 
             // lab_taxID
             // 
@@ -502,16 +491,16 @@
             // lab_district
             // 
             this.lab_district.AutoSize = true;
-            this.lab_district.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lab_district.Location = new System.Drawing.Point(468, 313);
+            this.lab_district.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lab_district.Location = new System.Drawing.Point(468, 355);
             this.lab_district.Name = "lab_district";
-            this.lab_district.Size = new System.Drawing.Size(0, 20);
+            this.lab_district.Size = new System.Drawing.Size(0, 12);
             this.lab_district.TabIndex = 62;
             // 
             // lab_website
             // 
             this.lab_website.AutoSize = true;
-            this.lab_website.Location = new System.Drawing.Point(468, 399);
+            this.lab_website.Location = new System.Drawing.Point(468, 440);
             this.lab_website.Name = "lab_website";
             this.lab_website.Size = new System.Drawing.Size(0, 12);
             this.lab_website.TabIndex = 63;
@@ -519,34 +508,146 @@
             // lab_seats
             // 
             this.lab_seats.AutoSize = true;
-            this.lab_seats.Location = new System.Drawing.Point(468, 481);
+            this.lab_seats.Location = new System.Drawing.Point(468, 522);
             this.lab_seats.Name = "lab_seats";
             this.lab_seats.Size = new System.Drawing.Size(0, 12);
             this.lab_seats.TabIndex = 64;
             // 
-            // lab_openTime
+            // cmb_city
             // 
-            this.lab_openTime.AutoSize = true;
-            this.lab_openTime.Location = new System.Drawing.Point(468, 518);
-            this.lab_openTime.Name = "lab_openTime";
-            this.lab_openTime.Size = new System.Drawing.Size(0, 12);
-            this.lab_openTime.TabIndex = 65;
+            this.cmb_city.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_city.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmb_city.FormattingEnabled = true;
+            this.cmb_city.Location = new System.Drawing.Point(212, 312);
+            this.cmb_city.Name = "cmb_city";
+            this.cmb_city.Size = new System.Drawing.Size(250, 28);
+            this.cmb_city.TabIndex = 68;
+            this.cmb_city.SelectedIndexChanged += new System.EventHandler(this.cmb_city_SelectedIndexChanged);
             // 
-            // lab_closeTime
+            // label1
             // 
-            this.lab_closeTime.AutoSize = true;
-            this.lab_closeTime.Location = new System.Drawing.Point(468, 558);
-            this.lab_closeTime.Name = "lab_closeTime";
-            this.lab_closeTime.Size = new System.Drawing.Size(0, 12);
-            this.lab_closeTime.TabIndex = 66;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(74, 313);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "店家縣市";
+            // 
+            // btn_demo
+            // 
+            this.btn_demo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_demo.Location = new System.Drawing.Point(283, 655);
+            this.btn_demo.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btn_demo.Name = "btn_demo";
+            this.btn_demo.Size = new System.Drawing.Size(87, 31);
+            this.btn_demo.TabIndex = 70;
+            this.btn_demo.Text = "Demo";
+            this.btn_demo.UseVisualStyleBackColor = true;
+            this.btn_demo.Click += new System.EventHandler(this.btn_demo_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // cmb_openTime_hour
+            // 
+            this.cmb_openTime_hour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_openTime_hour.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmb_openTime_hour.FormattingEnabled = true;
+            this.cmb_openTime_hour.Location = new System.Drawing.Point(212, 552);
+            this.cmb_openTime_hour.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.cmb_openTime_hour.Name = "cmb_openTime_hour";
+            this.cmb_openTime_hour.Size = new System.Drawing.Size(58, 29);
+            this.cmb_openTime_hour.TabIndex = 72;
+            // 
+            // cmb_openTime_minute
+            // 
+            this.cmb_openTime_minute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_openTime_minute.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmb_openTime_minute.FormattingEnabled = true;
+            this.cmb_openTime_minute.Location = new System.Drawing.Point(284, 552);
+            this.cmb_openTime_minute.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.cmb_openTime_minute.Name = "cmb_openTime_minute";
+            this.cmb_openTime_minute.Size = new System.Drawing.Size(58, 29);
+            this.cmb_openTime_minute.TabIndex = 73;
+            // 
+            // cmb_closeTime_minute
+            // 
+            this.cmb_closeTime_minute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_closeTime_minute.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmb_closeTime_minute.FormattingEnabled = true;
+            this.cmb_closeTime_minute.Location = new System.Drawing.Point(450, 551);
+            this.cmb_closeTime_minute.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.cmb_closeTime_minute.Name = "cmb_closeTime_minute";
+            this.cmb_closeTime_minute.Size = new System.Drawing.Size(58, 29);
+            this.cmb_closeTime_minute.TabIndex = 76;
+            // 
+            // cmb_closeTime_hour
+            // 
+            this.cmb_closeTime_hour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_closeTime_hour.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmb_closeTime_hour.FormattingEnabled = true;
+            this.cmb_closeTime_hour.Location = new System.Drawing.Point(377, 551);
+            this.cmb_closeTime_hour.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.cmb_closeTime_hour.Name = "cmb_closeTime_hour";
+            this.cmb_closeTime_hour.Size = new System.Drawing.Size(58, 29);
+            this.cmb_closeTime_hour.TabIndex = 75;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("微軟正黑體", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label19.Location = new System.Drawing.Point(343, 546);
+            this.label19.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 34);
+            this.label19.TabIndex = 78;
+            this.label19.Text = "~";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(436, 552);
+            this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 20);
+            this.label12.TabIndex = 79;
+            this.label12.Text = ":";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label20.Location = new System.Drawing.Point(270, 553);
+            this.label20.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(13, 20);
+            this.label20.TabIndex = 80;
+            this.label20.Text = ":";
             // 
             // Frm_StoreSignInPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 708);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1040, 701);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cmb_closeTime_minute);
+            this.Controls.Add(this.cmb_closeTime_hour);
+            this.Controls.Add(this.cmb_openTime_minute);
+            this.Controls.Add(this.cmb_openTime_hour);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.btn_demo);
+            this.Controls.Add(this.cmb_city);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_browseStoreImage);
+            this.Controls.Add(this.pic_showStoreImage);
             this.Controls.Add(this.txt_website);
             this.Controls.Add(this.cmb_district);
             this.Controls.Add(this.label17);
@@ -556,9 +657,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_taxID);
-            this.Controls.Add(this.txt_closeTime);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txt_openTime);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txt_seats);
             this.Controls.Add(this.label10);
@@ -573,8 +671,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lab_linkToMemberSignIn);
-            this.Controls.Add(this.lab_closeTime);
-            this.Controls.Add(this.lab_openTime);
             this.Controls.Add(this.lab_seats);
             this.Controls.Add(this.lab_email);
             this.Controls.Add(this.lab_website);
@@ -595,9 +691,10 @@
             this.Controls.Add(this.txt_doubleCheckPassword);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_account);
+            this.DoubleBuffered = true;
             this.Name = "Frm_StoreSignInPage";
             this.Text = "Frm_StoreSignInPage";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_showStoreImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,10 +730,7 @@
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_seats;
-        private System.Windows.Forms.TextBox txt_openTime;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_closeTime;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_taxID;
@@ -646,13 +740,22 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txt_website;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pic_showStoreImage;
+        private System.Windows.Forms.Button btn_browseStoreImage;
         private System.Windows.Forms.Label lab_taxID;
         private System.Windows.Forms.Label lab_district;
         private System.Windows.Forms.Label lab_website;
         private System.Windows.Forms.Label lab_seats;
-        private System.Windows.Forms.Label lab_openTime;
-        private System.Windows.Forms.Label lab_closeTime;
+        private System.Windows.Forms.ComboBox cmb_city;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_demo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox cmb_openTime_hour;
+        private System.Windows.Forms.ComboBox cmb_openTime_minute;
+        private System.Windows.Forms.ComboBox cmb_closeTime_minute;
+        private System.Windows.Forms.ComboBox cmb_closeTime_hour;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label20;
     }
 }
