@@ -125,6 +125,12 @@
     <Compile Include="Frm_StorePage.Designer.cs">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_StoreReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreReserve.Designer.cs">
+      <DependentUpon>Frm_StoreReserve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_StoreSignInPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant_Type.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
@@ -211,19 +222,17 @@
     <EmbeddedResource Include="Frm_StorePage.resx">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreReserve.resx">
+      <DependentUpon>Frm_StoreReserve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_StoreSignInPage.resx">
       <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -252,6 +261,11 @@
     <None Include="Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg" />
     <None Include="Resources\352091_search_icon.png" />
     <None Include="Resources\登入畫面.png" />
+    <None Include="bin\Debug\like_love_icon.png" />
+    <None Include="bin\Debug\user_icon.png" />
+    <None Include="bin\Debug\like_icon.png" />
+    <None Include="Resources\like_icon.png" />
+    <None Include="Resources\like_love_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>

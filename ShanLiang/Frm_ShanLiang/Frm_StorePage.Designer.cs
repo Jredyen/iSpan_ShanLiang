@@ -1,4 +1,6 @@
-﻿namespace Frm_ShanLiang
+﻿using System.Drawing;
+
+namespace Frm_ShanLiang
 {
     partial class Frm_StorePage
     {
@@ -39,12 +41,19 @@
             this.labSeat = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReserve = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLike = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnShare = new System.Windows.Forms.Button();
             this.btnCommemt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labCmtStar = new System.Windows.Forms.Label();
+            this.labCmt = new System.Windows.Forms.Label();
+            this.labCmtName = new System.Windows.Forms.Label();
+            this.labCmtDate = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBranch1 = new System.Windows.Forms.Button();
             this.btnBranch4 = new System.Windows.Forms.Button();
             this.btnBranch3 = new System.Windows.Forms.Button();
@@ -78,6 +87,9 @@
             this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLike)).BeginInit();
@@ -105,8 +117,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(1157, 751);
-            this.splitContainer1.SplitterDistance = 107;
+            this.splitContainer1.Size = new System.Drawing.Size(1157, 707);
+            this.splitContainer1.SplitterDistance = 89;
             this.splitContainer1.TabIndex = 1;
             // 
             // textBox1
@@ -142,30 +154,31 @@
             this.bnt_login.TabIndex = 0;
             this.bnt_login.Text = "登入";
             this.bnt_login.UseVisualStyleBackColor = true;
-            this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click_1);
+            this.bnt_login.Click += new System.EventHandler(this.bnt_login_Click);
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.labSeat);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnReserve);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnLike);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnShare);
             this.panel2.Controls.Add(this.btnCommemt);
-            this.panel2.Location = new System.Drawing.Point(739, 249);
+            this.panel2.Location = new System.Drawing.Point(737, 249);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(398, 813);
+            this.panel2.Size = new System.Drawing.Size(398, 323);
             this.panel2.TabIndex = 10;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(208, 183);
+            this.label11.Location = new System.Drawing.Point(221, 162);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 17);
             this.label11.TabIndex = 12;
@@ -175,7 +188,7 @@
             // 
             this.labSeat.AutoSize = true;
             this.labSeat.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labSeat.Location = new System.Drawing.Point(105, 183);
+            this.labSeat.Location = new System.Drawing.Point(119, 162);
             this.labSeat.Name = "labSeat";
             this.labSeat.Size = new System.Drawing.Size(27, 17);
             this.labSeat.TabIndex = 11;
@@ -186,7 +199,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(199, 158);
+            this.label9.Location = new System.Drawing.Point(212, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 21);
             this.label9.TabIndex = 10;
@@ -198,30 +211,31 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(93, 158);
+            this.label1.Location = new System.Drawing.Point(107, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "現場空位";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button2
+            // btnReserve
             // 
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(93, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "線上預約";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReserve.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReserve.Image = ((System.Drawing.Image)(resources.GetObject("btnReserve.Image")));
+            this.btnReserve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserve.Location = new System.Drawing.Point(107, 193);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(180, 38);
+            this.btnReserve.TabIndex = 4;
+            this.btnReserve.Text = "線上預約";
+            this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // LabelRestaurantname
             // 
             this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(93, 121);
+            this.label4.Location = new System.Drawing.Point(107, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 23);
             this.label4.TabIndex = 3;
@@ -229,33 +243,34 @@
             // 
             // btnLike
             // 
-            this.btnLike.Image = ((System.Drawing.Image)(resources.GetObject("btnLike.Image")));
+            this.btnLike.Image = Image.FromFile(@"..\..\Resources/like_icon.png");/*global::Frm_ShanLiang.Properties.Resources.like_icon;*/
             this.btnLike.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLike.Location = new System.Drawing.Point(213, 68);
+            this.btnLike.Location = new System.Drawing.Point(227, 47);
             this.btnLike.Name = "btnLike";
             this.btnLike.Size = new System.Drawing.Size(60, 38);
             this.btnLike.TabIndex = 2;
             this.btnLike.Text = "收藏";
             this.btnLike.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
-            // button1
+            // btnShare
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(93, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "分享";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShare.Image = ((System.Drawing.Image)(resources.GetObject("btnShare.Image")));
+            this.btnShare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShare.Location = new System.Drawing.Point(107, 47);
+            this.btnShare.Name = "btnShare";
+            this.btnShare.Size = new System.Drawing.Size(60, 38);
+            this.btnShare.TabIndex = 1;
+            this.btnShare.Text = "分享";
+            this.btnShare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShare.UseVisualStyleBackColor = true;
             // 
             // btnCommemt
             // 
             this.btnCommemt.Image = ((System.Drawing.Image)(resources.GetObject("btnCommemt.Image")));
             this.btnCommemt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommemt.Location = new System.Drawing.Point(153, 68);
+            this.btnCommemt.Location = new System.Drawing.Point(167, 47);
             this.btnCommemt.Name = "btnCommemt";
             this.btnCommemt.Size = new System.Drawing.Size(60, 38);
             this.btnCommemt.TabIndex = 0;
@@ -265,7 +280,9 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.flowLayoutPanel4);
             this.panel1.Controls.Add(this.btnBranch1);
             this.panel1.Controls.Add(this.btnBranch4);
             this.panel1.Controls.Add(this.btnBranch3);
@@ -288,15 +305,98 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.labStar);
-            this.panel1.Location = new System.Drawing.Point(8, 249);
+            this.panel1.Location = new System.Drawing.Point(6, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 813);
+            this.panel1.Size = new System.Drawing.Size(725, 909);
             this.panel1.TabIndex = 9;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel4.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(37, 413);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(647, 100);
+            this.flowLayoutPanel4.TabIndex = 30;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labCmtStar);
+            this.groupBox1.Controls.Add(this.labCmt);
+            this.groupBox1.Controls.Add(this.labCmtName);
+            this.groupBox1.Controls.Add(this.labCmtDate);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(644, 88);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // labCmtStar
+            // 
+            this.labCmtStar.AutoSize = true;
+            this.labCmtStar.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.labCmtStar.ForeColor = System.Drawing.Color.DarkOrange;
+            this.labCmtStar.Location = new System.Drawing.Point(39, 25);
+            this.labCmtStar.Name = "labCmtStar";
+            this.labCmtStar.Size = new System.Drawing.Size(22, 18);
+            this.labCmtStar.TabIndex = 27;
+            this.labCmtStar.Text = "★";
+            // 
+            // labCmt
+            // 
+            this.labCmt.AutoSize = true;
+            this.labCmt.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labCmt.Location = new System.Drawing.Point(4, 50);
+            this.labCmt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labCmt.Name = "labCmt";
+            this.labCmt.Size = new System.Drawing.Size(36, 18);
+            this.labCmt.TabIndex = 28;
+            this.labCmt.Text = "評論";
+            // 
+            // labCmtName
+            // 
+            this.labCmtName.AutoSize = true;
+            this.labCmtName.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labCmtName.Location = new System.Drawing.Point(39, 9);
+            this.labCmtName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labCmtName.Name = "labCmtName";
+            this.labCmtName.Size = new System.Drawing.Size(36, 18);
+            this.labCmtName.TabIndex = 26;
+            this.labCmtName.Text = "姓名";
+            // 
+            // labCmtDate
+            // 
+            this.labCmtDate.AutoSize = true;
+            this.labCmtDate.Font = new System.Drawing.Font("微軟正黑體", 8F);
+            this.labCmtDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labCmtDate.Location = new System.Drawing.Point(515, 9);
+            this.labCmtDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labCmtDate.Name = "labCmtDate";
+            this.labCmtDate.Size = new System.Drawing.Size(29, 15);
+            this.labCmtDate.TabIndex = 29;
+            this.labCmtDate.Text = "日期";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 9);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // btnBranch1
             // 
             this.btnBranch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBranch1.Location = new System.Drawing.Point(43, 672);
+            this.btnBranch1.Location = new System.Drawing.Point(43, 727);
             this.btnBranch1.Name = "btnBranch1";
             this.btnBranch1.Size = new System.Drawing.Size(97, 98);
             this.btnBranch1.TabIndex = 24;
@@ -307,7 +407,7 @@
             // btnBranch4
             // 
             this.btnBranch4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBranch4.Location = new System.Drawing.Point(352, 672);
+            this.btnBranch4.Location = new System.Drawing.Point(352, 727);
             this.btnBranch4.Name = "btnBranch4";
             this.btnBranch4.Size = new System.Drawing.Size(97, 98);
             this.btnBranch4.TabIndex = 23;
@@ -318,7 +418,7 @@
             // btnBranch3
             // 
             this.btnBranch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBranch3.Location = new System.Drawing.Point(249, 672);
+            this.btnBranch3.Location = new System.Drawing.Point(249, 727);
             this.btnBranch3.Name = "btnBranch3";
             this.btnBranch3.Size = new System.Drawing.Size(97, 98);
             this.btnBranch3.TabIndex = 22;
@@ -329,7 +429,7 @@
             // btnBranch2
             // 
             this.btnBranch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBranch2.Location = new System.Drawing.Point(146, 672);
+            this.btnBranch2.Location = new System.Drawing.Point(146, 727);
             this.btnBranch2.Name = "btnBranch2";
             this.btnBranch2.Size = new System.Drawing.Size(97, 98);
             this.btnBranch2.TabIndex = 21;
@@ -404,7 +504,7 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(37, 506);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(37, 563);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(647, 100);
             this.flowLayoutPanel3.TabIndex = 13;
@@ -413,7 +513,7 @@
             // 
             this.labBranch.AutoSize = true;
             this.labBranch.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
-            this.labBranch.Location = new System.Drawing.Point(33, 621);
+            this.labBranch.Location = new System.Drawing.Point(33, 674);
             this.labBranch.Name = "labBranch";
             this.labBranch.Size = new System.Drawing.Size(56, 28);
             this.labBranch.TabIndex = 12;
@@ -423,7 +523,7 @@
             // 
             this.labImage.AutoSize = true;
             this.labImage.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
-            this.labImage.Location = new System.Drawing.Point(35, 462);
+            this.labImage.Location = new System.Drawing.Point(35, 524);
             this.labImage.Name = "labImage";
             this.labImage.Size = new System.Drawing.Size(56, 28);
             this.labImage.TabIndex = 11;
@@ -552,10 +652,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(725, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 240);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -564,9 +665,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 751);
+            this.ClientSize = new System.Drawing.Size(1157, 707);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Frm_StorePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_StorePage";
             this.Load += new System.EventHandler(this.Frm_StorePage_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -578,6 +680,10 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxComment)).EndInit();
@@ -608,10 +714,10 @@
         private System.Windows.Forms.Label labTime;
         private System.Windows.Forms.Label labAddress;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLike;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.Button btnCommemt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label labBranch;
@@ -632,5 +738,12 @@
         private System.Windows.Forms.Button btnBranch4;
         private System.Windows.Forms.Button btnBranch3;
         private System.Windows.Forms.Button btnBranch1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labCmtName;
+        private System.Windows.Forms.Label labCmtStar;
+        private System.Windows.Forms.Label labCmt;
+        private System.Windows.Forms.Label labCmtDate;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
