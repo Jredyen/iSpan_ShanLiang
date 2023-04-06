@@ -31,15 +31,7 @@ namespace ShanLiang
         {
             InitializeComponent();
 
-            //timer_ADchange.Enabled = true;
-            //timer_ADchange.Interval = 5000;
-
-
-            //_adImages.Add(Image.FromFile(@"ubAD1.png"));
-            //_adImages.Add(Image.FromFile(@"ubAD2.png"));
-            //_adImages.Add(Image.FromFile(@"ubAD3.png"));
-
-            //pictureBox1.Image = _adImages[_adIndex];
+            
 
             
             timer_ADchange.Interval = 3000; 
@@ -128,6 +120,7 @@ namespace ShanLiang
                                 S.StoreMail
                             };
                     dataGridView1.DataSource = q.ToList();
+                    
                 }
                 else if (cmb_restaurantType.SelectedItem == null && cmb_City.SelectedItem != null && cmb_area.SelectedItem != null)
                 {
@@ -158,12 +151,10 @@ namespace ShanLiang
                 }else
                 {
                     var q = from S in _SL.Stores.AsEnumerable()
-                                //from C in _SL.Cities
-                                //join CC in _SL.Districts on C.CityID equals CC.CityID
+                               
                             join St in _SL.Store_Type.AsEnumerable() on S.StoreID equals St.StoreID
                             where
-                            //TODO:
-                            //C.CityName == (cmb_City.SelectedItem).ToString() 
+                           
 
 
                             S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
@@ -171,11 +162,11 @@ namespace ShanLiang
                             S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}") &&
 
 
-                            //S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}{cmb_area.SelectedItem}") ||
+                           
 
                             St.Restaurant_Type.TypeName == cmb_restaurantType.SelectedItem.ToString()
 
-                            //  && S.RestaurantName.Contains($"{txt_keyword.Text}")
+                            
 
 
                             select new
@@ -199,8 +190,13 @@ namespace ShanLiang
                             };
                     dataGridView1.DataSource = q.ToList();
                 }
-               
-                
+                if (dataGridView1.RowCount == 0)
+                {
+                    pictureBox2.Image = null;
+                    MessageBox.Show("沒有搜尋到店家");
+
+                }
+
             }
             catch (Exception ex)
             {
