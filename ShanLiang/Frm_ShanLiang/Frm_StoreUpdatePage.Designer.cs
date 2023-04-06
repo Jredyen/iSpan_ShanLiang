@@ -128,142 +128,142 @@
             storeIDLabel.AutoSize = true;
             storeIDLabel.Location = new System.Drawing.Point(35, 541);
             storeIDLabel.Name = "storeIDLabel";
-            storeIDLabel.Size = new System.Drawing.Size(145, 40);
+            storeIDLabel.Size = new System.Drawing.Size(74, 20);
             storeIDLabel.TabIndex = 2;
             storeIDLabel.Text = "Store ID:";
             // 
             // accountNameLabel
             // 
             accountNameLabel.AutoSize = true;
-            accountNameLabel.Location = new System.Drawing.Point(35, 597);
+            accountNameLabel.Location = new System.Drawing.Point(35, 584);
             accountNameLabel.Name = "accountNameLabel";
-            accountNameLabel.Size = new System.Drawing.Size(248, 40);
+            accountNameLabel.Size = new System.Drawing.Size(126, 20);
             accountNameLabel.TabIndex = 4;
             accountNameLabel.Text = "Account Name:";
             // 
             // taxIDLabel
             // 
             taxIDLabel.AutoSize = true;
-            taxIDLabel.Location = new System.Drawing.Point(35, 653);
+            taxIDLabel.Location = new System.Drawing.Point(35, 635);
             taxIDLabel.Name = "taxIDLabel";
-            taxIDLabel.Size = new System.Drawing.Size(117, 40);
+            taxIDLabel.Size = new System.Drawing.Size(60, 20);
             taxIDLabel.TabIndex = 6;
             taxIDLabel.Text = "Tax ID:";
             // 
             // restaurantNameLabel
             // 
             restaurantNameLabel.AutoSize = true;
-            restaurantNameLabel.Location = new System.Drawing.Point(35, 709);
+            restaurantNameLabel.Location = new System.Drawing.Point(35, 679);
             restaurantNameLabel.Name = "restaurantNameLabel";
-            restaurantNameLabel.Size = new System.Drawing.Size(288, 40);
+            restaurantNameLabel.Size = new System.Drawing.Size(145, 20);
             restaurantNameLabel.TabIndex = 8;
             restaurantNameLabel.Text = "Restaurant Name:";
             // 
             // restaurantAddressLabel
             // 
             restaurantAddressLabel.AutoSize = true;
-            restaurantAddressLabel.Location = new System.Drawing.Point(35, 765);
+            restaurantAddressLabel.Location = new System.Drawing.Point(35, 719);
             restaurantAddressLabel.Name = "restaurantAddressLabel";
-            restaurantAddressLabel.Size = new System.Drawing.Size(318, 40);
+            restaurantAddressLabel.Size = new System.Drawing.Size(159, 20);
             restaurantAddressLabel.TabIndex = 10;
             restaurantAddressLabel.Text = "Restaurant Address:";
             // 
             // restaurantPhoneLabel
             // 
             restaurantPhoneLabel.AutoSize = true;
-            restaurantPhoneLabel.Location = new System.Drawing.Point(35, 821);
+            restaurantPhoneLabel.Location = new System.Drawing.Point(35, 760);
             restaurantPhoneLabel.Name = "restaurantPhoneLabel";
-            restaurantPhoneLabel.Size = new System.Drawing.Size(291, 40);
+            restaurantPhoneLabel.Size = new System.Drawing.Size(148, 20);
             restaurantPhoneLabel.TabIndex = 12;
             restaurantPhoneLabel.Text = "Restaurant Phone:";
             // 
             // districtIDLabel
             // 
             districtIDLabel.AutoSize = true;
-            districtIDLabel.Location = new System.Drawing.Point(35, 877);
+            districtIDLabel.Location = new System.Drawing.Point(35, 803);
             districtIDLabel.Name = "districtIDLabel";
-            districtIDLabel.Size = new System.Drawing.Size(172, 40);
+            districtIDLabel.Size = new System.Drawing.Size(87, 20);
             districtIDLabel.TabIndex = 14;
             districtIDLabel.Text = "District ID:";
             // 
             // seatsLabel
             // 
             seatsLabel.AutoSize = true;
-            seatsLabel.Location = new System.Drawing.Point(35, 933);
+            seatsLabel.Location = new System.Drawing.Point(35, 841);
             seatsLabel.Name = "seatsLabel";
-            seatsLabel.Size = new System.Drawing.Size(105, 40);
+            seatsLabel.Size = new System.Drawing.Size(53, 20);
             seatsLabel.TabIndex = 16;
             seatsLabel.Text = "Seats:";
             // 
             // longitudeLabel
             // 
             longitudeLabel.AutoSize = true;
-            longitudeLabel.Location = new System.Drawing.Point(35, 989);
+            longitudeLabel.Location = new System.Drawing.Point(35, 878);
             longitudeLabel.Name = "longitudeLabel";
-            longitudeLabel.Size = new System.Drawing.Size(176, 40);
+            longitudeLabel.Size = new System.Drawing.Size(90, 20);
             longitudeLabel.TabIndex = 18;
             longitudeLabel.Text = "Longitude:";
             // 
             // latitudeLabel
             // 
             latitudeLabel.AutoSize = true;
-            latitudeLabel.Location = new System.Drawing.Point(35, 1045);
+            latitudeLabel.Location = new System.Drawing.Point(35, 921);
             latitudeLabel.Name = "latitudeLabel";
-            latitudeLabel.Size = new System.Drawing.Size(147, 40);
+            latitudeLabel.Size = new System.Drawing.Size(75, 20);
             latitudeLabel.TabIndex = 20;
             latitudeLabel.Text = "Latitude:";
             // 
             // openingTimeLabel
             // 
             openingTimeLabel.AutoSize = true;
-            openingTimeLabel.Location = new System.Drawing.Point(35, 1101);
+            openingTimeLabel.Location = new System.Drawing.Point(35, 961);
             openingTimeLabel.Name = "openingTimeLabel";
-            openingTimeLabel.Size = new System.Drawing.Size(236, 40);
+            openingTimeLabel.Size = new System.Drawing.Size(120, 20);
             openingTimeLabel.TabIndex = 22;
             openingTimeLabel.Text = "Opening Time:";
             // 
             // closingTimeLabel
             // 
             closingTimeLabel.AutoSize = true;
-            closingTimeLabel.Location = new System.Drawing.Point(35, 1157);
+            closingTimeLabel.Location = new System.Drawing.Point(35, 998);
             closingTimeLabel.Name = "closingTimeLabel";
-            closingTimeLabel.Size = new System.Drawing.Size(217, 40);
+            closingTimeLabel.Size = new System.Drawing.Size(110, 20);
             closingTimeLabel.TabIndex = 24;
             closingTimeLabel.Text = "Closing Time:";
             // 
             // websiteLabel
             // 
             websiteLabel.AutoSize = true;
-            websiteLabel.Location = new System.Drawing.Point(35, 1213);
+            websiteLabel.Location = new System.Drawing.Point(35, 1036);
             websiteLabel.Name = "websiteLabel";
-            websiteLabel.Size = new System.Drawing.Size(147, 40);
+            websiteLabel.Size = new System.Drawing.Size(74, 20);
             websiteLabel.TabIndex = 26;
             websiteLabel.Text = "Website:";
             // 
             // ratingLabel
             // 
             ratingLabel.AutoSize = true;
-            ratingLabel.Location = new System.Drawing.Point(35, 1269);
+            ratingLabel.Location = new System.Drawing.Point(35, 1072);
             ratingLabel.Name = "ratingLabel";
-            ratingLabel.Size = new System.Drawing.Size(122, 40);
+            ratingLabel.Size = new System.Drawing.Size(62, 20);
             ratingLabel.TabIndex = 28;
             ratingLabel.Text = "Rating:";
             // 
             // storeMailLabel
             // 
             storeMailLabel.AutoSize = true;
-            storeMailLabel.Location = new System.Drawing.Point(35, 1325);
+            storeMailLabel.Location = new System.Drawing.Point(35, 1107);
             storeMailLabel.Name = "storeMailLabel";
-            storeMailLabel.Size = new System.Drawing.Size(177, 40);
+            storeMailLabel.Size = new System.Drawing.Size(89, 20);
             storeMailLabel.TabIndex = 30;
             storeMailLabel.Text = "Store Mail:";
             // 
             // storeImageLabel
             // 
             storeImageLabel.AutoSize = true;
-            storeImageLabel.Location = new System.Drawing.Point(1455, 548);
+            storeImageLabel.Location = new System.Drawing.Point(948, 548);
             storeImageLabel.Name = "storeImageLabel";
-            storeImageLabel.Size = new System.Drawing.Size(207, 40);
+            storeImageLabel.Size = new System.Drawing.Size(105, 20);
             storeImageLabel.TabIndex = 32;
             storeImageLabel.Text = "Store Image:";
             storeImageLabel.Click += new System.EventHandler(this.storeImageLabel_Click);
@@ -333,7 +333,7 @@
             this.storeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.storeBindingNavigator.Name = "storeBindingNavigator";
             this.storeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.storeBindingNavigator.Size = new System.Drawing.Size(2736, 42);
+            this.storeBindingNavigator.Size = new System.Drawing.Size(1907, 39);
             this.storeBindingNavigator.TabIndex = 0;
             this.storeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -343,13 +343,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorAddNewItem.Text = "加入新的";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(53, 36);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 36);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -359,7 +359,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorDeleteItem.Text = "刪除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -368,7 +368,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -377,13 +377,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 42);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -398,7 +398,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 42);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -406,7 +406,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -415,20 +415,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(46, 36);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 42);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // storeBindingNavigatorSaveItem
             // 
             this.storeBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.storeBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("storeBindingNavigatorSaveItem.Image")));
             this.storeBindingNavigatorSaveItem.Name = "storeBindingNavigatorSaveItem";
-            this.storeBindingNavigatorSaveItem.Size = new System.Drawing.Size(46, 36);
+            this.storeBindingNavigatorSaveItem.Size = new System.Drawing.Size(36, 36);
             this.storeBindingNavigatorSaveItem.Text = "儲存資料";
             this.storeBindingNavigatorSaveItem.Click += new System.EventHandler(this.storeBindingNavigatorSaveItem_Click);
             // 
@@ -454,11 +454,11 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
             this.storeDataGridView.DataSource = this.storeBindingSource;
-            this.storeDataGridView.Location = new System.Drawing.Point(22, 142);
+            this.storeDataGridView.Location = new System.Drawing.Point(22, 107);
             this.storeDataGridView.Name = "storeDataGridView";
             this.storeDataGridView.RowHeadersWidth = 82;
             this.storeDataGridView.RowTemplate.Height = 38;
-            this.storeDataGridView.Size = new System.Drawing.Size(2702, 378);
+            this.storeDataGridView.Size = new System.Drawing.Size(1786, 378);
             this.storeDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -593,137 +593,137 @@
             // storeIDTextBox
             // 
             this.storeIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "StoreID", true));
-            this.storeIDTextBox.Location = new System.Drawing.Point(359, 538);
+            this.storeIDTextBox.Location = new System.Drawing.Point(239, 538);
             this.storeIDTextBox.Name = "storeIDTextBox";
-            this.storeIDTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.storeIDTextBox.Size = new System.Drawing.Size(618, 29);
             this.storeIDTextBox.TabIndex = 3;
             // 
             // accountNameTextBox
             // 
             this.accountNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "AccountName", true));
-            this.accountNameTextBox.Location = new System.Drawing.Point(359, 594);
+            this.accountNameTextBox.Location = new System.Drawing.Point(239, 584);
             this.accountNameTextBox.Name = "accountNameTextBox";
-            this.accountNameTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.accountNameTextBox.Size = new System.Drawing.Size(618, 29);
             this.accountNameTextBox.TabIndex = 5;
             // 
             // taxIDTextBox
             // 
             this.taxIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "TaxID", true));
-            this.taxIDTextBox.Location = new System.Drawing.Point(359, 650);
+            this.taxIDTextBox.Location = new System.Drawing.Point(239, 632);
             this.taxIDTextBox.Name = "taxIDTextBox";
-            this.taxIDTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.taxIDTextBox.Size = new System.Drawing.Size(618, 29);
             this.taxIDTextBox.TabIndex = 7;
             // 
             // restaurantNameTextBox
             // 
             this.restaurantNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "RestaurantName", true));
-            this.restaurantNameTextBox.Location = new System.Drawing.Point(359, 706);
+            this.restaurantNameTextBox.Location = new System.Drawing.Point(239, 676);
             this.restaurantNameTextBox.Name = "restaurantNameTextBox";
-            this.restaurantNameTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.restaurantNameTextBox.Size = new System.Drawing.Size(618, 29);
             this.restaurantNameTextBox.TabIndex = 9;
             // 
             // restaurantAddressTextBox
             // 
             this.restaurantAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "RestaurantAddress", true));
-            this.restaurantAddressTextBox.Location = new System.Drawing.Point(359, 762);
+            this.restaurantAddressTextBox.Location = new System.Drawing.Point(239, 716);
             this.restaurantAddressTextBox.Name = "restaurantAddressTextBox";
-            this.restaurantAddressTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.restaurantAddressTextBox.Size = new System.Drawing.Size(618, 29);
             this.restaurantAddressTextBox.TabIndex = 11;
             // 
             // restaurantPhoneTextBox
             // 
             this.restaurantPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "RestaurantPhone", true));
-            this.restaurantPhoneTextBox.Location = new System.Drawing.Point(359, 818);
+            this.restaurantPhoneTextBox.Location = new System.Drawing.Point(239, 757);
             this.restaurantPhoneTextBox.Name = "restaurantPhoneTextBox";
-            this.restaurantPhoneTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.restaurantPhoneTextBox.Size = new System.Drawing.Size(618, 29);
             this.restaurantPhoneTextBox.TabIndex = 13;
             // 
             // districtIDTextBox
             // 
             this.districtIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "DistrictID", true));
-            this.districtIDTextBox.Location = new System.Drawing.Point(359, 874);
+            this.districtIDTextBox.Location = new System.Drawing.Point(239, 800);
             this.districtIDTextBox.Name = "districtIDTextBox";
-            this.districtIDTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.districtIDTextBox.Size = new System.Drawing.Size(618, 29);
             this.districtIDTextBox.TabIndex = 15;
             // 
             // seatsTextBox
             // 
             this.seatsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "Seats", true));
-            this.seatsTextBox.Location = new System.Drawing.Point(359, 930);
+            this.seatsTextBox.Location = new System.Drawing.Point(239, 838);
             this.seatsTextBox.Name = "seatsTextBox";
-            this.seatsTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.seatsTextBox.Size = new System.Drawing.Size(618, 29);
             this.seatsTextBox.TabIndex = 17;
             // 
             // longitudeTextBox
             // 
             this.longitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "Longitude", true));
-            this.longitudeTextBox.Location = new System.Drawing.Point(359, 986);
+            this.longitudeTextBox.Location = new System.Drawing.Point(239, 875);
             this.longitudeTextBox.Name = "longitudeTextBox";
-            this.longitudeTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.longitudeTextBox.Size = new System.Drawing.Size(618, 29);
             this.longitudeTextBox.TabIndex = 19;
             // 
             // latitudeTextBox
             // 
             this.latitudeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "Latitude", true));
-            this.latitudeTextBox.Location = new System.Drawing.Point(359, 1042);
+            this.latitudeTextBox.Location = new System.Drawing.Point(239, 918);
             this.latitudeTextBox.Name = "latitudeTextBox";
-            this.latitudeTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.latitudeTextBox.Size = new System.Drawing.Size(618, 29);
             this.latitudeTextBox.TabIndex = 21;
             // 
             // openingTimeTextBox
             // 
             this.openingTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "OpeningTime", true));
-            this.openingTimeTextBox.Location = new System.Drawing.Point(359, 1098);
+            this.openingTimeTextBox.Location = new System.Drawing.Point(239, 958);
             this.openingTimeTextBox.Name = "openingTimeTextBox";
-            this.openingTimeTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.openingTimeTextBox.Size = new System.Drawing.Size(618, 29);
             this.openingTimeTextBox.TabIndex = 23;
             // 
             // closingTimeTextBox
             // 
             this.closingTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "ClosingTime", true));
-            this.closingTimeTextBox.Location = new System.Drawing.Point(359, 1154);
+            this.closingTimeTextBox.Location = new System.Drawing.Point(239, 995);
             this.closingTimeTextBox.Name = "closingTimeTextBox";
-            this.closingTimeTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.closingTimeTextBox.Size = new System.Drawing.Size(618, 29);
             this.closingTimeTextBox.TabIndex = 25;
             // 
             // websiteTextBox
             // 
             this.websiteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "Website", true));
-            this.websiteTextBox.Location = new System.Drawing.Point(359, 1210);
+            this.websiteTextBox.Location = new System.Drawing.Point(239, 1036);
             this.websiteTextBox.Name = "websiteTextBox";
-            this.websiteTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.websiteTextBox.Size = new System.Drawing.Size(618, 29);
             this.websiteTextBox.TabIndex = 27;
             // 
             // ratingTextBox
             // 
             this.ratingTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "Rating", true));
-            this.ratingTextBox.Location = new System.Drawing.Point(359, 1266);
+            this.ratingTextBox.Location = new System.Drawing.Point(239, 1072);
             this.ratingTextBox.Name = "ratingTextBox";
-            this.ratingTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.ratingTextBox.Size = new System.Drawing.Size(618, 29);
             this.ratingTextBox.TabIndex = 29;
             // 
             // storeMailTextBox
             // 
             this.storeMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.storeBindingSource, "StoreMail", true));
-            this.storeMailTextBox.Location = new System.Drawing.Point(359, 1322);
+            this.storeMailTextBox.Location = new System.Drawing.Point(239, 1107);
             this.storeMailTextBox.Name = "storeMailTextBox";
-            this.storeMailTextBox.Size = new System.Drawing.Size(1045, 50);
+            this.storeMailTextBox.Size = new System.Drawing.Size(618, 29);
             this.storeMailTextBox.TabIndex = 31;
             // 
             // storeImagePictureBox
             // 
             this.storeImagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.storeImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.storeBindingSource, "StoreImage", true));
-            this.storeImagePictureBox.Location = new System.Drawing.Point(1455, 594);
+            this.storeImagePictureBox.Location = new System.Drawing.Point(948, 594);
             this.storeImagePictureBox.Name = "storeImagePictureBox";
-            this.storeImagePictureBox.Size = new System.Drawing.Size(919, 715);
+            this.storeImagePictureBox.Size = new System.Drawing.Size(590, 388);
             this.storeImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.storeImagePictureBox.TabIndex = 33;
             this.storeImagePictureBox.TabStop = false;
             // 
             // btn_StoreImg
             // 
-            this.btn_StoreImg.Location = new System.Drawing.Point(1455, 1325);
+            this.btn_StoreImg.Location = new System.Drawing.Point(940, 998);
             this.btn_StoreImg.Name = "btn_StoreImg";
             this.btn_StoreImg.Size = new System.Drawing.Size(272, 43);
             this.btn_StoreImg.TabIndex = 34;
@@ -742,17 +742,18 @@
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(22, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 57);
+            this.label1.Size = new System.Drawing.Size(146, 30);
             this.label1.TabIndex = 35;
             this.label1.Text = "店家資料管理";
             // 
             // Frm_StoreUpdatePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 40F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2736, 1385);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_StoreImg);
             this.Controls.Add(storeImageLabel);
