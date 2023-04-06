@@ -19,11 +19,12 @@ namespace ShanLiang
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Homepage());
             Application.Run(new Frm_StorePage());
+            //Application.Run(new Frm_StoreReserve());
             //Application.Run(new Frm_StoreSignInPage());
-            //Application.Run(new Frm_SignInPage());
+            //Application.Run(new Frm_SignupPage());
             //Application.Run(new Frm_LoginPage());
             //Application.Run(new Frm_MemberPage());
-
+            //Application.Run(new Frm_StoreManagerPage());
         }
     }
 }

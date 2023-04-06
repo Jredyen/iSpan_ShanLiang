@@ -41,9 +41,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,11 +67,15 @@
     <Compile Include="City.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CMemberData.cs" />
+    <Compile Include="CNowLoginAccount.cs" />
     <Compile Include="Coupon.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CStoreData.cs" />
     <Compile Include="CStoreShow.cs" />
     <Compile Include="CStorePage.cs" />
+    <Compile Include="CCustomers.cs" />
     <Compile Include="District.cs">
       <DependentUpon>ShanLiangModel.tt</DependentUpon>
     </Compile>
@@ -94,17 +101,29 @@
     <Compile Include="Frm_MemberPage.Designer.cs">
       <DependentUpon>Frm_MemberPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_SignInPage.cs">
+    <Compile Include="Frm_SignupPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_SignInPage.Designer.cs">
-      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    <Compile Include="Frm_SignupPage.Designer.cs">
+      <DependentUpon>Frm_SignupPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_StoreManagerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreManagerPage.Designer.cs">
+      <DependentUpon>Frm_StoreManagerPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_StorePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_StorePage.Designer.cs">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_StoreReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreReserve.Designer.cs">
+      <DependentUpon>Frm_StoreReserve.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_StoreSignInPage.cs">
       <SubType>Form</SubType>
@@ -183,11 +202,17 @@
     <EmbeddedResource Include="Frm_MemberPage.resx">
       <DependentUpon>Frm_MemberPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_SignInPage.resx">
-      <DependentUpon>Frm_SignInPage.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_SignupPage.resx">
+      <DependentUpon>Frm_SignupPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreManagerPage.resx">
+      <DependentUpon>Frm_StoreManagerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StorePage.resx">
       <DependentUpon>Frm_StorePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreReserve.resx">
+      <DependentUpon>Frm_StoreReserve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StoreSignInPage.resx">
       <DependentUpon>Frm_StoreSignInPage.cs</DependentUpon>
@@ -229,6 +254,10 @@
   <ItemGroup>
     <None Include="Resources\1000-_0001_0.33L瓶裝金牌啤酒產品照-1.jpg" />
     <None Include="Resources\352091_search_icon.png" />
+    <None Include="Resources\登入畫面.png" />
+    <None Include="bin\Debug\like_love_icon.png" />
+    <None Include="bin\Debug\user_icon.png" />
+    <None Include="bin\Debug\like_icon.png" />
     <Content Include="ShanLiangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShanLiangModel.edmx</DependentUpon>
