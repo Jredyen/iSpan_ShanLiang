@@ -72,7 +72,7 @@ namespace Frm_ShanLiang
                 linkLab.AutoSize = true;
                 linkLab.Font = new Font("微軟正黑體", 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(136)));
                 linkLab.ImageAlign = ContentAlignment.MiddleLeft;
-                linkLab.Name = "linkLab"+item;
+                linkLab.Name = "linkLab" + item;
                 linkLab.Size = new Size(31, 16);
                 //linkLab.TabIndex = 1;
                 linkLab.TabStop = true;
@@ -82,7 +82,7 @@ namespace Frm_ShanLiang
 
             //評論區(Store_Evaluate)         
             var qS_E = SLE.Store_Evaluate.Where(id => id.StoreID == CStorePage._sid).
-                Select(n => new {  n.StoreID, n.Member.MemberName, n.Rating, n.EvaluateDate, n.Comments });
+                Select(n => new { n.StoreID, n.Member.MemberName, n.Rating, n.EvaluateDate, n.Comments });
             if (qS_E.Count() == 0)
             {
                 labCmtName.Text = null;
@@ -100,10 +100,10 @@ namespace Frm_ShanLiang
                         labCmtStar.Text += "★";
                     labCmtDate.Text = $"{item.EvaluateDate}";
                     labCmt.Text = item.Comments;
-                }                   
-            }            
+                }
+            }
 
-        }                
+        }
         public void LoadBtnImg()
         {
             var q1 = SLE.Stores.Where(id => id.StoreID == 1).Select(n => n.StoreImage);
@@ -115,7 +115,7 @@ namespace Frm_ShanLiang
                 {
                     MemoryStream ms = new MemoryStream(item);
                     btnBranch1.BackgroundImage = Image.FromStream(ms);
-                }                
+                }
             }
             var q2 = SLE.Stores.Where(id => id.StoreID == 8).Select(n => n.StoreImage);
             foreach (var item in q2)
@@ -127,7 +127,7 @@ namespace Frm_ShanLiang
                     MemoryStream ms = new MemoryStream(item);
                     btnBranch2.BackgroundImage = Image.FromStream(ms);
                 }
-                    
+
             }
             var q6 = SLE.Stores.Where(id => id.StoreID == 6).Select(n => n.StoreImage);
             foreach (var item in q6)
@@ -138,7 +138,7 @@ namespace Frm_ShanLiang
                 {
                     MemoryStream ms = new MemoryStream(item);
                     btnBranch3.BackgroundImage = Image.FromStream(ms);
-                }                
+                }
             }
             var q12 = SLE.Stores.Where(id => id.StoreID == 12).Select(n => n.StoreImage);
             foreach (var item in q12)
@@ -149,7 +149,7 @@ namespace Frm_ShanLiang
                 {
                     MemoryStream ms = new MemoryStream(item);
                     btnBranch4.BackgroundImage = Image.FromStream(ms);
-                }                
+                }
             }
         }//載入分店圖片
         private void btnBranch1_Click(object sender, EventArgs e)
@@ -177,7 +177,28 @@ namespace Frm_ShanLiang
 
         private void bnt_login_Click(object sender, EventArgs e)
         {
-            new Frm_LoginPage().ShowDialog();
+            switch (bnt_login.Text)
+            {
+                case "登入":
+                    Frm_LoginPage f = new Frm_LoginPage();
+                    f.Show();
+                    break;
+                case "我的頁面":
+                    if (CNowLoginAccount._Identification == 1)
+                    {
+                        new Frm_MemberPage().Show();
+                    }
+                    else if (CNowLoginAccount._Identification == 2)
+                    {
+                        new Frm_StoreManagerPage().Show();
+                    }
+                    else if (CNowLoginAccount._Identification == 0)
+                    {
+                        new Frm_AdminPage().Show();
+                    }
+                    else return;
+                    break;
+            }
         }
 
         private void btn_signin_Click(object sender, EventArgs e)
@@ -208,5 +229,15 @@ namespace Frm_ShanLiang
             }
 
         }//收藏
+
+        private void btn_signin_Click_1(object sender, EventArgs e)
+        {
+            new Frm_SignupPage().ShowDialog();
+        }
+
+        private void btnCommemt_Click(object sender, EventArgs e)
+        {
+            new Frm_StoreCmt().ShowDialog();
+        }
     }
 }

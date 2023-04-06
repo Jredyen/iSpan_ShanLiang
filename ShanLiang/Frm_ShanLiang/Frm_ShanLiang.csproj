@@ -107,6 +107,12 @@
     <Compile Include="Frm_SignupPage.Designer.cs">
       <DependentUpon>Frm_SignupPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_StoreCmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_StoreCmt.Designer.cs">
+      <DependentUpon>Frm_StoreCmt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_StoreManagerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_SignupPage.resx">
       <DependentUpon>Frm_SignupPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_StoreCmt.resx">
+      <DependentUpon>Frm_StoreCmt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_StoreManagerPage.resx">
       <DependentUpon>Frm_StoreManagerPage.cs</DependentUpon>
