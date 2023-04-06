@@ -45,6 +45,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.timer_ADchange = new System.Windows.Forms.Timer(this.components);
@@ -58,6 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,14 +88,14 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1210, 709);
-            this.splitContainer1.SplitterDistance = 100;
+            this.splitContainer1.Size = new System.Drawing.Size(940, 628);
+            this.splitContainer1.SplitterDistance = 88;
             this.splitContainer1.TabIndex = 0;
             // 
             // lab_user
             // 
             this.lab_user.AutoSize = true;
-            this.lab_user.Location = new System.Drawing.Point(1036, 44);
+            this.lab_user.Location = new System.Drawing.Point(773, 40);
             this.lab_user.Name = "lab_user";
             this.lab_user.Size = new System.Drawing.Size(60, 12);
             this.lab_user.TabIndex = 6;
@@ -125,18 +130,16 @@
             // 
             // txt_keyword
             // 
-            this.txt_keyword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_keyword.Location = new System.Drawing.Point(476, 9);
             this.txt_keyword.Name = "txt_keyword";
-            this.txt_keyword.Size = new System.Drawing.Size(457, 22);
+            this.txt_keyword.Size = new System.Drawing.Size(421, 22);
             this.txt_keyword.TabIndex = 1;
             this.txt_keyword.TextChanged += new System.EventHandler(this.txt_keyword_TextChanged);
             // 
             // btn_signinOrSignout
             // 
             this.btn_signinOrSignout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_signinOrSignout.Location = new System.Drawing.Point(1114, 9);
+            this.btn_signinOrSignout.Location = new System.Drawing.Point(853, 58);
             this.btn_signinOrSignout.Name = "btn_signinOrSignout";
             this.btn_signinOrSignout.Size = new System.Drawing.Size(75, 23);
             this.btn_signinOrSignout.TabIndex = 0;
@@ -146,11 +149,10 @@
             // 
             // btn_search
             // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_search.AutoSize = true;
             this.btn_search.BackColor = System.Drawing.SystemColors.Window;
             this.btn_search.Image = global::Frm_ShanLiang.Properties.Resources._352091_search_icon;
-            this.btn_search.Location = new System.Drawing.Point(939, 5);
+            this.btn_search.Location = new System.Drawing.Point(903, 5);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(30, 30);
             this.btn_search.TabIndex = 0;
@@ -160,7 +162,7 @@
             // btn_loginOrMypage
             // 
             this.btn_loginOrMypage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_loginOrMypage.Location = new System.Drawing.Point(1033, 9);
+            this.btn_loginOrMypage.Location = new System.Drawing.Point(772, 58);
             this.btn_loginOrMypage.Name = "btn_loginOrMypage";
             this.btn_loginOrMypage.Size = new System.Drawing.Size(75, 23);
             this.btn_loginOrMypage.TabIndex = 0;
@@ -177,8 +179,9 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1210, 605);
+            this.tabControl1.Size = new System.Drawing.Size(940, 536);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -188,7 +191,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1202, 579);
+            this.tabPage1.Size = new System.Drawing.Size(932, 510);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "首頁";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -199,9 +202,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(612, 266);
+            this.pictureBox2.Location = new System.Drawing.Point(611, 266);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(582, 295);
+            this.pictureBox2.Size = new System.Drawing.Size(313, 295);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -213,10 +216,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 266);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 92;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(333, 295);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
             // pictureBox1
             // 
@@ -224,26 +228,50 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1191, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(921, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1202, 579);
+            this.tabPage2.Size = new System.Drawing.Size(932, 510);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "最熱門店家";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(652, 79);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(513, 291);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(16, 20);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 92;
+            this.dataGridView2.RowTemplate.Height = 42;
+            this.dataGridView2.Size = new System.Drawing.Size(603, 367);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEnter);
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1202, 579);
+            this.tabPage3.Size = new System.Drawing.Size(932, 510);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "最近的店家";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -269,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 709);
+            this.ClientSize = new System.Drawing.Size(940, 628);
             this.Controls.Add(this.splitContainer1);
             this.IsMdiContainer = true;
             this.Name = "Frm_Homepage";
@@ -285,6 +313,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -311,6 +342,8 @@
         private System.Windows.Forms.ComboBox cmb_restaurantType;
         private System.Windows.Forms.ComboBox cmb_area;
         private System.Windows.Forms.Label lab_user;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 

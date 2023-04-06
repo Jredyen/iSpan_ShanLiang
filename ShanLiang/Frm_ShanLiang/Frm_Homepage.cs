@@ -118,40 +118,108 @@ namespace ShanLiang
             try
             {
                 string keyword = txt_keyword.Text;
-                var q = from S in _SL.Stores.AsEnumerable()
-                        join St in _SL.Store_Type.AsEnumerable()  on S.StoreID equals St.StoreID
-                        where
-                        //TODO:
-                    //S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}")&&
+
+                if (cmb_area.SelectedItem == null && cmb_restaurantType.SelectedItem == null)
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                            where S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}")
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
                     
-                    //S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}") &&
-                   
-                    
-                    S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}{cmb_area.SelectedItem}") ||
-                   
-                    St.Restaurant_Type.TypeName == cmb_restaurantType.SelectedItem.ToString()
-                  //  && S.RestaurantName.Contains($"{txt_keyword.Text}")
+                }
+                else if (cmb_restaurantType.SelectedItem == null && cmb_City.SelectedItem != null && cmb_area.SelectedItem != null)
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                            where
+                            S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
+                            S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}")
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
+                }else
+                {
+                    var q = from S in _SL.Stores.AsEnumerable()
+                               
+                            join St in _SL.Store_Type.AsEnumerable() on S.StoreID equals St.StoreID
+                            where
+                           
 
 
-                        select new
-                        {
-                            S.StoreID,
-                            S.AccountName,
-                            S.TaxID,
-                            S.RestaurantName,
-                            S.RestaurantAddress,
-                            S.RestaurantPhone,
-                            S.DistrictID,
-                            S.Seats,
-                            S.Longitude,
-                            S.Latitude,
-                            S.OpeningTime,
-                            S.ClosingTime,
-                            S.Website,
-                            S.StoreImage,
-                            S.Rating,
-                        };
-                dataGridView1.DataSource = q.ToList();
+                            S.RestaurantAddress.Contains($"{cmb_City.SelectedItem}") &&
+
+                            S.RestaurantAddress.Contains($"{cmb_area.SelectedItem}") &&
+
+
+                           
+
+                            St.Restaurant_Type.TypeName == cmb_restaurantType.SelectedItem.ToString()
+
+                            
+
+
+                            select new
+                            {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating,
+                                S.StoreMail
+                            };
+                    dataGridView1.DataSource = q.ToList();
+                }
+                if (dataGridView1.RowCount == 0)
+                {
+                    pictureBox2.Image = null;
+                    MessageBox.Show("沒有搜尋到店家");
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -238,10 +306,58 @@ namespace ShanLiang
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+
+
+
+        private void txt_keyword_TextChanged(object sender, EventArgs e)
+        {   //如果沒搜尋到東西 是否要多個if data沒秀任何資料 就跳出視窗 告知沒有搜尋到結果 是否前往熱門餐廳的按鈕?
+            try
+            {
+                
+                string keyword = txt_keyword.Text;
+                var query = from S in _SL.Stores
+                            where 
+                            S.RestaurantAddress.Contains(keyword) ||
+                            S.RestaurantName.Contains(keyword)
+                            select new {
+                                S.StoreID,
+                                S.AccountName,
+                                S.TaxID,
+                                S.RestaurantName,
+                                S.RestaurantAddress,
+                                S.RestaurantPhone,
+                                S.DistrictID,
+                                S.Seats,
+                                S.Longitude,
+                                S.Latitude,
+                                S.OpeningTime,
+                                S.ClosingTime,
+                                S.Website,
+                                S.StoreImage,
+                                S.Rating, 
+                                S.StoreMail
+                            };
+                dataGridView1.DataSource = query.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            //預計做成 點選DataGridView 的店家資料 picturebox2就會出現店家的圖片
-            //資料庫圖片還沒插入 還沒試驗能不能成
+           
+           
+
+
+
+
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
             try
             {
                 if (e.RowIndex >= 0)
@@ -266,23 +382,46 @@ namespace ShanLiang
             {
                 pictureBox2.Image = pictureBox2.ErrorImage;
             }
-  
-
         }
 
-
-
-        private void txt_keyword_TextChanged(object sender, EventArgs e)
+        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                
-                string keyword = txt_keyword.Text;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+
+                    // 從資料行取得二進位圖片資料
+                    byte[] imageData = (byte[])row.Cells["StoreImage"].Value;
+
+                    // 將二進位圖片資料轉換成圖片物件
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        image = Image.FromStream(ms);
+                    }
+
+                    // 將圖片顯示在 PictureBox 控制項中
+                    pictureBox3.Image = image;
+                }
+            }
+            catch (Exception ex)
+            {
+                pictureBox3.Image = pictureBox3.ErrorImage;
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
                 var query = from S in _SL.Stores
-                            where 
-                            S.RestaurantAddress.Contains(keyword) ||
-                            S.RestaurantName.Contains(keyword)
-                            select new {
+                            where S.Rating > 4
+
+                            select new
+                            {
                                 S.StoreID,
                                 S.AccountName,
                                 S.TaxID,
@@ -297,9 +436,10 @@ namespace ShanLiang
                                 S.ClosingTime,
                                 S.Website,
                                 S.StoreImage,
-                                S.Rating,  
+                                S.Rating,
+                                S.StoreMail
                             };
-                dataGridView1.DataSource = query.ToList();
+                dataGridView2.DataSource = query.ToList();
             }
             catch (Exception ex)
             {
