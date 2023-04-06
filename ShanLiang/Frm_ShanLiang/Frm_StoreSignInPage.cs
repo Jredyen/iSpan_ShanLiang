@@ -367,7 +367,7 @@ namespace Frm_ShanLiang
             txt_doubleCheckPassword.Text = "Test12345";
             txt_taxID.Text = "11111111";
             txt_name.Text = "Test11";
-            txt_phone.Text = "0233445566";
+            txt_phone.Text = "(02)3344-5566";
             cmb_type.Text = "日式料理";
             cmb_city.Text = "台北市";
             cmb_district.Text = "大安區";
