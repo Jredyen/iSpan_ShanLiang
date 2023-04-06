@@ -39,31 +39,31 @@ namespace Frm_ShanLiang
             this.tabControl_MemberManagementSystem.SelectedIndex = 1;
            //從db載入會員資料
             var qAccount = from p in _SL.Members
-                       where p.AccountName == CNowLoginAccount.loginAccountName
+                       where p.AccountName == CNowLoginAccount._loginAccountName
                        select p.AccountName;
             foreach (var i in qAccount) {
                 this.txt_MemberAccount.Text = i;
             }
             var qName = from p in _SL.Members
-                        where p.AccountName == CNowLoginAccount.loginAccountName
+                        where p.AccountName == CNowLoginAccount._loginAccountName
                         select p.MemberName;
             foreach(var i in qName){
                 this.txt_MemberName.Text = i;
             }
             var qPhone = from p in _SL.Members
-                         where p.AccountName == CNowLoginAccount.loginAccountName
+                         where p.AccountName == CNowLoginAccount._loginAccountName
                          select p.Memberphone;
             foreach (var i in qPhone){
                 this.txt_MemberTelephoneNumber.Text = i;
             }    
             var qEmail = from p in _SL.Members
-                         where p.AccountName == CNowLoginAccount.loginAccountName
+                         where p.AccountName == CNowLoginAccount._loginAccountName
                          select p.Email;
             foreach (var i in qEmail){
                 this.txt_MemberEMail.Text = i;
             }
             var qAddress = from p in _SL.Members
-                       where p.AccountName == CNowLoginAccount.loginAccountName
+                       where p.AccountName == CNowLoginAccount._loginAccountName
                        select p.Address;
             foreach (var i in qAddress){
                 this.txt_MemberAddress.Text = i;
@@ -186,7 +186,7 @@ namespace Frm_ShanLiang
             {
                 //修改會員資料
                 var q = (from m in this._SL.Members
-                         where m.AccountName == CNowLoginAccount.loginAccountName
+                         where m.AccountName == CNowLoginAccount._loginAccountName
                          select m).FirstOrDefault();
                 if (q == null) return;
                 if (boolStg == false && IsPasswordsEnabled == true)
@@ -227,35 +227,35 @@ namespace Frm_ShanLiang
             {
                 //從db載入會員資料
                 var qAccount = from p in _SL.Members
-                               where p.AccountName == CNowLoginAccount.loginAccountName
+                               where p.AccountName == CNowLoginAccount._loginAccountName
                                select p.AccountName;
                 foreach (var i in qAccount)
                 {
                     this.txt_MemberAccount.Text = i;
                 }
                 var qName = from p in _SL.Members
-                            where p.AccountName == CNowLoginAccount.loginAccountName
+                            where p.AccountName == CNowLoginAccount._loginAccountName
                             select p.MemberName;
                 foreach (var i in qName)
                 {
                     this.txt_MemberName.Text = i;
                 }
                 var qPhone = from p in _SL.Members
-                             where p.AccountName == CNowLoginAccount.loginAccountName
+                             where p.AccountName == CNowLoginAccount._loginAccountName
                              select p.Memberphone;
                 foreach (var i in qPhone)
                 {
                     this.txt_MemberTelephoneNumber.Text = i;
                 }
                 var qEmail = from p in _SL.Members
-                             where p.AccountName == CNowLoginAccount.loginAccountName
+                             where p.AccountName == CNowLoginAccount._loginAccountName
                              select p.Email;
                 foreach (var i in qEmail)
                 {
                     this.txt_MemberEMail.Text = i;
                 }
                 var qAddress = from p in _SL.Members
-                               where p.AccountName == CNowLoginAccount.loginAccountName
+                               where p.AccountName == CNowLoginAccount._loginAccountName
                                select p.Address;
                 foreach (var i in qAddress)
                 {
@@ -328,7 +328,7 @@ namespace Frm_ShanLiang
                         on m.MemberID equals o.MemberID
                         join s in this._SL.Stores
                         on o.StoreID equals s.StoreID
-                        where m.AccountName == CNowLoginAccount.loginAccountName
+                        where m.AccountName == CNowLoginAccount._loginAccountName
                         //&& s.AccountName.Contains(ss)
                         select new
                         {
@@ -517,7 +517,7 @@ namespace Frm_ShanLiang
         }
         bool AccountAndAction(int ii1, int ii2)
         {
-            bool result1 = ii1 == CNowLoginAccount.nowLoginAccountID;
+            bool result1 = ii1 == CNowLoginAccount._nowLoginAccountID;
             bool result2 = ii2 == cbo_MemberSelectedAction.SelectedIndex;
             return result1 && result2;
         }
@@ -547,7 +547,7 @@ namespace Frm_ShanLiang
                 var q = (from m in this._SL.Members
                          join a in this._SL.Accounts
                          on m.AccountName equals a.AccountName
-                         where m.AccountName == CNowLoginAccount.loginAccountName
+                         where m.AccountName == CNowLoginAccount._loginAccountName
                          select m ).FirstOrDefault();
                 if (q == null) return;
                 if (boolStg == false && IsPasswordsEnabled == true)

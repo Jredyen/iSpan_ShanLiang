@@ -321,9 +321,11 @@ namespace ShanLiang
                 
                 string keyword = txt_keyword.Text;
                 var query = from S in _SL.Stores
+                            join St in _SL.Store_Type on S.StoreID equals St.StoreID
                             where 
                             S.RestaurantAddress.Contains(keyword) ||
-                            S.RestaurantName.Contains(keyword)
+                            S.RestaurantName.Contains(keyword) ||
+                            St.Restaurant_Type.TypeName.Contains(keyword)
                             select new {
                                 S.StoreID,
                                 S.AccountName,
