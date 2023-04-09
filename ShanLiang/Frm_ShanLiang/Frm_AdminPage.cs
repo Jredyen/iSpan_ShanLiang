@@ -18,39 +18,69 @@ namespace Frm_ShanLiang
         public Frm_AdminPage()
         {
             InitializeComponent();
-            tabControl1.SelectedIndex = 0;
-            this.pictureBoxStoreImage.AllowDrop = true;
-            this.pictureBoxStoreImage.DragEnter += pictureBoxStoreImage_DragEnter;
-            this.pictureBoxStoreImage.DragDrop += pictureBoxStoreImage_DragDrop;
+            tabControl1.SelectedIndex = 3;
+            pictureBoxStoreImage.AllowDrop = true;            
+            pictureBoxStoreImage.DragEnter += pictureBoxStoreImage_DragEnter;
+            pictureBoxStoreImage.DragDrop += pictureBoxStoreImage_DragDrop;
+            pictureBoxStoreimages.AllowDrop = true;
+            pictureBoxStoreimages.DragEnter += PictureBoxStoreimages_DragEnter;
+            pictureBoxStoreimages.DragDrop += PictureBoxStoreimages_DragDrop;
+        }
+        private void pictureBoxStoreImage_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void pictureBoxStoreImage_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            pictureBoxStoreImage.Image = Image.FromFile(files[0]);
+            try
+            {
+                byte[] bytesImage = { 1, 1 };      //先把照片轉成二進位資料
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                this.pictureBoxStoreImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                bytesImage = ms.GetBuffer();
+
+                //dataGridViewStore.SelectedCells[13].Value = bytesImage; //可以選整欄去找序號13的位置更換圖片
+                dataGridViewStore.SelectedCells[0].Value = bytesImage;  //只能選照片那格去更換照片
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void PictureBoxStoreimages_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void PictureBoxStoreimages_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            pictureBoxStoreimages.Image = Image.FromFile(files[0]);
+            try
+            {
+                byte[] bytesImage = { 1, 1 };      //先把照片轉成二進位資料
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                this.pictureBoxStoreimages.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                bytesImage = ms.GetBuffer();               
+                dataGridViewStoreImage.SelectedCells[0].Value = bytesImage;  //只能選照片那格去更換照片
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         ShanLiangEntities _SLE = new ShanLiangEntities();
-        void Read_RefreshDataGridViewAccount()
-        {   //更新帳號列表
-            this.dataGridViewAccount.DataSource = null;
-            this.dataGridViewAccount.DataSource = _SLE.Accounts.ToList();
-        }
-        void Read_RefreshDataGridViewMember()
-        {   //更新會員列表
-            this.dataGridViewMember.DataSource = null;
-            this.dataGridViewMember.DataSource = _SLE.Members.ToList();
-        }
-        void Read_RefreshDataGridViewStore()
-        {   //更新店家列表
-            this.dataGridViewStore.DataSource = null;
-            this.dataGridViewStore.DataSource = _SLE.Stores.ToList();
-        }
-        void Read_RefreshDataGridViewStoreImage()
-        {   //更新店家列表
-            this.dataGridViewStoreImage.DataSource = null;
-            this.dataGridViewStoreImage.DataSource = _SLE.Store_Image.ToList();
-        }
+
+        void Read_DataGridView(DataGridView dataGridView,object list) //此方法用在讀取資料表到GridView
+        { dataGridView.DataSource = list; }                           //list = 要放入的資料表
 
         //===============================帳號======================================
 
         private void btn_readaccount_Click(object sender, EventArgs e)
-        {
-            Read_RefreshDataGridViewAccount();                                     //讀取Account帳號表
-            dataGridViewIdentification.DataSource = _SLE.Identifications.ToList(); //讀取帳號類型表
+        {            
+            Read_DataGridView(dataGridViewAccount, _SLE.Accounts.ToList());//讀取Account帳號表
+            Read_DataGridView(dataGridViewIdentification, _SLE.Identifications.ToList());//讀取帳號類型表            
         }
 
         private void btn_orderbyaccount_Click(object sender, EventArgs e)
@@ -59,14 +89,13 @@ namespace Frm_ShanLiang
             {
                 var q = from p in _SLE.Accounts
                         orderby p.Identification
-                        select p;
-                dataGridViewAccount.DataSource = q.ToList();
+                        select p;               
+                Read_DataGridView(dataGridViewAccount, q.ToList());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            
+            }           
         }
 
         private void btn_updateaccount_Click(object sender, EventArgs e)
@@ -78,7 +107,7 @@ namespace Frm_ShanLiang
 
                 if (account == null) return;               
                 _SLE.SaveChanges();
-                Read_RefreshDataGridViewAccount();
+                Read_DataGridView(dataGridViewAccount, _SLE.Accounts.ToList());                
             }
             catch (Exception ex)
             {
@@ -94,7 +123,7 @@ namespace Frm_ShanLiang
                 Account account = new Account { AccountName = "Test" };
                 _SLE.Accounts.Add(account);
                 _SLE.SaveChanges();
-                this.Read_RefreshDataGridViewAccount();
+                Read_DataGridView(dataGridViewAccount, _SLE.Accounts.ToList());
             }
             catch (Exception ex)
             {
@@ -113,7 +142,7 @@ namespace Frm_ShanLiang
                     _SLE.Accounts.Remove((Account)account);
                     _SLE.SaveChanges();
                 }
-                Read_RefreshDataGridViewAccount();
+                Read_DataGridView(dataGridViewAccount, _SLE.Accounts.ToList());
             }
             catch (Exception ex)
             {
@@ -124,7 +153,7 @@ namespace Frm_ShanLiang
         
         private void btn_readmember_Click(object sender, EventArgs e)
         {  //讀取Member會員表
-            Read_RefreshDataGridViewMember();
+            Read_DataGridView(dataGridViewMember, _SLE.Members.ToList());
         }
         
         private void btn_updatemember_Click(object sender, EventArgs e)
@@ -135,7 +164,7 @@ namespace Frm_ShanLiang
                               select p).FirstOrDefault();
                 if (member == null) return;
                 _SLE.SaveChanges();
-                Read_RefreshDataGridViewMember();
+                Read_DataGridView(dataGridViewMember, _SLE.Members.ToList());
             }
             catch (Exception ex)
             {
@@ -149,7 +178,7 @@ namespace Frm_ShanLiang
                 Member member = new Member { AccountName = "Test" };
                 _SLE.Members.Add(member);
                 _SLE.SaveChanges();
-                Read_RefreshDataGridViewMember();
+                Read_DataGridView(dataGridViewMember, _SLE.Members.ToList());
             }
             catch (Exception ex)
             {
@@ -166,7 +195,7 @@ namespace Frm_ShanLiang
                     _SLE.Members.Remove((Member)member);
                     _SLE.SaveChanges();
                 }
-                Read_RefreshDataGridViewMember();              
+                Read_DataGridView(dataGridViewMember, _SLE.Members.ToList());
             }
             catch (Exception ex)
             {
@@ -176,7 +205,7 @@ namespace Frm_ShanLiang
         //========================店家=====================================
         private void btn_readstore_Click(object sender, EventArgs e)
         {
-            Read_RefreshDataGridViewStore();
+            Read_DataGridView(dataGridViewStore, _SLE.Stores.ToList());
         }
 
         private void btn_updatestore_Click(object sender, EventArgs e)
@@ -187,7 +216,7 @@ namespace Frm_ShanLiang
                               select p).FirstOrDefault();
                 if (store == null) return;
                 _SLE.SaveChanges();
-                Read_RefreshDataGridViewStore();
+                Read_DataGridView(dataGridViewStore, _SLE.Stores.ToList());
             }
             catch (Exception ex)
             {
@@ -202,7 +231,7 @@ namespace Frm_ShanLiang
                 Store store = new Store { AccountName = "Test" };
                 _SLE.Stores.Add(store);
                 _SLE.SaveChanges();
-                Read_RefreshDataGridViewStore();
+                Read_DataGridView(dataGridViewStore, _SLE.Stores.ToList());
             }
             catch (Exception ex)
             {
@@ -220,7 +249,7 @@ namespace Frm_ShanLiang
                     _SLE.Stores.Remove((Store)store);
                     _SLE.SaveChanges();
                 }
-                Read_RefreshDataGridViewStore();
+                Read_DataGridView(dataGridViewStore, _SLE.Stores.ToList());
             }
             catch (Exception ex)
             {
@@ -253,60 +282,66 @@ namespace Frm_ShanLiang
             {
                 pictureBoxStoreImage.Image = pictureBoxStoreImage.ErrorImage;
             }
-        }
-
-        private void pictureBoxStoreImage_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Copy;
-        }
-
-        private void pictureBoxStoreImage_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            pictureBoxStoreImage.Image = Image.FromFile(files[0]);
+        }      
+        //===========================店家照片集==========================================
+        private void btn_readstoreimages_Click(object sender, EventArgs e)
+        {   //讀取Store_Image資料表
+            Read_DataGridView(dataGridViewStoreImage, _SLE.Store_Image.ToList());
             
+            var q = from p in _SLE.Stores
+                    select p.RestaurantName;
+            foreach (var Name in q)
+            {   //把店家名放到combobox
+                comboBoxStoreName.Items.Add(Name);
+            }
         }
-
-        private void btn_updateStoreImage_Click(object sender, EventArgs e)
-        {    //把picturebox裡的照片放到StoreImage裡  (放進去後須按修改才會真的存進DB)
+        private void btn_addstoreimages_Click(object sender, EventArgs e)
+        {  //增加一欄
             try
             {
-                byte[] bytesImage = { 1, 1 };      //先把照片轉成二進位資料
-                System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                this.pictureBoxStoreImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                bytesImage = ms.GetBuffer();
-
-                //dataGridViewStore.SelectedCells[13].Value = bytesImage; //可以選整欄去找序號13的位置更換圖片
-                dataGridViewStore.SelectedCells[0].Value = bytesImage;  //只能選照片那格去更換照片
+                Store_Image store_Image = new Store_Image { StoreID = 1 };
+                _SLE.Store_Image.Add(store_Image);
+                _SLE.SaveChanges();
+                Read_DataGridView(dataGridViewStoreImage, _SLE.Store_Image.ToList());
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);               
-            }           
-        }
-        //===========================店家照片集==========================================
-        private void btn_readstoreimage_Click(object sender, EventArgs e)
-        {   //讀取Store_Image資料表 把StoreID放到combobox
-
-            Read_RefreshDataGridViewStoreImage();
-
-            var q = (from p in _SLE.Store_Image
-                     select p.StoreID).Distinct();
-            foreach (var ID in q)
-            {
-                comboBoxStoreID.Items.Add(ID);                
+                MessageBox.Show(ex.Message);
             }
-           
-            //var q = (from p in _SLE.Store_Image   //combobox同時顯示ID與Name 但沒辦法搜尋對應的圖片
-            //         join s in _SLE.Stores
-            //         on p.StoreID equals s.StoreID
-            //         select new { p.StoreID , s.RestaurantName }).Distinct();
-            //foreach (var ID in q)
-            //{
-            //    comboBoxStoreID.Items.Add(ID);
-            //}
         }
 
+        private void btn_updatestoreimages_Click(object sender, EventArgs e)
+        {   //儲存變更
+            try
+            {
+                var store = (from p in _SLE.Stores
+                             select p).FirstOrDefault();
+                if (store == null) return;
+                _SLE.SaveChanges();
+                Read_DataGridView(dataGridViewStoreImage, _SLE.Store_Image.ToList());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btn_deletestoreimages_Click(object sender, EventArgs e)
+        {  //刪除選到的欄位
+            try
+            {
+                foreach (DataGridViewRow row in dataGridViewStoreImage.SelectedRows)
+                {
+                    var storeImage = row.DataBoundItem;
+                    _SLE.Store_Image.Remove((Store_Image)storeImage);
+                    _SLE.SaveChanges();
+                }
+                Read_DataGridView(dataGridViewStoreImage, _SLE.Store_Image.ToList());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void dataGridViewStoreImage_CellClick(object sender, DataGridViewCellEventArgs e)
         {    //把選到的欄位圖片放到picturebox瀏覽
             try
@@ -329,21 +364,25 @@ namespace Frm_ShanLiang
             }
         }
 
-        private void comboBoxStoreID_SelectedIndexChanged(object sender, EventArgs e)
-        {  //選擇StoreID會跳出該店家的圖片集
-            int comboboxID = Convert.ToInt16(comboBoxStoreID.Text);  //先將選到的comboBoxStoreID轉型int
-
-            var s = from p in _SLE.Stores     //查詢storeID對應到的店家名
-                    where p.StoreID == comboboxID
-                    select p.RestaurantName;
-            foreach (var storename in s)
+        private void comboBoxStoreName_SelectedIndexChanged(object sender, EventArgs e)
+        {  //選擇店家名會跳出該店家的圖片集
+            try
             {
-                LabelRestaurantname.Text = storename;
+                int SelectStoreID = (int)((from p in _SLE.Store_Image
+                                      join s in _SLE.Stores
+                                      on p.StoreID equals s.StoreID
+                                      where s.RestaurantName == comboBoxStoreName.Text
+                                      select p.StoreID).Distinct()).First();
+                
+                ShowImage(SelectStoreID);//顯示對應的店家圖片
             }
-            ShowImage(comboboxID);                     //顯示對應的店家圖片  
+            catch (Exception)
+            {
+                MessageBox.Show("沒有對應的圖片");
+            }                                                  
         }
         public void ShowImage(int storeID)
-        {  //用combobox選到的StoreID去搜尋圖片並放到picturebox
+        {  //用combobox選到的店名去搜尋圖片並放到flowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
             var q = from p in _SLE.Store_Image
                     where p.StoreID == storeID
@@ -354,16 +393,15 @@ namespace Frm_ShanLiang
                 pictureBox.Click += (sender, e) =>
                 {
                     Form f = new Form();
+                    f.Width =1200 ;
+                    f.Height = 720;
                     f.BackgroundImage = ((PictureBox)sender).Image;
                     f.BackgroundImageLayout = ImageLayout.Stretch;
                     f.Show();
                 };
                 MemoryStream ms = new MemoryStream(img);
-
-                Image image = Image.FromStream(ms);
-                pictureBox.Image = image;                              //轉好的資料放到pictureBox
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; //設定pictureBox屬性
-                pictureBox.BorderStyle = BorderStyle.Fixed3D;
+                pictureBox.Image = Image.FromStream(ms);               //轉好的資料放到pictureBox
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; //設定pictureBox屬性                
                 pictureBox.Margin = new Padding(5, 5, 5, 5);
                 pictureBox.Padding = new Padding(5, 5, 5, 5);
                 pictureBox.BackColor = Color.Yellow;
@@ -384,6 +422,6 @@ namespace Frm_ShanLiang
         private void PictureBox_MouseLeave(object sender, EventArgs e)
         {   //滑鼠離開圖片上的變化
             ((PictureBox)sender).BackColor = Color.Yellow;
-        }
+        }   
     }
 }
